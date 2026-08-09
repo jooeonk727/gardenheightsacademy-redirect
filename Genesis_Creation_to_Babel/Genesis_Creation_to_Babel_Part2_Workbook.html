@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+  if (/^(?:www\.)?gardenheightsacademy\.net$/i.test(window.location.hostname)) {
+    window.location.replace("https://gardenheightsacademy.com");
+  }
+</script>
+<title>Genesis: Creation to Babel Part 2 Study Guide - Word &amp; World Academy</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700&display=swap');
+:root{--grn:#386D8A;--grn-lt:#E1F1F9;--grn-dk:#1C4A63;--lime:#9CD0EC;--prp:#451CA1;--prp-lt:#eeebf8;--org:#F79309;--org-lt:#fef3e2;--navy:#2B1B90;--navy-lt:#eeeef9;--teal:#0D7A7A;--teal-lt:#E0F4F4;--ink:#1C1C1E;--slate:#4A5568;--rule:#E2E8F0;--bg:#F8F9FB;--ok:#16a34a;--err:#dc2626;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);}
+nav{background:var(--grn);padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:56px;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.15);}
+.nav-l{display:flex;align-items:center;gap:10px;}
+.nav-logo{height:50px;width:auto;display:block;background:#fff;border-radius:9px;padding:5px;}.nav-gha{display:inline-flex;align-items:center;flex-shrink:0;}
+.nav-title{color:white;font-size:14px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;}
+.nav-r{display:flex;align-items:center;gap:14px;}
+.pbar-wrap{display:flex;align-items:center;gap:8px;color:rgba(255,255,255,.85);font-size:13px;font-weight:500;}
+.pbar{width:110px;height:6px;background:rgba(255,255,255,.25);border-radius:99px;overflow:hidden;}
+.pfill{height:100%;background:var(--lime);border-radius:99px;transition:width .4s;width:0%;}
+.sbadge{background:rgba(255,255,255,.15);color:white;font-size:13px;font-weight:700;padding:4px 12px;border-radius:99px;}
+.shell{display:grid;grid-template-columns:224px 1fr;min-height:calc(100vh - 56px);}
+aside{background:white;border-right:1px solid var(--rule);padding:16px 0;position:sticky;top:56px;height:calc(100vh - 56px);overflow-y:auto;}
+.sbl{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--slate);padding:0 18px 8px;}
+.ni{display:flex;align-items:center;gap:10px;padding:9px 18px;cursor:pointer;transition:background .15s;border-left:3px solid transparent;font-size:14px;color:var(--slate);font-weight:500;}
+.ni:hover{background:var(--bg);}
+.ni.active{background:var(--grn-lt);border-left-color:var(--grn);color:var(--grn-dk);font-weight:700;}
+.ni.done{color:var(--ok);}
+.ndot{width:18px;height:18px;border-radius:50%;background:var(--rule);flex-shrink:0;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;color:white;}
+.ni.active .ndot{background:var(--grn);}
+.ni.done .ndot{background:var(--ok);}
+main{padding:32px 40px 80px;max-width:840px;}
+.sec{display:none;}.sec.active{display:block;}
+.hero{background:linear-gradient(135deg,#E2F0F8 0%,#C3E2F4 52%,#A5D4EE 100%);border-radius:16px;padding:34px 38px;color:#593218;margin-bottom:24px;}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#876C22;margin-bottom:8px;}
+.hero h1{font-family:'Playfair Display',serif;font-size:39px;font-weight:900;line-height:1.05;margin-bottom:4px;}
+.hero-ch{font-size:16px;color:var(--org);font-weight:600;margin-bottom:4px;}
+.hero-by{font-size:13px;opacity:.6;margin-bottom:22px;}
+.htags{display:flex;gap:8px;flex-wrap:wrap;}
+.htag{font-size:13px;background:rgba(0,0,0,.06);padding:4px 12px;border-radius:99px;font-weight:500;}
+.card{background:white;border:1px solid var(--rule);border-radius:12px;padding:18px 22px;margin-bottom:14px;}
+.card p{font-size:15px;line-height:1.7;color:var(--slate);}.card b{color:var(--ink);}
+.c-grn{border-left:4px solid var(--grn);background:var(--grn-lt);}
+.c-navy{border-left:4px solid var(--navy);background:var(--navy-lt);}
+.c-prp{border-left:4px solid var(--prp);background:var(--prp-lt);}
+.c-org{border-left:4px solid var(--org);background:var(--org-lt);}
+.c-teal{border-left:4px solid var(--teal);background:var(--teal-lt);}
+.clabel{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px;}
+.vgrid{display:grid;grid-template-columns:1fr;gap:10px;margin-bottom:22px;}
+.vc{background:white;border:1px solid var(--rule);border-radius:10px;overflow:hidden;}
+.vc-top{padding:12px 14px;background:var(--org-lt);border-bottom:1px solid #f0d8a8;display:flex;align-items:baseline;gap:7px;flex-wrap:wrap;}
+.vword{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:var(--navy);}
+.vpos{font-size:11px;color:var(--org);font-weight:700;background:white;padding:1px 7px;border-radius:99px;border:1px solid var(--org);}
+.vch{margin-left:auto;font-size:12px;color:#aaa;font-weight:500;}
+.vc-bot{padding:10px 14px;}
+.vmean{font-size:14px;color:var(--ink);font-weight:500;margin-bottom:4px;line-height:1.4;}
+.vex{font-size:13px;color:var(--slate);font-style:italic;line-height:1.5;}
+.qb{background:white;border:1px solid var(--rule);border-radius:12px;padding:20px 22px;margin-bottom:18px;}
+.qrow{display:flex;align-items:flex-start;gap:12px;margin-bottom:12px;}
+.qnum{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:white;flex-shrink:0;}
+.qtext{font-size:15px;font-weight:600;color:var(--ink);line-height:1.55;flex:1;}
+.vhl{background:#D8DEE6;border-radius:2px;padding:0 2px;font-weight:600;color:var(--ink);}.qch{display:none;}
+#sec-stdtest .qch{display:inline-block;flex:0 0 auto;font-size:10.5px;font-weight:700;color:#6D28D9;background:#F3F0FF;border:1px solid #DDD3F5;border-radius:99px;padding:3px 10px;margin-left:auto;white-space:nowrap;align-self:flex-start;}
+.whint{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px;align-items:center;}
+.whint-label{font-size:12px;color:var(--slate);font-weight:600;margin-right:2px;}
+.wh{padding:4px 12px;background:var(--bg);border:1.5px solid var(--rule);border-radius:99px;font-size:13px;font-weight:600;color:var(--slate);}
+.whint-note{font-size:12px;color:#aaa;font-style:italic;margin-left:4px;}
+.mcq{display:flex;flex-direction:column;gap:7px;}
+.mb{padding:10px 14px;border:1.5px solid var(--rule);border-radius:8px;background:white;text-align:left;cursor:pointer;font-size:14px;font-weight:500;color:var(--ink);transition:all .15s;display:flex;align-items:center;gap:10px;font-family:'Inter',sans-serif;}
+.mb:hover:not(:disabled){border-color:var(--navy);background:var(--navy-lt);}
+.mb.correct{border-color:var(--ok);background:#f0fdf4;color:var(--ok);font-weight:600;}
+.mb.wrong{border-color:var(--err);background:#fef2f2;color:var(--err);}
+.ml{width:22px;height:22px;border-radius:50%;border:1.5px solid currentColor;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;}
+.tf{display:flex;gap:10px;}
+.tfb{flex:1;padding:13px;border:1.5px solid var(--rule);border-radius:8px;background:white;cursor:pointer;font-size:15px;font-weight:700;text-align:center;transition:all .15s;font-family:'Inter',sans-serif;}
+.tfb:hover:not(:disabled){border-color:var(--navy);background:var(--navy-lt);}
+.tfb.correct{border-color:var(--ok);background:#f0fdf4;color:var(--ok);}
+.tfb.wrong{border-color:var(--err);background:#fef2f2;color:var(--err);}
+.fib-wrap{background:var(--bg);border:1px solid var(--rule);border-radius:8px;padding:14px 16px;font-size:15px;line-height:2.6;color:var(--ink);}
+.fib{display:inline-block;border:none;border-bottom:2px solid var(--navy);min-width:110px;padding:0 4px;font-size:15px;font-weight:600;color:var(--navy);background:transparent;outline:none;text-align:center;font-family:'Inter',sans-serif;}
+.fib.ok{border-bottom-color:var(--ok);color:var(--ok);}
+.fib.bad{border-bottom-color:var(--err);color:var(--err);}
+.fib-check{margin-left:8px;padding:4px 12px;background:var(--navy);color:white;border:none;border-radius:6px;font-size:13px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;}
+.fib-check:hover{background:var(--prp);}
+.oel{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.oei{display:flex;align-items:center;gap:14px;padding:13px 16px;background:white;border:1.5px solid var(--rule);border-radius:8px;font-size:14px;}
+.oei-text{flex:1;line-height:1.5;}
+.onum-input{width:44px;height:44px;border:2px solid var(--rule);border-radius:8px;font-size:19px;font-weight:700;text-align:center;color:var(--navy);background:var(--bg);outline:none;transition:all .15s;font-family:'Inter',sans-serif;flex-shrink:0;}
+.onum-input:focus{border-color:var(--navy);background:white;}
+.onum-input.ok{border-color:var(--ok);background:#f0fdf4;color:var(--ok);}
+.onum-input.bad{border-color:var(--err);background:#fef2f2;color:var(--err);}
+.lterm{border-radius:10px;overflow:hidden;margin-bottom:16px;}
+.lterm-head{padding:9px 14px;}
+.lterm-label{font-size:12px;font-weight:700;color:white;letter-spacing:.06em;text-transform:uppercase;}
+.lterm-body{padding:12px 14px;font-size:14px;line-height:1.65;color:var(--ink);}
+.fb{margin-top:10px;padding:11px 14px;border-radius:8px;font-size:14px;line-height:1.6;display:none;}
+.fb.show{display:block;}
+.ok-fb{background:#f0fdf4;border:1px solid #bbf7d0;color:#15803d;}
+.bad-fb{background:#fef2f2;border:1px solid #fecaca;color:#b91c1c;}
+.review-fb{background:var(--navy-lt);border:1px solid #a5b4fc;color:var(--navy);}
+.sbtn{margin-top:10px;padding:9px 20px;background:var(--navy);color:white;border:none;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:background .15s;font-family:'Inter',sans-serif;}
+.sbtn:hover:not(:disabled){background:var(--prp);}
+.sbtn:disabled{background:#ccc;cursor:default;}
+.writing-box{border:2px solid var(--grn);border-radius:12px;overflow:hidden;}
+.writing-header{background:var(--grn);padding:16px 20px;color:white;}
+.writing-header h3{font-size:16px;font-weight:700;margin-bottom:4px;}
+.writing-header p{font-size:14px;opacity:.85;line-height:1.5;}
+.writing-body{padding:20px 22px;background:white;}
+.starter{font-size:14px;color:var(--teal);background:var(--teal-lt);border:1px solid #99d0d0;border-radius:6px;padding:10px 13px;margin-bottom:14px;line-height:1.6;}
+textarea{width:100%;min-height:160px;border:1.5px solid var(--rule);border-radius:8px;padding:12px 14px;font-family:'Inter',sans-serif;font-size:14px;line-height:1.65;color:var(--ink);resize:vertical;background:var(--bg);transition:border-color .15s;}
+textarea:focus{outline:none;border-color:var(--navy);background:white;}
+textarea:read-only{background:#f5f5f5;}
+.wc{text-align:right;font-size:12px;color:var(--slate);margin-top:4px;}
+.wc.enough{color:var(--ok);font-weight:600;}
+.snav{display:flex;gap:10px;margin-top:28px;padding-top:22px;border-top:1px solid var(--rule);}
+.nbtn{padding:10px 20px;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer;transition:all .15s;border:none;font-family:'Inter',sans-serif;}
+.nbtn-p{background:var(--grn);color:white;}.nbtn-p:hover{background:var(--grn-dk);}
+.nbtn-s{background:white;color:var(--slate);border:1.5px solid var(--rule);}.nbtn-s:hover{border-color:var(--navy);color:var(--navy);}
+.sec-eye{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px;}
+.sec-title{font-family:'Playfair Display',serif;font-size:27px;font-weight:900;margin-bottom:6px;}
+.sec-sub{font-size:15px;color:var(--slate);line-height:1.6;margin-bottom:22px;}
+.ovt{width:100%;border-collapse:collapse;font-size:14px;}
+.ovt th{background:#B79CED;color:#25303B;padding:10px 14px;text-align:left;font-size:13px;font-weight:600;}
+.ovt th:first-child{border-radius:8px 0 0 0;}.ovt th:last-child{border-radius:0 8px 0 0;}
+.ovt td{padding:11px 14px;border-bottom:1px solid var(--rule);font-size:14px;vertical-align:top;line-height:1.5;}
+.ovt tr:last-child td{border-bottom:none;}
+.ovt td:first-child{font-weight:600;color:#8E6C0B;width:34%;}
+.ovt tr:nth-child(odd) td{background:#F3F4F6;}.ovt tr:nth-child(even) td{background:white;}
+.done-wrap{text-align:center;padding:40px 20px;}
+.done-wrap h2{font-family:'Playfair Display',serif;font-size:29px;font-weight:900;margin-bottom:8px;}
+.score-box{background:linear-gradient(135deg,var(--grn) 0%,var(--navy) 100%);border-radius:16px;padding:28px;color:white;text-align:center;margin:20px 0;}
+.score-n{font-family:'Playfair Display',serif;font-size:61px;font-weight:900;line-height:1;}
+.score-l{font-size:14px;opacity:.8;margin-top:6px;}
+@media(max-width:768px){.shell{grid-template-columns:1fr}aside{display:none}main{padding:20px 16px 60px}.vgrid{grid-template-columns:1fr}.hero h1{font-size:29px}}
+.kbank{border:2px solid #B79CED;border-radius:12px;overflow:hidden;margin-bottom:22px;background:white;}
+.kbank-head{background:#B79CED;padding:10px 16px;display:flex;align-items:center;gap:8px;}
+.kbank-icon{font-size:17px;}
+.kbank-title{color:#25303B;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;}
+.kbank-body{padding:14px 16px;font-size:14px;line-height:1.7;color:var(--ink);}
+.kbank-body b{color:#8E6C0B;}
+.kbank-tag{display:inline-block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--teal);background:var(--teal-lt);padding:2px 8px;border-radius:99px;margin-bottom:8px;}
+.nav-gha{display:inline-flex;align-items:center;flex-shrink:0;}.nav-logo{height:50px;width:auto;display:block;background:#fff;border-radius:9px;padding:5px;}.nav-home{display:inline-flex;align-items:center;gap:5px;color:white;text-decoration:none;font-size:13.5px;font-weight:700;background:rgba(255,255,255,0.16);padding:6px 13px;border-radius:8px;margin-right:14px;white-space:nowrap;transition:background .15s;}
+.nav-home:hover{background:rgba(255,255,255,0.28);}
+
+
+.w-preview{background:#f8f9fb;border:1px solid #e2e8f0;border-radius:10px;padding:14px 16px;font-size:14.5px;line-height:1.7;color:#1c1c1e;margin-top:12px;white-space:pre-wrap;word-break:break-word;}
+.lt-spell{text-decoration:underline wavy #E5484D;text-decoration-thickness:2px;text-underline-offset:3px;cursor:help;}
+.lt-gram{text-decoration:underline wavy #2563EB;text-decoration-thickness:2px;text-underline-offset:3px;cursor:help;}
+.w-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;}
+.w-chip{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;padding:4px 10px;border-radius:999px;border:1px solid #e2e8f0;background:#fff;}
+.w-chip .wdot{width:7px;height:7px;border-radius:50%;}
+.w-chip.pass{color:#0a5c18;border-color:#BFE6C8;background:#e8f5ec;}
+.w-chip.pass .wdot{background:#118824;}
+.w-chip.spell{color:#C0282C;border-color:#F3C2C4;background:#FDECEC;}
+.w-chip.spell .wdot{background:#E5484D;}
+.w-chip.gram{color:#1D4ED8;border-color:#C5D6FA;background:#EAF1FE;}
+.w-chip.gram .wdot{background:#2563EB;}
+
+.mb.sel{border-color:#1e40af !important;background:#eef4ff !important;box-shadow:0 0 0 2px rgba(30,64,175,.18);}.mb.sel::after{content:" \2713 tap again to confirm";color:#1e40af;font-weight:700;font-size:12px;margin-left:6px;white-space:nowrap;}
+/* Think Deeper widgets */
+.td-claim{display:flex;flex-direction:column;gap:8px;margin-bottom:12px;}
+.tdopt{padding:10px 14px;border:1.5px solid var(--rule);border-radius:8px;background:white;text-align:left;cursor:pointer;font-size:14px;font-weight:500;color:var(--ink);transition:all .15s;font-family:'Inter',sans-serif;}
+.tdopt:hover:not(:disabled){border-color:var(--org);background:var(--org-lt);}
+.tdopt.sel{border-color:var(--org) !important;background:var(--org-lt) !important;box-shadow:0 0 0 2px rgba(247,147,9,.18);font-weight:700;}
+.tdopt.correct{border-color:var(--ok);background:#f0fdf4;color:var(--ok);font-weight:600;}
+.tdopt.wrong{border-color:var(--err);background:#fef2f2;color:var(--err);}
+.tdopt:disabled{cursor:default;}
+.td-legend{display:flex;justify-content:space-between;font-size:12.5px;font-weight:700;color:var(--org);margin-bottom:8px;}
+.td-buckets{display:flex;flex-direction:column;gap:8px;margin-bottom:12px;}
+.tdit{display:flex;align-items:center;gap:10px;padding:10px 14px;border:1.5px solid var(--rule);border-radius:8px;background:white;text-align:left;cursor:pointer;font-size:14px;color:var(--ink);transition:all .15s;font-family:'Inter',sans-serif;}
+.tdit:hover:not(:disabled){border-color:var(--org);}
+.tdit-b{flex:0 0 auto;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:#94a3b8;background:#f1f5f9;border-radius:99px;padding:3px 9px;white-space:nowrap;}
+.tdit.bA .tdit-b{color:#0D7A7A;background:#E0F4F4;}
+.tdit.bB .tdit-b{color:#451CA1;background:#eeebf8;}
+.tdit.correct{border-color:var(--ok);background:#f0fdf4;}
+.tdit.wrong{border-color:var(--err);background:#fef2f2;}
+.tdit:disabled{cursor:default;}
+.td-match{display:flex;flex-direction:column;gap:10px;margin-bottom:12px;}
+.tdm-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+.tdm-c{flex:0 0 auto;font-size:14px;font-weight:600;color:var(--ink);min-width:180px;}
+.tdm-arrow{color:#94a3b8;}
+.tdm-s{flex:1;min-width:200px;padding:9px 11px;border:1.5px solid var(--rule);border-radius:8px;font-size:14px;font-family:'Inter',sans-serif;background:white;color:var(--ink);}
+.tdm-s.correct{border-color:var(--ok);background:#f0fdf4;}
+.tdm-s.wrong{border-color:var(--err);background:#fef2f2;}
+.td-arg{font-size:15px;line-height:2.1;color:var(--ink);margin-bottom:12px;}
+.tda-s{padding:8px 10px;border:1.5px solid var(--rule);border-radius:8px;font-size:14px;font-family:'Inter',sans-serif;background:white;color:var(--ink);margin:0 2px;}
+.tda-s.correct{border-color:var(--ok);background:#f0fdf4;}
+.tda-s.wrong{border-color:var(--err);background:#fef2f2;}
+</style>
+<style>details.gh-deep>summary{list-style:none}details.gh-deep>summary::-webkit-details-marker{display:none}details.gh-deep[open]>summary .ghd-hint{display:none}</style><style>/* GHA golden nav + std-test passage indent */
+nav{background:linear-gradient(140deg,#0E1A14 0%,#12251B 100%)!important;border-bottom:1px solid rgba(201,162,39,.28);}
+.nav-pill{color:#fff!important;font-weight:700;font-size:12px;padding:6px 12px;border-radius:99px;text-decoration:none;box-shadow:0 2px 8px rgba(0,0,0,.16);white-space:nowrap;margin-left:10px;flex-shrink:0;}
+.np-my{background:#C9A227;}
+.np-lib{background:#2E7D32;}
+#sec-stdtest .card p[style*="font-style:italic"]{text-indent:1.6em;}
+@media(max-width:768px){.nav-title{display:none;}.pbar-wrap{display:none;}.nav-logo{height:36px!important;}nav{gap:8px;padding:0 10px;}.nav-pill{font-size:11px;padding:5px 10px;margin-left:6px;}.nav-home{font-size:12px;white-space:nowrap;}}
+</style><style>.psum{display:flex;flex-direction:column;gap:8px;margin:10px 0;}.psb{display:flex;align-items:flex-start;gap:10px;text-align:left;padding:12px 14px;background:white;border:1.5px solid var(--rule);border-radius:10px;font-size:14.5px;line-height:1.5;cursor:pointer;font-family:inherit;color:inherit;}.psb::before{content:"";flex:0 0 18px;height:18px;margin-top:1px;border:2px solid var(--rule);border-radius:5px;}.psb.sel{border-color:var(--navy);background:#f0f6ff;}.psb.sel::before{background:var(--navy);border-color:var(--navy);}.psb.ok{border-color:var(--ok);background:#f0fdf4;}.psb.ok::before{background:var(--ok);border-color:var(--ok);}.psb.bad{border-color:var(--err);background:#fef2f2;}.psb.bad::before{background:var(--err);border-color:var(--err);}.psb.miss{border-style:dashed;border-color:var(--ok);}</style></head>
+<body>
+<div style="background:#0E1A14;color:#C9A227;text-align:center;font-size:12.5px;font-weight:700;letter-spacing:.04em;padding:7px 10px;">FREE SAMPLE &middot; Part 2 of 8 &middot; no sign-in required</div>
+
+<nav>
+  <div class="nav-l"><a class="nav-gha" href="../index.html" style="font-family:'Playfair Display',serif;font-weight:900;font-size:17px;color:#C9A227;text-decoration:none;">Word &amp; World Academy</a><a class="nav-pill" style="background:#FFDA70;color:#4A3808!important;" href="../index.html#library">Library</a><a class="nav-home" href="../genesis-creation-to-babel.html">&#8962; Genesis: Creation to Babel Home</a><div class="nav-title">Word &amp; World Academy &middot; <i>Genesis: Creation to Babel</i> Study Guide</div></div>
+  <div class="nav-r">
+    <div class="pbar-wrap"><div class="pbar"><div class="pfill" id="pfill"></div></div><span id="ptext">0 / 4</span></div>
+    <div class="sbadge" id="sbadge">Score 0</div>
+  </div>
+</nav>
+<div class="shell">
+<aside>
+  <div class="sbl" style="margin-top:10px">Sections</div>
+  <div class="ni active" data-sec="overview" onclick="goTo('overview')"><span class="ndot"></span>Overview</div>
+  <div class="ni" data-sec="vocab" onclick="goTo('vocab')"><span class="ndot"></span>Part 1 &middot; Vocabulary</div>
+  <div class="ni" data-sec="comp" onclick="goTo('comp')"><span class="ndot"></span>Part 2 &middot; Comprehension</div>
+  <div class="ni" data-sec="literary" onclick="goTo('literary')"><span class="ndot"></span>Part 3 &middot; Literary Elements</div>
+  <div class="ni" data-sec="critical" onclick="goTo('critical')"><span class="ndot"></span>Part 4 &middot; Think Deeper</div>
+  <div class="ni" data-sec="stdtest" onclick="goTo('stdtest')"><span class="ndot"></span>Part 5 &middot; Standardized Test</div>
+  
+</aside>
+<main>
+
+<section class="sec active" id="sec-overview"><div class="hero"><div class="eyebrow">Genesis: Creation to Babel &middot; Word &amp; World Academy</div><h1>Part 2</h1><div class="hero-ch">for <i>Genesis: Creation to Babel</i> &middot; Part 2 &middot; Genesis 3</div><div class="hero-meta"><span class="htag">8 Parts</span><span class="htag">40 min</span></div></div><div class="card c-grn"><div class="clabel" style="color:var(--grn)">What Happens in Part 2</div><p>In <b>Genesis 3</b>, a <b>crafty</b> serpent asks the woman a question about God's one rule: don't eat from the tree in the middle of the garden. The serpent tells her she won't die, and that the fruit will open her eyes. She sees the fruit looks good, takes it, eats, and gives some to her husband, who is with her. He eats too. Their eyes are opened &mdash; not the way the serpent promised. They notice they are not wearing anything, feel <b>ashamed</b>, and sew fig leaves together to cover themselves. When they hear God in the garden, they <b>hide</b>. God asks three questions: &ldquo;Where are you?&rdquo; &ldquo;Who told you that you were naked?&rdquo; and &ldquo;Have you eaten from the tree?&rdquo; The man blames the woman; the woman blames the serpent. God speaks a <b>curse</b> on the serpent and on the ground, which will now grow <b>thorns</b>. Then, before sending them out of the garden, God makes clothes for the man and the woman out of animal skin &mdash; and places a guard at the entrance so they cannot come back to the tree of life.</p></div>
+<div style="padding:6px 6px 2px;"><div class="card"><div class="clabel" style="color:var(--navy)">What We Will Learn</div><table class="ovt"><thead><tr><th>Section</th><th>What you will practice</th></tr></thead><tbody><tr><td>Vocabulary</td><td>Words the chapter is built from: crafty, forbidden, hide, ashamed, curse, thorn, guard</td></tr><tr><td>Bible Study</td><td>How one choice leads to another &mdash; reading a chain of cause and effect</td></tr><tr><td>Scripture Discovery</td><td>Real snakes, fig trees and thorny plants of the ancient Near East</td></tr></tbody></table></div><div class="card"><div class="clabel" style="color:var(--navy)">Chapter Summary</div><table class="ovt"><thead><tr><th>Ch.</th><th>What happens</th></tr></thead><tbody><tr><td>3</td><td><b>The Serpent and Leaving the Garden</b> &mdash; A crafty serpent questions God's one rule and tells the woman she will not die if she eats the fruit. She eats, gives some to her husband, and he eats too. They realize they are not wearing anything and feel ashamed, so they sew fig leaves together and hide from God. God asks what happened; the man blames the woman, the woman blames the serpent. God speaks a curse on the serpent and on the ground, promises pain and hard work ahead, then makes clothing for the man and woman and sends them out of the garden, guarding the way back to the tree of life.</td></tr></tbody></table></div></div><div class="snav"><button class="nbtn nbtn-p" onclick="goTo('vocab')">Start &rarr; Part 1: Vocabulary</button></div></section>
+<section class="sec" id="sec-vocab"><div class="sec-eye" style="color:var(--org)">Part 1</div><div class="sec-title">Vocabulary</div><div class="sec-sub">Study 7 key words from Genesis 3, then answer each question.</div><div class="kbank"><div class="kbank-head" style="background:#B79CED"><span class="kbank-icon">&#128218;</span><div class="kbank-head-text"><span class="kbank-eyebrow">&#128142; Treasure Wisdom &middot; a true fact behind the story</span><span class="kbank-title" style="color:#25303B">The Words of a Choice</span></div></div><div class="kbank-body"><span class="kbank-tag" style="background:#B79CED;color:#25303B">Word Study &middot; A Story Told in Feelings</span>Follow the feelings in this chapter through its words. The serpent is <b>crafty</b> &mdash; clever in a tricky way. The one rule God gave was that the fruit was <b>forbidden</b> &mdash; not allowed. After they break it, the man and the woman feel <b>ashamed</b> for the first time, and they <b>hide</b>. Notice how the words move: a clever question, a forbidden thing, a bad feeling, then hiding. That is the whole shape of the chapter in four words.</div></div><div class="vgrid"><div class="vc"><div class="vc-top"><span class="vword">crafty</span><span class="vpos">adj.</span><span class="vch">Gen 3:1</span></div><div class="vc-bot"><div class="vmean">Clever in a tricky way</div><div class="vex">&ldquo;The serpent was more crafty than any other wild animal.&rdquo;</div></div></div><div class="vc"><div class="vc-top"><span class="vword">forbidden</span><span class="vpos">adj.</span><span class="vch">Gen 3:3</span></div><div class="vc-bot"><div class="vmean">Not allowed</div><div class="vex">&ldquo;God said not to eat the fruit of one tree &mdash; it was forbidden.&rdquo;</div></div></div><div class="vc"><div class="vc-top"><span class="vword">hide</span><span class="vpos">v.</span><span class="vch">Gen 3:8</span></div><div class="vc-bot"><div class="vmean">To go where others cannot see you</div><div class="vex">&ldquo;The man and the woman hid among the trees of the garden.&rdquo;</div></div></div><div class="vc"><div class="vc-top"><span class="vword">ashamed</span><span class="vpos">adj.</span><span class="vch">Gen 3:7</span></div><div class="vc-bot"><div class="vmean">Feeling bad about something you did or how you look</div><div class="vex">&ldquo;They realized they were not wearing anything and felt ashamed.&rdquo;</div></div></div><div class="vc"><div class="vc-top"><span class="vword">curse</span><span class="vpos">v.</span><span class="vch">Gen 3:14</span></div><div class="vc-bot"><div class="vmean">To say something bad will happen, as a punishment</div><div class="vex">&ldquo;God said the serpent was cursed more than any animal.&rdquo;</div></div></div><div class="vc"><div class="vc-top"><span class="vword">thorn</span><span class="vpos">n.</span><span class="vch">Gen 3:18</span></div><div class="vc-bot"><div class="vmean">A sharp, pointed part of a plant</div><div class="vex">&ldquo;The ground would now grow thorns and prickly plants.&rdquo;</div></div></div><div class="vc"><div class="vc-top"><span class="vword">guard</span><span class="vpos">n.</span><span class="vch">Gen 3:24</span></div><div class="vc-bot"><div class="vmean">Someone or something placed to watch and protect a place</div><div class="vex">&ldquo;God placed a guard at the entrance so they could not return.&rdquo;</div></div></div></div><p style="font-size:13px;color:var(--slate);font-style:italic;margin:10px 0 14px;padding:0 4px">&#9432; The vocabulary words in this list are selected to help you understand and complete this workbook. Some may not appear word-for-word in your Bible.</p><div class="qb"><div class="qrow"><span class="qnum" style="background:var(--org)">1</span><span class="qtext">A word for someone clever in a tricky way is ___.</span><span class="qch">Gen 3:1</span></div><div class="mcq" id="m-v1"><button class="mb" onclick="doMCQ(this,'m-v1','B','f-v1')"><span class="ml">A</span>forbidden</button><button class="mb" onclick="doMCQ(this,'m-v1','B','f-v1')"><span class="ml">B</span>crafty</button><button class="mb" onclick="doMCQ(this,'m-v1','B','f-v1')"><span class="ml">C</span>ashamed</button><button class="mb" onclick="doMCQ(this,'m-v1','B','f-v1')"><span class="ml">D</span>cursed</button></div><div class="fb" id="f-v1" data-why="The serpent was more crafty than any other wild animal."></div></div><div class="qb"><div class="qrow"><span class="qnum" style="background:var(--org)">2</span><span class="qtext">Something that is &lsquo;forbidden&rsquo; is not allowed.</span><span class="qch">Gen 3:3</span></div><div class="tf" id="t-v2"><button class="tfb" onclick="doTF(this,'t-v2','true','f-t-v2','TRUE &mdash; the fruit of one tree in the garden was forbidden.')">TRUE</button><button class="tfb" onclick="doTF(this,'t-v2','true','f-t-v2','TRUE &mdash; the fruit of one tree in the garden was forbidden.')">FALSE</button></div><div class="fb" id="f-t-v2"></div></div><div class="qb"><div class="qrow"><span class="qnum" style="background:var(--org)">3</span><span class="qtext">Write your answer in the blank, then click Check.</span><span class="qch">Gen 3:8</span></div><div class="whint"><span class="whint-label">Word choices:</span><span class="wh">hide</span><span class="wh">guard</span><span class="wh">curse</span><span class="wh">thorn</span><span class="whint-note">- some words will not be used</span></div><div class="fib-wrap"><div>When they heard God in the garden, the man and the woman went to <input class="fib" id="fib-v3" placeholder="________"> among the trees. <button class="fib-check" onclick="doFib('fib-v3','hide','fi-fib-v3')">Check</button> <span id="fi-fib-v3"></span></div></div></div><div class="qb"><div class="qrow"><span class="qnum" style="background:var(--org)">4</span><span class="qtext">To feel &lsquo;ashamed&rsquo; is to ___.</span><span class="qch">Gen 3:7</span></div><div class="mcq" id="m-v4"><button class="mb" onclick="doMCQ(this,'m-v4','B','f-v4')"><span class="ml">A</span>feel proud of something</button><button class="mb" onclick="doMCQ(this,'m-v4','B','f-v4')"><span class="ml">B</span>feel bad about something</button><button class="mb" onclick="doMCQ(this,'m-v4','B','f-v4')"><span class="ml">C</span>feel hungry</button><button class="mb" onclick="doMCQ(this,'m-v4','B','f-v4')"><span class="ml">D</span>feel sleepy</button></div><div class="fb" id="f-v4" data-why="They realized they were not wearing anything and felt ashamed."></div></div><div class="qb"><div class="qrow"><span class="qnum" style="background:var(--org)">5</span><span class="qtext">To &lsquo;curse&rsquo; someone means to wish them good luck.</span><span class="qch">Gen 3:14</span></div><div class="tf" id="t-v5"><button class="tfb" onclick="doTF(this,'t-v5','false','f-t-v5','FALSE &mdash; a curse says something bad will happen, not something good.')">TRUE</button><button class="tfb" onclick="doTF(this,'t-v5','false','f-t-v5','FALSE &mdash; a curse says something bad will happen, not something good.')">FALSE</button></div><div class="fb" id="f-t-v5"></div></div><div class="qb"><div class="qrow"><span class="qnum" style="background:var(--org)">6</span><span class="qtext">A &lsquo;thorn&rsquo; is a soft, smooth part of a plant.</span><span class="qch">Gen 3:18</span></div><div class="tf" id="t-v6"><button class="tfb" onclick="doTF(this,'t-v6','false','f-t-v6','FALSE &mdash; a thorn is sharp and pointed, not soft.')">TRUE</button><button class="tfb" onclick="doTF(this,'t-v6','false','f-t-v6','FALSE &mdash; a thorn is sharp and pointed, not soft.')">FALSE</button></div><div class="fb" id="f-t-v6"></div></div><div class="qb"><div class="qrow"><span class="qnum" style="background:var(--org)">7</span><span class="qtext">Write your answer in the blank, then click Check.</span><span class="qch">Gen 3:24</span></div><div class="whint"><span class="whint-label">Word choices:</span><span class="wh">guard</span><span class="wh">crafty</span><span class="wh">forbidden</span><span class="wh">hide</span><span class="whint-note">- some words will not be used</span></div><div class="fib-wrap"><div>God placed a <input class="fib" id="fib-v7" placeholder="________"> at the entrance, so the man and the woman could not go back to the tree of life. <button class="fib-check" onclick="doFib('fib-v7','guard','fi-fib-v7')">Check</button> <span id="fi-fib-v7"></span></div></div></div><div class="snav"><button class="nbtn nbtn-s" onclick="goTo('overview')">&larr; Back</button><button class="nbtn nbtn-p" onclick="markDone('vocab');goTo('comp')">Next: Comprehension &rarr;</button></div></section>
+<section class="sec" id="sec-comp"><div class="sec-eye" style="color:var(--lime)">Part 2</div><div class="sec-title">Comprehension</div><div class="sec-sub">Show you understood what happens in Genesis 3.</div><div class="kbank"><div class="kbank-head" style="background:#B79CED"><span class="kbank-icon">&#129504;</span><div class="kbank-head-text"><span class="kbank-eyebrow">&#128142; Treasure Wisdom &middot; a true fact behind the story</span><span class="kbank-title" style="color:#25303B">One Choice, Many Effects</span></div></div><div class="kbank-body"><span class="kbank-tag" style="background:#B79CED;color:#25303B">Bible Study Skill &middot; Reading a Chain of Cause and Effect</span>Some chapters are best read by asking, again and again: <b>and then what happened because of that?</b> Try it here. The serpent asks a question, so the woman starts to doubt. Because she doubts, she eats. Because she eats, she gives some to the man. Because he eats too, their eyes are opened. Because their eyes are opened, they feel ashamed. Because they feel ashamed, they hide. Each step is <b>caused</b> by the step before it. Reading a chain like this helps you see not just what happened, but why.</div></div><div class="qb"><div class="qrow"><span class="qnum" style="background:var(--navy)">1</span><span class="qtext">What question does the serpent ask the woman?</span><span class="qch">Gen 3:1</span></div><div class="mcq" id="m-c1"><button class="mb" onclick="doMCQ(this,'m-c1','A','f-c1')"><span class="ml">A</span>Did God really say you must not eat from any tree in the garden?</button><button class="mb" onclick="doMCQ(this,'m-c1','A','f-c1')"><span class="ml">B</span>Do you like this garden?</button><button class="mb" onclick="doMCQ(this,'m-c1','A','f-c1')"><span class="ml">C</span>Where is the man?</button><button class="mb" onclick="doMCQ(this,'m-c1','A','f-c1')"><span class="ml">D</span>What is your name?</button></div><div class="fb" id="f-c1" data-why="It is a question that makes the woman start to doubt what God said."></div></div><div class="qb"><div class="qrow"><span class="qnum" style="background:var(--navy)">2</span><span class="qtext">What do the woman and the man notice right after they eat the fruit?</span><span class="qch">Gen 3:7</span></div><div class="mcq" id="m-c2"><button class="mb" onclick="doMCQ(this,'m-c2','B','f-c2')"><span class="ml">A</span>they fall asleep</button><button class="mb" onclick="doMCQ(this,'m-c2','B','f-c2')"><span class="ml">B</span>they are not wearing anything, and feel ashamed</button><button class="mb" onclick="doMCQ(this,'m-c2','B','f-c2')"><span class="ml">C</span>they can suddenly fly</button><button class="mb" onclick="doMCQ(this,'m-c2','B','f-c2')"><span class="ml">D</span>they forget how to talk</button></div><div class="fb" id="f-c2" data-why="Their eyes are opened, but not the way the serpent promised."></div></div><div class="qb"><div class="qrow"><span class="qnum" style="background:var(--navy)">3</span><span class="qtext">When God asks the man what happened, what does the man do?</span><span class="qch">Gen 3:12</span></div><div class="mcq" id="m-c3"><button class="mb" onclick="doMCQ(this,'m-c3','B','f-c3')"><span class="ml">A</span>he says sorry right away</button><button class="mb" onclick="doMCQ(this,'m-c3','B','f-c3')"><span class="ml">B</span>he blames the woman</button><button class="mb" onclick="doMCQ(this,'m-c3','B','f-c3')"><span class="ml">C</span>he blames the serpent</button><button class="mb" onclick="doMCQ(this,'m-c3','B','f-c3')"><span class="ml">D</span>he says nothing at all</button></div><div class="fb" id="f-c3" data-why="Then the woman blames the serpent."></div></div><div class="qb"><div class="qrow"><span class="qnum" style="background:var(--navy)">4</span><span class="qtext">What does God make for the man and the woman before sending them out of the garden?</span><span class="qch">Gen 3:21</span></div><div class="mcq" id="m-c4"><button class="mb" onclick="doMCQ(this,'m-c4','B','f-c4')"><span class="ml">A</span>a new garden</button><button class="mb" onclick="doMCQ(this,'m-c4','B','f-c4')"><span class="ml">B</span>clothes from animal skin</button><button class="mb" onclick="doMCQ(this,'m-c4','B','f-c4')"><span class="ml">C</span>a boat</button><button class="mb" onclick="doMCQ(this,'m-c4','B','f-c4')"><span class="ml">D</span>a new kind of tree</button></div><div class="fb" id="f-c4" data-why="Even while sending them out, God takes care of them."></div></div><div class="qb"><div class="qrow"><span class="qnum" style="background:var(--navy)">5</span><span class="qtext">Write the numbers 1&ndash;5 in the boxes to show the correct order in Genesis 3. Number 1 = what happens first.</span><span class="qch">Gen 3</span></div><ul class="oel" id="oel-c5"><li class="oei" data-o="2"><input class="onum-input" id="oi-0" type="number" min="1" max="5" placeholder="#"><span class="oei-text">The woman and the man eat the fruit.</span></li><li class="oei" data-o="4"><input class="onum-input" id="oi-1" type="number" min="1" max="5" placeholder="#"><span class="oei-text">God makes clothes for them.</span></li><li class="oei" data-o="1"><input class="onum-input" id="oi-2" type="number" min="1" max="5" placeholder="#"><span class="oei-text">The serpent asks the woman about the tree.</span></li><li class="oei" data-o="5"><input class="onum-input" id="oi-3" type="number" min="1" max="5" placeholder="#"><span class="oei-text">God sends them out of the garden.</span></li><li class="oei" data-o="3"><input class="onum-input" id="oi-4" type="number" min="1" max="5" placeholder="#"><span class="oei-text">They hide from God among the trees.</span></li></ul><button class="sbtn" style="margin-top:12px" onclick="checkOrder()">Check Order</button><div class="fb" id="f-c5"></div></div><div class="qb"><div class="qrow"><span class="qnum" style="background:var(--navy)">6</span><span class="qtext">God curses the ground because of what the man did.</span><span class="qch">Gen 3:17</span></div><div class="tf" id="t-c6"><button class="tfb" onclick="doTF(this,'t-c6','true','f-t-c6','TRUE &mdash; the ground will now grow thorns, and work will be hard.')">TRUE</button><button class="tfb" onclick="doTF(this,'t-c6','true','f-t-c6','TRUE &mdash; the ground will now grow thorns, and work will be hard.')">FALSE</button></div><div class="fb" id="f-t-c6"></div></div><div class="qb"><div class="qrow"><span class="qnum" style="background:var(--navy)">7</span><span class="qtext">The man and the woman die right away after they eat the fruit.</span><span class="qch">Gen 3:19-24</span></div><div class="tf" id="t-c7"><button class="tfb" onclick="doTF(this,'t-c7','false','f-t-c7','FALSE &mdash; the chapter shows them leaving the garden alive, though everything about their life has changed.')">TRUE</button><button class="tfb" onclick="doTF(this,'t-c7','false','f-t-c7','FALSE &mdash; the chapter shows them leaving the garden alive, though everything about their life has changed.')">FALSE</button></div><div class="fb" id="f-t-c7"></div></div><div class="snav"><button class="nbtn nbtn-s" onclick="goTo('vocab')">&larr; Back</button><button class="nbtn nbtn-p" onclick="markDone('comp');goTo('literary')">Next: Literary Elements &rarr;</button></div></section>
+<section class="sec" id="sec-literary"><div class="sec-eye" style="color:var(--prp)">Part 3</div><div class="sec-title">Literary Elements</div><div class="sec-sub">Understanding HOW and WHY Genesis 3 tells its story mostly through talk between characters.</div><div class="kbank"><div class="kbank-head" style="background:#B79CED"><span class="kbank-icon">&#128214;</span><div class="kbank-head-text"><span class="kbank-eyebrow">&#128142; Treasure Wisdom &middot; a true fact behind the story</span><span class="kbank-title" style="color:#25303B">A Chapter Full of Questions</span></div></div><div class="kbank-body"><span class="kbank-tag" style="background:#B79CED;color:#25303B">Literary Craft &middot; Dialogue</span>Genesis 1 was a list. Genesis 2 was a scene. Genesis 3 is neither &mdash; it is mostly <b>dialogue</b>, talk between characters. Count the questions: the serpent asks one, and then God asks three in a row &mdash; &ldquo;Where are you?&rdquo; &ldquo;Who told you?&rdquo; &ldquo;Have you eaten?&rdquo; Each question does more than ask for information. It makes the person answering think, and it moves the story forward. A chapter built from questions feels like watching a conversation happen, not like being told a list or shown a scene.</div></div><div class="lterm"><div class="lterm-head" style="background:var(--prp)"><span class="lterm-label">Dialogue</span></div><div class="lterm-body" style="background:var(--prp-lt)">Talk between characters in a story. Most of Genesis 3 is dialogue &mdash; the serpent and the woman, then God, the man and the woman.</div></div><div class="lterm"><div class="lterm-head" style="background:var(--prp)"><span class="lterm-label">Cause and effect</span></div><div class="lterm-body" style="background:var(--prp-lt)">One event makes another event happen. The serpent's question causes doubt; doubt causes eating; eating causes shame.</div></div><div class="lterm"><div class="lterm-head" style="background:var(--prp)"><span class="lterm-label">Consequence</span></div><div class="lterm-body" style="background:var(--prp-lt)">Something that happens because of what a character did. Thorns in the ground and leaving the garden are both consequences.</div></div><div class="qb"><div class="qrow"><span class="qnum" style="background:var(--prp)">1</span><span class="qtext">What is Genesis 3 mostly made of?</span><span class="qch">Gen 3</span></div><div class="mcq" id="m-l1"><button class="mb" onclick="doMCQ(this,'m-l1','C','f-l1')"><span class="ml">A</span>a list of days</button><button class="mb" onclick="doMCQ(this,'m-l1','C','f-l1')"><span class="ml">B</span>a description of a place</button><button class="mb" onclick="doMCQ(this,'m-l1','C','f-l1')"><span class="ml">C</span>questions and answers between characters</button><button class="mb" onclick="doMCQ(this,'m-l1','C','f-l1')"><span class="ml">D</span>a song</button></div><div class="fb" id="f-l1" data-why="It is built almost entirely from dialogue."></div></div><div class="qb"><div class="qrow"><span class="qnum" style="background:var(--prp)">2</span><span class="qtext">Write your answer in each blank, then click Check.</span><span class="qch">Gen 3</span></div><div class="whint"><span class="whint-label">Word choices:</span><span class="wh">dialogue</span><span class="wh">question</span><span class="wh">scene</span><span class="wh">list</span><span class="whint-note">- some words will not be used</span></div><div class="fib-wrap"><div style="margin-bottom:14px">Talk between characters in a story is called <input class="fib" id="fib-l2a" placeholder="________">. <button class="fib-check" onclick="doFib('fib-l2a','dialogue','fi-fib-l2a')">Check</button> <span id="fi-fib-l2a"></span></div><div>Something that makes a character think and moves the story forward is often a <input class="fib" id="fib-l2b" placeholder="________">. <button class="fib-check" onclick="doFib('fib-l2b','question','fi-fib-l2b')">Check</button> <span id="fi-fib-l2b"></span></div></div></div><div class="qb"><div class="qrow"><span class="qnum" style="background:var(--prp)">3</span><span class="qtext">How many questions does God ask the man, one after another?</span><span class="qch">Gen 3:9-11</span></div><div class="mcq" id="m-l3"><button class="mb" onclick="doMCQ(this,'m-l3','C','f-l3')"><span class="ml">A</span>one</button><button class="mb" onclick="doMCQ(this,'m-l3','C','f-l3')"><span class="ml">B</span>two</button><button class="mb" onclick="doMCQ(this,'m-l3','C','f-l3')"><span class="ml">C</span>three</button><button class="mb" onclick="doMCQ(this,'m-l3','C','f-l3')"><span class="ml">D</span>four</button></div><div class="fb" id="f-l3" data-why="Where are you? Who told you? Have you eaten?"></div></div><div class="qb"><div class="qrow"><span class="qnum" style="background:var(--prp)">4</span><span class="qtext">God's first question to the man is &ldquo;Have you eaten from the tree?&rdquo;</span><span class="qch">Gen 3:9</span></div><div class="tf" id="t-l4"><button class="tfb" onclick="doTF(this,'t-l4','false','f-t-l4','FALSE &mdash; the first question is &ldquo;Where are you?&rdquo;')">TRUE</button><button class="tfb" onclick="doTF(this,'t-l4','false','f-t-l4','FALSE &mdash; the first question is &ldquo;Where are you?&rdquo;')">FALSE</button></div><div class="fb" id="f-t-l4"></div></div><div class="qb"><div class="qrow"><span class="qnum" style="background:var(--prp)">5</span><span class="qtext">A chapter built mostly from talk between characters uses dialogue.</span><span class="qch">Gen 3</span></div><div class="tf" id="t-l5"><button class="tfb" onclick="doTF(this,'t-l5','true','f-t-l5','TRUE &mdash; that is exactly what dialogue means.')">TRUE</button><button class="tfb" onclick="doTF(this,'t-l5','true','f-t-l5','TRUE &mdash; that is exactly what dialogue means.')">FALSE</button></div><div class="fb" id="f-t-l5"></div></div><div class="qb"><div class="qrow"><span class="qnum" style="background:var(--prp)">6</span><span class="qtext">Why do God's questions make the story feel different from Genesis 1's refrain?</span><span class="qch">Gen 1&ndash;3</span></div><div class="mcq" id="m-l6"><button class="mb" onclick="doMCQ(this,'m-l6','B','f-l6')"><span class="ml">A</span>because they are the same words repeated</button><button class="mb" onclick="doMCQ(this,'m-l6','B','f-l6')"><span class="ml">B</span>because each answer changes what happens next</button><button class="mb" onclick="doMCQ(this,'m-l6','B','f-l6')"><span class="ml">C</span>because they are only about the weather</button><button class="mb" onclick="doMCQ(this,'m-l6','B','f-l6')"><span class="ml">D</span>because no one answers them</button></div><div class="fb" id="f-l6" data-why="A refrain repeats. A question in dialogue moves the story somewhere new."></div></div><div class="qb"><div class="qrow"><span class="qnum" style="background:var(--prp)">7</span><span class="qtext">Write your answer in the blank, then click Check.</span><span class="qch">Gen 3</span></div><div class="whint"><span class="whint-label">Word choices:</span><span class="wh">consequence</span><span class="wh">dialogue</span><span class="wh">refrain</span><span class="wh">pattern</span><span class="whint-note">- some words will not be used</span></div><div class="fib-wrap"><div>Something that happens because of what a character did is called a <input class="fib" id="fib-l7" placeholder="________">. <button class="fib-check" onclick="doFib('fib-l7','consequence','fi-fib-l7')">Check</button> <span id="fi-fib-l7"></span></div></div></div><div class="snav"><button class="nbtn nbtn-s" onclick="goTo('comp')">&larr; Back</button><button class="nbtn nbtn-p" onclick="markDone('literary');goTo('critical')">Next: Think Deeper &rarr;</button></div></section>
+<section class="sec" id="sec-critical"><div class="sec-eye" style="color:var(--org)">Part 4</div><div class="sec-title">Think Deeper</div><div class="sec-sub">Four deeper challenges &mdash; no single-word recall. Read, weigh the evidence, and reason it out.</div><div class="kbank"><div class="kbank-head" style="background:#B79CED"><span class="kbank-icon">&#128058;</span><div class="kbank-head-text"><span class="kbank-eyebrow">&#128142; Treasure Wisdom &middot; a true fact behind the story</span><span class="kbank-title" style="color:#25303B">Snakes, Fig Trees and Thorns</span></div></div><div class="kbank-body"><span class="kbank-tag" style="background:#B79CED;color:#25303B">Scripture Discovery &middot; Nature</span>Two plants and one animal appear in this chapter, and all three were real and common in the ancient Near East. <b>Fig trees</b> grow broad leaves, big enough to sew together for covering &mdash; which is why the first clothing in the story is fig leaves, not some rare plant. <b>Thorny</b> plants like thistles are common on ground nobody tends; farmers in the region fought them constantly, which is exactly what the chapter says will now happen to the man's work. And <b>snakes</b> were a known, sometimes-dangerous part of everyday life there, the kind of real animal a farmer or shepherd would actually meet &mdash; not an imaginary creature invented for the story.</div></div><div style="background:#F7F9F5;border:1px solid #D9E3D2;border-left:4px solid var(--grn);border-radius:10px;padding:14px 16px;margin:10px 0 6px;font-size:14.5px;line-height:1.75;color:#2a3a2a;"><p style="margin:0">Read Genesis 3 in your Bible first. Then think about it. Notice how one small choice leads to another, and another. Watch what changes between the start of the chapter and the end &mdash; not just what happens, but how the man and woman feel and act differently.</p></div><div style="font-size:11.5px;color:#8a93a6;margin:4px 2px 0;font-style:italic;">Original passage written for this workbook &mdash; not a quotation from Scripture.</div><div class="qb tdq" data-td="claim" data-key="1,2"><div class="qrow"><span class="qnum" style="background:var(--org)">1</span><span class="qtext"><b>Claim:</b> &ldquo;Genesis 3 shows a chain of cause and effect, not just a list of separate events.&rdquo; &mdash; choose the <b>two</b> details that best prove it.</span><span class="qch">Claim &amp; Evidence</span></div><div class="td-claim"><button class="tdopt" data-k="1" onclick="tdPick(this)">The serpent's question causes the woman to doubt</button><button class="tdopt" data-k="2" onclick="tdPick(this)">Feeling ashamed causes the man and woman to hide</button><button class="tdopt" data-k="3" onclick="tdPick(this)">The chapter is set in a garden</button><button class="tdopt" data-k="4" onclick="tdPick(this)">Thorns and thistles are real plants</button><button class="tdopt" data-k="5" onclick="tdPick(this)">Fig trees have large leaves</button><button class="tdopt" data-k="6" onclick="tdPick(this)">Eating the fruit happens in the garden</button><button class="tdopt" data-k="7" onclick="tdPick(this)">The serpent is called crafty</button></div><button class="sbtn td-check" onclick="tdCheckClaim(this)">Check (choose 2)</button><div class="fb" data-why="The first two show one event causing the next. The others are true, but they are just facts from the page, not proof of a chain."></div></div><div class="qb tdq" data-td="bucket" data-a="Before eating the fruit" data-b="After eating the fruit"><div class="qrow"><span class="qnum" style="background:var(--org)">2</span><span class="qtext">Before eating the fruit, or after? <b>Tap each</b> detail to send it left or right. There are <b>3 details for each side</b>.</span><span class="qch">Sort into two</span></div><div class="td-legend"><span class="td-lg td-lgA">&#9668; Before eating</span><span class="td-lg td-lgB">After eating &#9658;</span></div><div class="td-buckets"><button class="tdit" data-ans="A" data-bucket="" onclick="tdCycle(this)"><span class="tdit-b">Tap to sort</span><span>The man and woman are not ashamed</span></button><button class="tdit" data-ans="B" data-bucket="" onclick="tdCycle(this)"><span class="tdit-b">Tap to sort</span><span>They feel ashamed of being unclothed</span></button><button class="tdit" data-ans="A" data-bucket="" onclick="tdCycle(this)"><span class="tdit-b">Tap to sort</span><span>They are not hiding from God</span></button><button class="tdit" data-ans="B" data-bucket="" onclick="tdCycle(this)"><span class="tdit-b">Tap to sort</span><span>They hide among the trees</span></button><button class="tdit" data-ans="A" data-bucket="" onclick="tdCycle(this)"><span class="tdit-b">Tap to sort</span><span>The ground has not been cursed yet</span></button><button class="tdit" data-ans="B" data-bucket="" onclick="tdCycle(this)"><span class="tdit-b">Tap to sort</span><span>The ground grows thorns</span></button></div><button class="sbtn td-check" onclick="tdCheckBucket(this)">Check</button><div class="fb" data-why="Almost everything changes between the start of the chapter and the end."></div></div><div class="qb tdq" data-td="match"><div class="qrow"><span class="qnum" style="background:var(--org)">3</span><span class="qtext">Match each cause to its result. For each <b>cause</b>, pick its <b>result</b>.</span><span class="qch">Cause &amp; Effect</span></div><div class="td-match"><div class="tdm-row"><span class="tdm-c">The serpent asks a question</span><span class="tdm-arrow">&rarr;</span><select class="tdm-s" data-ans="e0"><option value="">choose the result&hellip;</option><option value="e0">The woman starts to doubt what God said</option><option value="e1">She gives some fruit to the man</option><option value="e2">They feel ashamed and hide</option><option value="e3">The woman blames the serpent</option><option value="e4">A guard is placed at the entrance</option></select></div><div class="tdm-row"><span class="tdm-c">The woman eats the fruit</span><span class="tdm-arrow">&rarr;</span><select class="tdm-s" data-ans="e1"><option value="">choose the result&hellip;</option><option value="e0">The woman starts to doubt what God said</option><option value="e1">She gives some fruit to the man</option><option value="e2">They feel ashamed and hide</option><option value="e3">The woman blames the serpent</option><option value="e4">A guard is placed at the entrance</option></select></div><div class="tdm-row"><span class="tdm-c">Their eyes are opened</span><span class="tdm-arrow">&rarr;</span><select class="tdm-s" data-ans="e2"><option value="">choose the result&hellip;</option><option value="e0">The woman starts to doubt what God said</option><option value="e1">She gives some fruit to the man</option><option value="e2">They feel ashamed and hide</option><option value="e3">The woman blames the serpent</option><option value="e4">A guard is placed at the entrance</option></select></div><div class="tdm-row"><span class="tdm-c">The man blames the woman</span><span class="tdm-arrow">&rarr;</span><select class="tdm-s" data-ans="e3"><option value="">choose the result&hellip;</option><option value="e0">The woman starts to doubt what God said</option><option value="e1">She gives some fruit to the man</option><option value="e2">They feel ashamed and hide</option><option value="e3">The woman blames the serpent</option><option value="e4">A guard is placed at the entrance</option></select></div><div class="tdm-row"><span class="tdm-c">They leave the garden</span><span class="tdm-arrow">&rarr;</span><select class="tdm-s" data-ans="e4"><option value="">choose the result&hellip;</option><option value="e0">The woman starts to doubt what God said</option><option value="e1">She gives some fruit to the man</option><option value="e2">They feel ashamed and hide</option><option value="e3">The woman blames the serpent</option><option value="e4">A guard is placed at the entrance</option></select></div></div><button class="sbtn td-check" onclick="tdCheckMatch(this)">Check</button><div class="fb" data-why="Each cause in this chapter leads straight into the next event."></div></div><div class="qb tdq" data-td="arg"><div class="qrow"><span class="qnum" style="background:var(--org)">4</span><span class="qtext">Fill <b>both</b> blanks to complete the reasoning.</span><span class="qch">Build the Argument</span></div><div class="td-arg">The man blames the woman because <select class="tda-s" data-ans="1"><option value="">choose&hellip;</option><option value="1">it feels easier than admitting his own choice</option><option value="2">she asked him to blame her</option><option value="3">the serpent told him to</option></select> , which shows that <select class="tda-s" data-ans="1"><option value="">choose&hellip;</option><option value="1">blaming someone else is easier than taking responsibility</option><option value="2">the woman is the only one at fault</option><option value="3">the man did nothing wrong</option></select> .</div><button class="sbtn td-check" onclick="tdCheckArg(this)">Check</button><div class="fb" data-why="Notice that both the man and the woman point somewhere else instead of answering the question."></div></div><div class="snav"><button class="nbtn nbtn-s" onclick="goTo('literary')">&larr; Back</button><button class="nbtn nbtn-p" onclick="markDone('critical');goTo('stdtest')">Next: Standardized Test &rarr;</button></div></section>
+<section class="sec" id="sec-stdtest"><div class="sec-eye" style="color:#6D28D9">Part 5</div><div class="sec-title">Standardized Test</div><div class="sec-sub">Reading passage &middot; Fig Trees and Thorns: Farming in the Ancient Near East &middot; practices the same reading-comprehension skills tested on the <b>SAT</b> and <b>TOEFL</b>: main idea, detail, vocabulary in context, inference and synthesis.</div><div style="background:#F3F0FF;border:1px solid #DDD3F5;border-radius:10px;padding:11px 14px;margin:6px 0 4px;font-size:13px;color:#4a4a63;">&#128214; You already have the skills from the sections above. Now use them on a short passage about the world behind the chapter you just read. Read the passage (the <b>highlighted</b> words are tested below), then answer the questions below. <b>Tap an answer to select it, then tap it again to confirm</b> &mdash; you can change your choice until you confirm.</div><div style="background:#F7F5FF;border:1px solid #DDD3F5;border-left:4px solid #6D28D9;border-radius:10px;padding:14px 16px;margin:10px 0 6px;font-size:14.5px;line-height:1.75;color:#2a2a3a;"><div style="font-size:11.5px;color:#8a93a6;font-style:italic;margin-bottom:9px;">Original passage written for this workbook &mdash; not a quotation from Scripture.</div><div style="font-family:'Playfair Display',serif;font-weight:700;font-size:17px;color:#3d2170;margin-bottom:9px;">Fig Trees and Thorns: Farming in the Ancient Near East</div><p style="margin:0">Farmers in the ancient Near East knew two plants very well: the fig tree and the thorn bush. A <b>fig tree</b> has broad leaves and can grow quite tall, giving shade as well as fruit. Its wide leaves were sometimes sewn together for simple covering. Thorn bushes grew wherever a field was left alone. If a farmer stopped clearing his land for even one season, thorns would creep back and <b>choke</b> the young plants growing there. That is one reason thorns became a picture of hard, unwanted work. Keeping a field clear took constant effort, day after day, with no season off. A garden that grew good fruit by itself, with no struggle at all, would have sounded like nothing the first readers had ever actually known.</p></div><div class="qb"><div class="qrow"><span class="qnum" style="background:var(--teal,#0D7A7A)">1</span><span class="qtext">What is this passage mostly about?</span><span class="qch">SAT/TOEFL Reading &middot; Main Idea</span></div><div class="mcq" id="m-s1"><button class="mb" onclick="doMCQ(this,'m-s1','C','f-m-s1')"><span class="ml">A</span>how tall fig trees can grow</button><button class="mb" onclick="doMCQ(this,'m-s1','C','f-m-s1')"><span class="ml">B</span>the best season to plant a garden</button><button class="mb" onclick="doMCQ(this,'m-s1','C','f-m-s1')"><span class="ml">C</span>how much work it took to keep a field clear and growing</button><button class="mb" onclick="doMCQ(this,'m-s1','C','f-m-s1')"><span class="ml">D</span>how to weave a basket from leaves</button></div><div class="fb" id="f-m-s1" data-why="The passage keeps returning to how much constant effort farming took."></div></div><div class="qb"><div class="qrow"><span class="qnum" style="background:var(--teal,#0D7A7A)">2</span><span class="qtext">What were fig leaves sometimes used for?</span><span class="qch">SAT/TOEFL Reading &middot; Detail</span></div><div class="mcq" id="m-s2"><button class="mb" onclick="doMCQ(this,'m-s2','B','f-m-s2')"><span class="ml">A</span>building walls</button><button class="mb" onclick="doMCQ(this,'m-s2','B','f-m-s2')"><span class="ml">B</span>sewing together for simple covering</button><button class="mb" onclick="doMCQ(this,'m-s2','B','f-m-s2')"><span class="ml">C</span>feeding to animals</button><button class="mb" onclick="doMCQ(this,'m-s2','B','f-m-s2')"><span class="ml">D</span>making rope</button></div><div class="fb" id="f-m-s2" data-why="Their wide leaves made them useful for more than just shade and fruit."></div></div><div class="qb"><div class="qrow"><span class="qnum" style="background:var(--teal,#0D7A7A)">3</span><span class="qtext">In this passage, &ldquo;choke&rdquo; means ___.</span><span class="qch">SAT/TOEFL Reading &middot; Vocabulary in Context</span></div><div class="mcq" id="m-s3"><button class="mb" onclick="doMCQ(this,'m-s3','D','f-m-s3')"><span class="ml">A</span>to water a plant</button><button class="mb" onclick="doMCQ(this,'m-s3','D','f-m-s3')"><span class="ml">B</span>to help something grow faster</button><button class="mb" onclick="doMCQ(this,'m-s3','D','f-m-s3')"><span class="ml">C</span>to pick fruit early</button><button class="mb" onclick="doMCQ(this,'m-s3','D','f-m-s3')"><span class="ml">D</span>to crowd out and stop something from growing</button></div><div class="fb" id="f-m-s3" data-why="Thorns crowd out the young plants a farmer actually wants."></div></div><div class="qb"><div class="qrow"><span class="qnum" style="background:var(--teal,#0D7A7A)">4</span><span class="qtext">What happens if a farmer stops clearing his field, even for one season?</span><span class="qch">SAT/TOEFL Reading &middot; Detail</span></div><div class="mcq" id="m-s4"><button class="mb" onclick="doMCQ(this,'m-s4','A','f-m-s4')"><span class="ml">A</span>thorns creep back in</button><button class="mb" onclick="doMCQ(this,'m-s4','A','f-m-s4')"><span class="ml">B</span>the fig trees stop growing fruit</button><button class="mb" onclick="doMCQ(this,'m-s4','A','f-m-s4')"><span class="ml">C</span>the ground turns to sand</button><button class="mb" onclick="doMCQ(this,'m-s4','A','f-m-s4')"><span class="ml">D</span>nothing changes at all</button></div><div class="fb" id="f-m-s4" data-why="Stated directly in the passage."></div></div><div class="qb"><div class="qrow"><span class="qnum" style="background:var(--teal,#0D7A7A)">5</span><span class="qtext">You can guess from the passage that keeping a field clear was ___.</span><span class="qch">SAT/TOEFL Reading &middot; Inference</span></div><div class="mcq" id="m-s5"><button class="mb" onclick="doMCQ(this,'m-s5','C','f-m-s5')"><span class="ml">A</span>something done once a year</button><button class="mb" onclick="doMCQ(this,'m-s5','C','f-m-s5')"><span class="ml">B</span>easy and quick work</button><button class="mb" onclick="doMCQ(this,'m-s5','C','f-m-s5')"><span class="ml">C</span>a job that never really stopped</button><button class="mb" onclick="doMCQ(this,'m-s5','C','f-m-s5')"><span class="ml">D</span>work only children did</button></div><div class="fb" id="f-m-s5" data-why="Constant effort, day after day, with no season off."></div></div><div class="qb"><div class="qrow"><span class="qnum" style="background:var(--teal,#0D7A7A)">6</span><span class="qtext">Why does the passage say a garden that grew fruit with no struggle would sound surprising to the first readers?</span><span class="qch">SAT/TOEFL Reading &middot; Inference</span></div><div class="mcq" id="m-s6"><button class="mb" onclick="doMCQ(this,'m-s6','D','f-m-s6')"><span class="ml">A</span>because fig trees cannot grow without thorns nearby</button><button class="mb" onclick="doMCQ(this,'m-s6','D','f-m-s6')"><span class="ml">B</span>because they had never seen a fig tree</button><button class="mb" onclick="doMCQ(this,'m-s6','D','f-m-s6')"><span class="ml">C</span>because gardens were not allowed back then</button><button class="mb" onclick="doMCQ(this,'m-s6','D','f-m-s6')"><span class="ml">D</span>because every garden they knew took constant, hard work</button></div><div class="fb" id="f-m-s6" data-why="Effortless growing was outside their everyday experience."></div></div><div class="qb"><div class="qrow"><span class="qnum" style="background:var(--teal,#0D7A7A)">7</span><span class="qtext">How does this passage help explain what changes for the man in Genesis 3?</span><span class="qch">SAT/TOEFL Reading &middot; Synthesis</span></div><div class="mcq" id="m-s7"><button class="mb" onclick="doMCQ(this,'m-s7','B','f-m-s7')"><span class="ml">A</span>it shows fig trees are more useful than thorn bushes</button><button class="mb" onclick="doMCQ(this,'m-s7','B','f-m-s7')"><span class="ml">B</span>it shows how real and constant the work of fighting thorns would now be for him</button><button class="mb" onclick="doMCQ(this,'m-s7','B','f-m-s7')"><span class="ml">C</span>it proves the garden of Eden had no plants at all</button><button class="mb" onclick="doMCQ(this,'m-s7','B','f-m-s7')"><span class="ml">D</span>it explains why the serpent was crafty</button></div><div class="fb" id="f-m-s7" data-why="The ground now growing thorns was not a small detail &mdash; it meant a lifetime of hard, unending work."></div></div><div class="snav"><button class="nbtn nbtn-s" onclick="goTo('critical')">&larr; Back</button><button class="nbtn nbtn-p" onclick="markDone('stdtest');showDone()">Finish &amp; See Score</button></div></section>
+<!-- print-only: kept for generate_edition_docs.py; unreachable online -->
+
+<section class="sec" id="sec-done"><div class="done-wrap"><div style="margin-bottom:16px;font-family:'Playfair Display',serif;font-weight:900;font-size:22px;color:#0E1A14;">Word &amp; World <span style="color:#9AA6AC;">Academy</span></div><h2>Part 2 Complete!</h2><p style="color:var(--slate);font-size:16px;margin-bottom:6px">You finished <b>Genesis 3</b> of <i>Genesis: Creation to Babel</i>.</p><p style="color:var(--slate);font-size:15px;margin-bottom:20px">Here are your auto-graded results:</p><div class="score-box"><div class="score-n" id="final-score">-</div><div class="score-l">points out of 100</div></div>
+  <!--TEACHIT-ONLINE--><div style="font-weight:800;color:#B97E00;font-size:15px;">&#128483;&#65039; Teach It &middot; Just for Fun <span style="font-weight:600;font-size:12px;color:#9a8030;">(optional)</span></div><div class="card c-navy" style="text-align:left;margin-top:0"><div class="clabel" style="color:var(--navy)">Teach it to someone</div><p>The best last step is to teach it. In your own words, explain what happened &mdash; retell a favorite scene, teach a character&rsquo;s big choice, or sum up the main idea for a parent, friend, or classmate. When you can teach it clearly, you truly own it.</p></div><!--/TEACHIT-ONLINE--><div style="margin-top:20px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap"><button class="nbtn nbtn-s" onclick="goTo('overview')">&larr; Review from Start</button><a class="nbtn" href="../genesis-creation-to-babel.html" style="background:#2E7D32;color:#fff;text-decoration:none;display:inline-flex;align-items:center">Parts 3&ndash;8 coming soon &rarr;</a></div><p style="margin-top:24px;font-size:12px;color:#94a3b8;line-height:1.6;max-width:560px;margin-left:auto;margin-right:auto">Independent study guide by Word &amp; World Academy. Not affiliated with or endorsed by Crossway or any Bible publisher. Contains original retelling and analysis only; no Scripture text is reproduced in full. <b>Reference edition:</b> keyed to the <b>ESV&reg; Bible</b> &mdash; read Genesis 1 in your own ESV Bible alongside this workbook. Scripture quotations, where used, are from the ESV&reg; Bible, copyright &copy; 2001 by Crossway. Used by permission. All rights reserved.</p></div></section>
+</main>
+</div>
+<script>
+
+var score = 0;
+var doneSecs = {};
+var TOTAL = 5;  // 4 graded sections; writing (Part 5) is optional and not counted
+
+function goTo(id) {
+  var secs = document.querySelectorAll('.sec');
+  for (var i = 0; i < secs.length; i++) secs[i].classList.remove('active');
+  document.getElementById('sec-' + id).classList.add('active');
+  var nis = document.querySelectorAll('.ni');
+  for (var j = 0; j < nis.length; j++) {
+    nis[j].classList.remove('active');
+    if (nis[j].getAttribute('data-sec') === id) nis[j].classList.add('active');
+  }
+  window.scrollTo(0, 0);
+}
+
+function markDone(id) {
+  if (id !== 'writing') doneSecs[id] = true;  // writing is optional, not part of progress
+  var el = document.querySelector('[data-sec="' + id + '"]');
+  if (el) {
+    el.classList.add('done');
+    el.querySelector('.ndot').textContent = 'OK';
+  }
+  updateUI();
+}
+
+function updateUI() {
+  var count = Object.keys(doneSecs).length;
+  var pct = Math.round((count / TOTAL) * 100);
+  document.getElementById('pfill').style.width = pct + '%';
+  document.getElementById('ptext').textContent = count + ' / ' + TOTAL;
+  document.getElementById('sbadge').textContent = 'Score ' + score;
+}
+
+function doMCQ(btn,gid,correct,fid){
+  var g=document.getElementById(gid); if(!g) return;
+  if(g.getAttribute('data-done')) return;
+  var btns=g.querySelectorAll('.mb'); var L=['A','B','C','D'];
+  if(!btn.classList.contains('sel')){
+    for(var s=0;s<btns.length;s++) btns[s].classList.remove('sel');
+    btn.classList.add('sel'); return;
+  }
+  var idx=-1; for(var i=0;i<btns.length;i++){ if(btns[i]===btn) idx=i; }
+  var ok=L[idx]===correct; var fb=document.getElementById(fid);
+  var why=fb?(fb.getAttribute('data-why')||''):'';
+  g.setAttribute('data-done','1');
+  for(var k=0;k<btns.length;k++){ btns[k].disabled=true; btns[k].classList.remove('sel');
+    if(L[k]===correct) btns[k].classList.add('correct');
+    else if(btns[k]===btn && !ok) btns[k].classList.add('wrong'); }
+  if(fb){ fb.className='fb show '+(ok?'ok-fb':'bad-fb');
+    fb.innerHTML=(ok?'\u2713 Correct! ':'\u2717 Not quite \u2014 the correct answer is '+correct+'. ')+why; }
+  if(typeof score==='number'&&ok) score++;
+  if(typeof updateUI==='function'){ try{updateUI();}catch(e){} }
+}
+
+function doTF(btn, gid, correct, fid, explanation) {
+  var g = document.getElementById(gid);
+  if (g.getAttribute('data-done')) return;
+  g.setAttribute('data-done', '1');
+  var btns = g.querySelectorAll('.tfb');
+  var clicked = btn.textContent.indexOf('TRUE') !== -1 ? 'true' : 'false';
+  var ok = clicked === correct;
+  for (var i = 0; i < btns.length; i++) {
+    btns[i].disabled = true;
+    var isT = btns[i].textContent.indexOf('TRUE') !== -1;
+    if ((isT && correct === 'true') || (!isT && correct === 'false')) btns[i].classList.add('correct');
+    else if (btns[i] === btn && !ok) btns[i].classList.add('wrong');
+  }
+  var fb = document.getElementById(fid);
+  fb.classList.add('show');
+  if (ok) {
+    fb.classList.add('ok-fb');
+    fb.innerHTML = explanation;
+    score += 10;
+    updateUI();
+  } else {
+    fb.classList.add('bad-fb');
+    fb.innerHTML = explanation;
+  }
+}
+
+function doFib(inputId, answer, feedbackId) {
+  var inp = document.getElementById(inputId);
+  var fb = document.getElementById(feedbackId);
+  if (inp.readOnly) return;
+  var val = inp.value.trim().toLowerCase().replace(/[^a-z ]/g, '');
+  var ans = answer.toLowerCase();
+  var ok = val === ans || val.replace(/ /g, '') === ans.replace(/ /g, '');
+  if (ok) {
+    inp.classList.add('ok');
+    inp.readOnly = true;
+    fb.innerHTML = 'OK';
+    fb.style.color = '#16a34a';
+    score += 5;
+    updateUI();
+  } else {
+    inp.classList.add('bad');
+    fb.innerHTML = 'X';
+    fb.style.color = '#dc2626';
+    setTimeout(function () {
+      inp.classList.remove('bad');
+      inp.value = '';
+      fb.innerHTML = '';
+    }, 1500);
+  }
+}
+
+/* ===== Think Deeper widgets: Claim & Evidence, Bucket sort, Match, Argument Builder ===== */
+function tdFeedback(g, ok, correctCount, total){
+  var fb = g.querySelector('.fb');
+  if (!fb) return;
+  var why = fb.getAttribute('data-why') || '';
+  fb.classList.add('show', ok ? 'ok-fb' : 'bad-fb');
+  if (ok) {
+    fb.innerHTML = '✓ Correct! ' + why;
+  } else if (typeof correctCount === 'number') {
+    fb.innerHTML = '✗ ' + correctCount + ' of ' + total + ' correct. ' + why;
+  } else {
+    fb.innerHTML = '✗ Not quite. ' + why;
+  }
+}
+
+function tdPick(btn){
+  var g = btn.closest('.qb');
+  if (!g || g.getAttribute('data-done')) return;
+  btn.classList.toggle('sel');
+}
+
+function tdCheckClaim(chkBtn){
+  var g = chkBtn.closest('.qb');
+  if (!g || g.getAttribute('data-done')) return;
+  var keys = (g.getAttribute('data-key') || '').split(',').filter(Boolean);
+  var opts = g.querySelectorAll('.tdopt');
+  var selected = [];
+  for (var i = 0; i < opts.length; i++) { if (opts[i].classList.contains('sel')) selected.push(opts[i].getAttribute('data-k')); }
+  if (!selected.length) return;
+  g.setAttribute('data-done', '1');
+  var ok = selected.length === keys.length && selected.every(function (k) { return keys.indexOf(k) !== -1; });
+  for (var j = 0; j < opts.length; j++) {
+    var k = opts[j].getAttribute('data-k');
+    opts[j].disabled = true;
+    opts[j].classList.remove('sel');
+    if (keys.indexOf(k) !== -1) opts[j].classList.add('correct');
+    else if (selected.indexOf(k) !== -1) opts[j].classList.add('wrong');
+  }
+  chkBtn.disabled = true;
+  tdFeedback(g, ok);
+  if (ok) score += 10;
+  updateUI();
+}
+
+function tdCycle(el){
+  var g = el.closest('.qb');
+  if (!g || g.getAttribute('data-done')) return;
+  var cur = el.getAttribute('data-bucket');
+  var next = cur === '' ? 'A' : (cur === 'A' ? 'B' : '');
+  el.setAttribute('data-bucket', next);
+  el.classList.remove('bA', 'bB');
+  var label = el.querySelector('.tdit-b');
+  if (next === 'A') { el.classList.add('bA'); if (label) label.textContent = g.getAttribute('data-a'); }
+  else if (next === 'B') { el.classList.add('bB'); if (label) label.textContent = g.getAttribute('data-b'); }
+  else if (label) { label.textContent = 'Tap to sort'; }
+}
+
+function tdCheckBucket(chkBtn){
+  var g = chkBtn.closest('.qb');
+  if (!g || g.getAttribute('data-done')) return;
+  var items = g.querySelectorAll('.tdit');
+  for (var i = 0; i < items.length; i++) { if (!items[i].getAttribute('data-bucket')) return; }
+  g.setAttribute('data-done', '1');
+  var correctCount = 0;
+  for (var j = 0; j < items.length; j++) {
+    items[j].disabled = true;
+    var ok = items[j].getAttribute('data-bucket') === items[j].getAttribute('data-ans');
+    items[j].classList.add(ok ? 'correct' : 'wrong');
+    if (ok) correctCount++;
+  }
+  chkBtn.disabled = true;
+  var allOk = correctCount === items.length;
+  tdFeedback(g, allOk, correctCount, items.length);
+  if (allOk) score += 10;
+  updateUI();
+}
+
+function tdCheckMatch(chkBtn){
+  var g = chkBtn.closest('.qb');
+  if (!g || g.getAttribute('data-done')) return;
+  var sels = g.querySelectorAll('.tdm-s');
+  for (var i = 0; i < sels.length; i++) { if (!sels[i].value) return; }
+  g.setAttribute('data-done', '1');
+  var correctCount = 0;
+  for (var j = 0; j < sels.length; j++) {
+    sels[j].disabled = true;
+    var ok = sels[j].value === sels[j].getAttribute('data-ans');
+    sels[j].classList.add(ok ? 'correct' : 'wrong');
+    if (ok) correctCount++;
+  }
+  chkBtn.disabled = true;
+  var allOk = correctCount === sels.length;
+  tdFeedback(g, allOk, correctCount, sels.length);
+  if (allOk) score += 10;
+  updateUI();
+}
+
+function tdCheckArg(chkBtn){
+  var g = chkBtn.closest('.qb');
+  if (!g || g.getAttribute('data-done')) return;
+  var sels = g.querySelectorAll('.tda-s');
+  for (var i = 0; i < sels.length; i++) { if (!sels[i].value) return; }
+  g.setAttribute('data-done', '1');
+  var correctCount = 0;
+  for (var j = 0; j < sels.length; j++) {
+    sels[j].disabled = true;
+    var ok = sels[j].value === sels[j].getAttribute('data-ans');
+    sels[j].classList.add(ok ? 'correct' : 'wrong');
+    if (ok) correctCount++;
+  }
+  chkBtn.disabled = true;
+  var allOk = correctCount === sels.length;
+  tdFeedback(g, allOk, correctCount, sels.length);
+  if (allOk) score += 10;
+  updateUI();
+}
+
+function checkOrder() {
+  var items = document.querySelectorAll('#oel-c5 .oei');
+  var fb = document.getElementById('f-c5');
+  if (fb.getAttribute('data-done')) return;
+  var entered = [];
+  for (var i = 0; i < items.length; i++) {
+    entered.push(parseInt(document.getElementById('oi-' + i).value) || 0);
+  }
+  for (var a = 0; a < entered.length; a++) {
+    if (entered[a] < 1 || entered[a] > 5) {
+      fb.classList.add('show', 'bad-fb');
+      fb.innerHTML = 'Please enter a number from 1 to 5 in every box first.';
+      return;
+    }
+  }
+  var unique = {};
+  for (var b = 0; b < entered.length; b++) unique[entered[b]] = true;
+  if (Object.keys(unique).length !== 5) {
+    fb.classList.add('show', 'bad-fb');
+    fb.innerHTML = 'Each number 1 to 5 must be used exactly once. Check for duplicates.';
+    return;
+  }
+  var correct = 0;
+  for (var c = 0; c < items.length; c++) {
+    var inp = document.getElementById('oi-' + c);
+    inp.readOnly = true;
+    if (entered[c] === parseInt(items[c].getAttribute('data-o'))) {
+      inp.classList.add('ok'); correct++;
+    } else {
+      inp.classList.add('bad');
+    }
+  }
+  fb.setAttribute('data-done', '1');
+  fb.classList.add('show');
+  if (correct === 5) {
+    fb.classList.add('ok-fb');
+    fb.innerHTML = 'Perfect! All 5 events are in the correct order.';
+    score += 15; updateUI();
+  } else {
+    fb.classList.add('bad-fb');var pairs=[];for(var d=0;d<items.length;d++){var ot=parseInt(items[d].getAttribute('data-o'));var tEl=items[d].querySelector('.oei-text');if(tEl)pairs.push({o:ot,t:tEl.textContent.trim()});}pairs.sort(function(a,b){return a.o-b.o;});fb.innerHTML=correct+'/5 correct. Correct order:<br>'+pairs.map(function(p,i){return '<b>'+(i+1)+'.</b> '+p.t;}).join('<br>');
+  }
+}
+
+function showDone() {
+  localStorage.setItem('genesis1_part2_done','1');
+  document.getElementById('final-score').textContent = score;
+  goTo('done');
+}
+
+updateUI();
+
+
+</script>
+
+<script>
+/* ===== GHA equal-weight 100-point scoring + reliable writing check (injected) ===== */
+(function(){
+  if(window.__ghaPatched)return; window.__ghaPatched=true;
+
+  /* ---- SCORING: every numbered question worth the same, total = 100 ---- */
+  window.psToggle=function(b){return psToggle(b)};window.psCheck=function(a,c){return psCheck(a,c)};
+function psToggle(btn){
+  var box=btn.parentNode;
+  if(box.getAttribute('data-done'))return;
+  if(btn.classList.contains('sel')){btn.classList.remove('sel');return;}
+  if(box.querySelectorAll('.psb.sel').length>=3)return;
+  btn.classList.add('sel');
+}
+function psCheck(boxId,fbId){
+  var box=document.getElementById(boxId);
+  var fb=document.getElementById(fbId);
+  if(box.getAttribute('data-done'))return;
+  var sel=box.querySelectorAll('.psb.sel');
+  if(sel.length!==3){fb.className='fb show bad-fb';fb.innerHTML='Please choose exactly THREE statements first.';return;}
+  var key={};box.getAttribute('data-key').split(',').forEach(function(k){key[k.trim()]=1;});
+  var good=0;
+  var all=box.querySelectorAll('.psb');
+  for(var i=0;i<all.length;i++){
+    var b=all[i],k=b.getAttribute('data-k');
+    if(b.classList.contains('sel')){
+      b.classList.remove('sel');
+      if(key[k]){b.classList.add('ok');good++;}else{b.classList.add('bad');}
+    }else if(key[k]){b.classList.add('miss');}
+  }
+  box.setAttribute('data-done','1');
+  if(typeof score!=='undefined')score++;
+  if(typeof updateUI==='function')updateUI();
+  fb.className='fb show '+(good===3?'ok-fb':'bad-fb');
+  fb.innerHTML=(good===3?'&#10003; Perfect &mdash; all three main ideas!':'&#10007; '+good+'/3 correct. Dashed boxes show main ideas you missed.')+
+    (fb.getAttribute('data-why')?('<br>'+fb.getAttribute('data-why')):'');
+}
+
+function qbFrac(qb){if(qb.dataset&&qb.dataset.done==='1'&&qb.dataset.frac!==undefined)return parseFloat(qb.dataset.frac)||0;
+    var psbs=qb.querySelectorAll(".psb");if(psbs.length){var box=qb.querySelector(".psum");if(!box||!box.getAttribute("data-done"))return 0;return qb.querySelectorAll(".psb.ok").length/3;}
+    var fibs=qb.querySelectorAll('.fib');
+    if(fibs.length){var o=0;for(var i=0;i<fibs.length;i++){if(fibs[i].classList.contains('ok'))o++;}return o/fibs.length;}
+    var oeis=qb.querySelectorAll('.oei');
+    if(oeis.length){var ins=qb.querySelectorAll('input'),t=0,k=0;for(var j=0;j<ins.length;j++){t++;if(ins[j].classList.contains('ok'))k++;}return t?k/t:0;}
+    if(qb.querySelector('.tdopt')||qb.querySelector('.tdit')||qb.querySelector('.tdm-s')||qb.querySelector('.tda-s')){
+      if(qb.getAttribute('data-done')!=='1')return 0;
+      return qb.querySelector('.wrong')?0:1;
+    }
+    if(qb.querySelector('.mb')||qb.querySelector('.tfb')){
+      if(!qb.querySelector('[data-done="1"]'))return 0;
+      return qb.querySelector('.wrong')?0:1;
+    }
+    return 0;
+  }
+  function ghaScore(){
+    var ids=['sec-vocab','sec-comp','sec-literary','sec-critical','sec-stdtest'],tot=0,cnt=0;
+    for(var s=0;s<ids.length;s++){var sec=document.getElementById(ids[s]);if(!sec)continue;var qbs=sec.querySelectorAll('.qb');if(!qbs.length)continue;var e=0;for(var i=0;i<qbs.length;i++){e+=qbFrac(qbs[i]);}tot+=e/qbs.length;cnt++;}
+    return cnt?Math.round(tot/cnt*100):0;
+  }
+  window.ghaScore=ghaScore;
+  var GHA_SEC_LABELS={'sec-vocab':'Vocabulary','sec-comp':'Comprehension','sec-literary':'Literary Elements','sec-critical':'Think Deeper','sec-stdtest':'Standardized Test'};
+  function ghaSectionScores(){var ids=['sec-vocab','sec-comp','sec-literary','sec-critical','sec-stdtest'],out={};for(var s=0;s<ids.length;s++){var sec=document.getElementById(ids[s]);if(!sec)continue;var qbs=sec.querySelectorAll('.qb');var e=0;for(var i=0;i<qbs.length;i++)e+=qbFrac(qbs[i]);out[ids[s]]={earned:Math.round(e),possible:qbs.length};}return out;}
+  window.ghaSectionScores=ghaSectionScores;
+  function ghaRenderBreakdown(){var dn=document.getElementById('sec-done');if(!dn)return;var wrap=dn.querySelector('.done-wrap')||dn;var box=document.getElementById('gha-breakdown');if(!box){box=document.createElement('div');box.id='gha-breakdown';box.style.cssText='max-width:430px;margin:16px auto 0;text-align:left';var sb=dn.querySelector('.score-box');if(sb&&sb.parentNode)sb.parentNode.insertBefore(box,sb.nextSibling);else wrap.appendChild(box);}var ss=ghaSectionScores();var html='<div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:#8896A5;margin:0 0 9px">Section breakdown</div>';for(var id in ss){var e=ss[id].earned,p=ss[id].possible;if(!p)continue;var pct=Math.round(e/p*100);html+='<div style="display:flex;align-items:center;gap:10px;margin-bottom:7px;font-size:14px"><div style="flex:1;color:#1A2E3B;font-weight:600">'+GHA_SEC_LABELS[id]+'</div><div style="width:100px;height:7px;background:#EDF1F5;border-radius:4px;overflow:hidden"><div style="height:100%;width:'+pct+'%;background:#2E7D32"></div></div><div style="width:46px;text-align:right;font-weight:700;color:#2E7D32">'+e+'/'+p+'</div></div>';}box.innerHTML=html;}
+  window.ghaRenderBreakdown=ghaRenderBreakdown;
+  function refresh(){
+    var sc=ghaScore();
+    var sb=document.getElementById('sbadge');if(sb)sb.textContent='Score '+sc+' / 100';
+    var dn=document.getElementById('sec-done');var fs=document.getElementById('final-score');
+    if(fs&&dn&&dn.classList.contains('active'))fs.textContent=sc;
+  }
+  window.ghaRefresh=refresh;
+  if(typeof updateUI==='function'){var _u=updateUI;window.updateUI=function(){try{_u();}catch(e){}refresh();};}
+  if(typeof showDone==='function'){var _d=showDone;window.showDone=function(){try{_d();}catch(e){}var fs=document.getElementById('final-score');if(fs)fs.textContent=ghaScore();if(window.ghaRenderBreakdown)ghaRenderBreakdown();};}
+
+  if(document.readyState!=='loading')refresh();else document.addEventListener('DOMContentLoaded',refresh);
+})();
+</script>
+
+<script>/* GHA one-chance MCQ (override) */
+(function(){
+  window.doMCQ=function(btn,gid,correct,fid){
+    var g=document.getElementById(gid); if(!g) return;
+    if(g.getAttribute('data-done')) return;
+    var btns=g.querySelectorAll('.mb'); var L=['A','B','C','D'];
+    if(!btn.classList.contains('sel')){
+      for(var s=0;s<btns.length;s++) btns[s].classList.remove('sel');
+      btn.classList.add('sel'); return;
+    }
+    var idx=-1; for(var i=0;i<btns.length;i++){ if(btns[i]===btn) idx=i; }
+    var ok=L[idx]===correct; var fb=document.getElementById(fid);
+    var why=fb?(fb.getAttribute('data-why')||''):'';
+    g.setAttribute('data-done','1');
+    for(var k=0;k<btns.length;k++){ btns[k].disabled=true; btns[k].classList.remove('sel');
+      if(L[k]===correct) btns[k].classList.add('correct');
+      else if(btns[k]===btn && !ok) btns[k].classList.add('wrong'); }
+    if(fb){ fb.className='fb show '+(ok?'ok-fb':'bad-fb');
+      fb.innerHTML=(ok?'\u2713 Correct! ':'\u2717 Not quite \u2014 the correct answer is '+correct+'. ')+why; }
+    if(typeof updateUI==='function'){ try{updateUI();}catch(e){} }
+    if(window.ghaRefresh){ try{window.ghaRefresh();}catch(e){} }
+  };
+  document.addEventListener('DOMContentLoaded',function(){
+    var secs=document.querySelectorAll('.sec');
+    for(var i=0;i<secs.length;i++){ var sec=secs[i];
+      if(sec.querySelector('.mb') && !sec.querySelector('.gha-onechance')){
+        var n=document.createElement('div'); n.className='gha-onechance';
+        n.style.cssText='margin:8px 0 2px;font-size:12.5px;font-weight:700;color:#B97E00;background:#FFF6DE;border:1px solid #F0D27A;border-radius:9px;padding:7px 12px;';
+        n.innerHTML='✏️ You have <b>one chance</b> to fix your answer — if your first pick is wrong, you can change it once.';
+        var sub=sec.querySelector('.sec-sub');
+        if(sub&&sub.parentNode){ sub.parentNode.insertBefore(n, sub.nextSibling); }
+        else { var t=sec.querySelector('.sec-title'); if(t&&t.parentNode){ t.parentNode.insertBefore(n, t.nextSibling); } else { sec.insertBefore(n, sec.firstChild); } }
+      }
+    }
+  });
+})();
+</script>
+<script>/* GHA report card (genesis1) */
+(function(){
+  var BOOK='genesis1', PART='p2';
+  function qfrac(qb){var fibs=qb.querySelectorAll('.fib');if(fibs.length){var o=0;for(var i=0;i<fibs.length;i++)if(fibs[i].classList.contains('ok'))o++;return o/fibs.length;}var oeis=qb.querySelectorAll('.oei');if(oeis.length){var ins=qb.querySelectorAll('input'),t=0,k=0;for(var j=0;j<ins.length;j++){t++;if(ins[j].classList.contains('ok'))k++;}return t?k/t:0;}if(qb.querySelector('.mb')||qb.querySelector('.tfb')){if(!qb.querySelector('[data-done="1"]'))return 0;return qb.querySelector('.wrong')?0:1;}return 0;}
+  var SECS={vocab:'sec-vocab',comp:'sec-comp',literary:'sec-literary',critical:'sec-critical',stdtest:'sec-stdtest'};
+  function sectionScores(){var out={};for(var k in SECS){var sec=document.getElementById(SECS[k]);if(!sec)continue;var qbs=sec.querySelectorAll('.qb');if(!qbs.length)continue;var e=0;for(var i=0;i<qbs.length;i++)e+=qfrac(qbs[i]);out[k]=Math.round(e/qbs.length*100);}return out;}
+  function saveReport(){try{var all=JSON.parse(localStorage.getItem('gha_report')||'{}');if(!all[BOOK])all[BOOK]={};var cur=all[BOOK][PART]||{},ns=sectionScores();for(var k in ns)cur[k]=Math.max(cur[k]||0,ns[k]);all[BOOK][PART]=cur;localStorage.setItem('gha_report',JSON.stringify(all));}catch(e){}}
+  function colr(v){return v>=75?'#16a34a':v>=50?'#d97706':'#dc2626';}
+  function showReport(){var data={};try{data=(JSON.parse(localStorage.getItem('gha_report')||'{}')[BOOK])||{};}catch(e){}var done=0;for(var d=1;d<=8;d++)if(data['p'+d])done++;if(!done)return;var box=document.getElementById('report-card');if(!box){var dw=document.querySelector('#sec-done .done-wrap')||document.getElementById('sec-done');if(!dw)return;box=document.createElement('div');box.id='report-card';dw.appendChild(box);}var sects=[['vocab','Vocabulary'],['comp','Comprehension'],['literary','Literary Elements'],['critical','Think Deeper'],['stdtest','Standardized Test']];var head='<th style="text-align:left;padding:7px 10px">Section</th>';for(var p=1;p<=8;p++)head+='<th style="padding:7px 7px;text-align:center">P'+p+'</th>';head+='<th style="padding:7px 10px;text-align:center;border-left:2px solid #cbd5e1">Avg</th>';var rows='';for(var i=0;i<sects.length;i++){var key=sects[i][0],sum=0,n=0,tds='<td style="padding:7px 10px;font-weight:600;border-bottom:1px solid #eef2f7;text-align:left">'+sects[i][1]+'</td>';for(var q=1;q<=8;q++){var v=data['p'+q]?data['p'+q][key]:undefined;if(typeof v==='number'){sum+=v;n++;tds+='<td style="padding:7px 7px;text-align:center;border-bottom:1px solid #eef2f7;font-weight:600;color:'+colr(v)+'">'+v+'</td>';}else tds+='<td style="padding:7px 7px;text-align:center;border-bottom:1px solid #eef2f7;color:#cbd5e1">&ndash;</td>';}var avg=n?Math.round(sum/n):0;tds+='<td style="padding:7px 10px;text-align:center;font-weight:800;border-left:2px solid #cbd5e1;color:'+(n?colr(avg):'#cbd5e1')+'">'+(n?avg:'&ndash;')+'</td>';rows+='<tr>'+tds+'</tr>';}box.innerHTML='<div style="margin:22px auto 0;max-width:700px;text-align:left"><div style="font-family:\'Playfair Display\',serif;font-size:18px;color:#1A2E3B;margin-bottom:4px">\uD83D\uDCCA My Genesis: Creation to Babel Report Card</div><div style="font-size:12.5px;color:#64748b;margin-bottom:10px">Your best score per section, across all 8 parts. Green \u2265 75 \u00b7 amber \u2265 50 \u00b7 red below.</div><div style="overflow-x:auto"><table style="border-collapse:collapse;width:100%;font-size:12.5px"><thead><tr style="background:#F1F5F9">'+head+'</tr></thead><tbody>'+rows+'</tbody></table></div></div>';}
+  var _sd=window.showDone;window.showDone=function(){try{if(_sd)_sd();}catch(e){}try{saveReport();}catch(e){}try{showReport();}catch(e){}};window.ghaShowReport=showReport;
+})();
+</script>
+<style>/* gha report-card PDF print */
+@media print{
+  body *{visibility:hidden!important;}
+  #report-card,#report-card *{visibility:visible!important;}
+  #report-card{position:absolute;left:0;top:0;width:100%;margin:0;padding:14px;}
+  #gha-rc-pdf{display:none!important;}
+  @page{margin:14mm;}
+}</style>
+<script>/* gha report-card: Save as PDF button */
+(function(){
+  if(!window.ghaShowReport) return;
+  var _r=window.ghaShowReport;
+  window.ghaShowReport=function(){
+    _r();
+    var box=document.getElementById('report-card');
+    if(!box||box.style.display==='none') return;
+    if(box.querySelector('#gha-rc-pdf')) return;
+    var b=document.createElement('button');
+    b.id='gha-rc-pdf';
+    b.type='button';
+    b.textContent='\uD83D\uDDA8 Save as PDF';
+    b.style.cssText='margin-top:12px;padding:9px 16px;border:1.5px solid var(--navy,#2B1B90);background:#fff;color:var(--navy,#2B1B90);font-weight:700;border-radius:9px;cursor:pointer;font-family:inherit;font-size:14px';
+    b.onclick=function(){window.print();};
+    box.appendChild(b);
+  };
+})();
+</script>
+<script>
+/* GHA account tracking: view log + report-card auto-save */
+(function(){
+  var BOOK='genesis1', LEVEL=1, PART=2;
+  function ghaGate(){ /* accounts not yet live on this site; Part 1 is an open free sample, so this is a no-op */ }
+  function post(p,b){ try{ var _pr=JSON.parse(localStorage.getItem('gha_profile')||'null'); if(_pr&&_pr.id!=null&&b&&b.profile_id==null)b.profile_id=_pr.id; }catch(e){} try{ var _r=fetch(p,{method:'POST',credentials:'same-origin',headers:{'Content-Type':'application/json'},body:JSON.stringify(b)}); if(p==='/api/access'&&b&&b.kind==='workbook'){ _r.then(function(r){return r.json();}).then(function(d){ if(d&&d.allowed===false)ghaGate(); }).catch(function(){}); } _r.catch(function(){});}catch(e){} }
+  try{ if(localStorage.getItem('gha_auth')==='1') post('/api/access',{book:BOOK,level:LEVEL,part:PART,kind:'workbook'}); }catch(e){}
+  var lastSent=null;
+  function watch(){
+    var fs=document.getElementById('final-score');
+    if(!fs || !window.MutationObserver) return;
+    new MutationObserver(function(){
+      var sc=parseInt((fs.textContent||'').replace(/[^0-9]/g,''),10);
+      if(!isNaN(sc)&&sc>=0&&sc<=100&&sc!==lastSent){ lastSent=sc; post('/api/report',{book:BOOK,part:PART,score:sc,detail:(window.ghaSectionScores?window.ghaSectionScores():null)}); }
+    }).observe(fs,{childList:true,characterData:true,subtree:true});
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',watch); else watch();
+})();
+</script>
+<script>
+function ghaShowReport(){return;/*report card graph removed*/
+  var sects=[['vocab','Vocabulary'],['comp','Comprehension'],['literary','Literary Elements'],['critical','Think Deeper'],['stdtest','Standardized Test']];
+  var data={};try{data=(JSON.parse(localStorage.getItem('gha_report')||'{}').genesis1)||{};}catch(e){}
+  var box=document.getElementById('report-card');if(!box)return;
+  var done=0;for(var d=1;d<=8;d++){if(data['p'+d])done++;}
+  if(!done){box.style.display='none';return;}
+  function colr(v){return v>=75?'#16a34a':v>=50?'#d97706':'#dc2626';}
+  var head='<th style="text-align:left;padding:7px 10px">Section</th>';
+  for(var p=1;p<=8;p++)head+='<th style="padding:7px 7px;text-align:center">P'+p+'</th>';
+  head+='<th style="padding:7px 10px;text-align:center;border-left:2px solid #cbd5e1">Avg</th>';
+  var rows='',best=null,worst=null;
+  for(var i=0;i<sects.length;i++){var key=sects[i][0],sum=0,n=0;
+    var tds='<td style="padding:7px 10px;font-weight:600;border-bottom:1px solid #eef2f7">'+sects[i][1]+'</td>';
+    for(var q=1;q<=8;q++){var v=data['p'+q]?data['p'+q][key]:undefined;
+      if(typeof v==='number'){sum+=v;n++;tds+='<td style="padding:7px 7px;text-align:center;border-bottom:1px solid #eef2f7;font-weight:600;color:'+colr(v)+'">'+v+'</td>';}
+      else tds+='<td style="padding:7px 7px;text-align:center;border-bottom:1px solid #eef2f7;color:#cbd5e1">&ndash;</td>';}
+    var avg=n?Math.round(sum/n):0;
+    tds+='<td style="padding:7px 10px;text-align:center;border-bottom:1px solid #eef2f7;border-left:2px solid #cbd5e1;font-weight:800;color:'+colr(avg)+'">'+(n?avg:'&ndash;')+'</td>';
+    rows+='<tr>'+tds+'</tr>';
+    if(n){if(best===null||avg>best.v)best={name:sects[i][1],v:avg};if(worst===null||avg<worst.v)worst={name:sects[i][1],v:avg};}}
+  var tip=(best&&worst)?('Strongest: <b>'+best.name+'</b> ('+best.v+'). Focus next on <b>'+worst.name+'</b> ('+worst.v+') &mdash; you can do it! &#127942;'):'';
+  box.innerHTML='<div style="background:#fff;border:2px solid var(--navy);border-radius:12px;overflow:hidden"><div style="background:var(--navy);color:#fff;padding:10px 14px;font-weight:700">&#128203; My Genesis: Creation to Babel Report Card <span style="font-weight:500;opacity:.85">('+done+' of 8 parts done &middot; scores per section &amp; part)</span></div><div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:13px;min-width:600px"><thead><tr style="background:var(--navy-lt)">'+head+'</tr></thead><tbody>'+rows+'</tbody></table></div><div style="padding:10px 14px;font-size:12.5px;color:#475569">'+tip+'</div></div>';
+  box.style.display='block';
+}
+</script><style>/* gha report-card PDF print */
+@media print{
+  body *{visibility:hidden!important;}
+  #report-card,#report-card *{visibility:visible!important;}
+  #report-card{position:absolute;left:0;top:0;width:100%;margin:0;padding:14px;}
+  #gha-rc-pdf{display:none!important;}
+  @page{margin:14mm;}
+}</style>
+<script>/* gha report-card: Save as PDF button */
+(function(){
+  if(!window.ghaShowReport) return;
+  var _r=window.ghaShowReport;
+  window.ghaShowReport=function(){
+    _r();
+    var box=document.getElementById('report-card');
+    if(!box||box.style.display==='none') return;
+    if(box.querySelector('#gha-rc-pdf')) return;
+    var b=document.createElement('button');
+    b.id='gha-rc-pdf';
+    b.type='button';
+    b.textContent='\uD83D\uDDA8 Save as PDF';
+    b.style.cssText='margin-top:12px;padding:9px 16px;border:1.5px solid var(--navy,#2B1B90);background:#fff;color:var(--navy,#2B1B90);font-weight:700;border-radius:9px;cursor:pointer;font-family:inherit;font-size:14px';
+    b.onclick=function(){window.print();};
+    box.appendChild(b);
+  };
+})();
+</script><script>(function(){function go(){if(window.ghaShowReport){try{ghaShowReport();}catch(e){}}}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',go);else go();var fs=document.getElementById('final-score');if(fs&&window.MutationObserver){try{new MutationObserver(go).observe(fs,{childList:true,characterData:true,subtree:true});}catch(e){}}})();</script><!--KBGATE-->
+<style>
+.kbg-on > .kbank{border:1px solid #B79CED !important;box-shadow:0 8px 22px rgba(0,0,0,.06) !important;overflow:hidden}
+.kbg-on .kbank-head{background:#B79CED !important;border-top:4px solid #E0B33C !important;border-bottom:1px solid #eee !important}
+.kbg-on .kbank-title{color:#25303B !important}
+.kbank-head-text{display:flex;flex-direction:column;gap:1px;}
+.kbank-eyebrow{font-size:10.5px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#3d2d70;opacity:.8;}
+.kbank-head .kbank-title{font-size:14.5px;font-weight:800;text-transform:none;letter-spacing:0;}
+.kbg-on .kbank-body{background:#fff !important;color:#2b2f36 !important;font-size:15px !important;line-height:1.72 !important}
+.kbg-on .kbank-body b,.kbg-on .kbank-body strong{color:#8E6C0B !important}
+.kbg-on .kbank-tag{background:#fff !important;border:1px solid #E0B33C !important;color:#8E6C0B !important}
+.kbg-reveal{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;margin:16px 0 6px;padding:14px 18px;border:none;border-radius:12px;background:#2E7D32;color:#fff;font-family:inherit;font-weight:800;font-size:15px;letter-spacing:.01em;cursor:pointer;box-shadow:0 6px 16px rgba(46,125,50,.26);transition:background .15s}
+.kbg-reveal:hover{background:#256528}
+.kbg-reveal:focus-visible{outline:3px solid rgba(46,125,50,.4);outline-offset:2px}
+.kbg-reveal .kbg-reveal-ar{font-size:13px;opacity:.9}
+.kbg-hidden{display:none}.kbg-hidden.kbg-show{display:block}
+</style>
+<script>
+(function(){
+  if(window.__kbGate)return; window.__kbGate=1;
+  function build(sec){
+    if(sec.dataset.kbg)return;
+    var kbs=sec.querySelectorAll(':scope > .kbank'); if(!kbs.length)return;
+    sec.dataset.kbg='1'; sec.classList.add('kbg-on');
+    var kids=Array.prototype.slice.call(sec.children), lastKb=-1;
+    kids.forEach(function(c,i){ if(c.classList&&c.classList.contains('kbank'))lastKb=i; });
+    var hide=[]; for(var i=lastKb+1;i<kids.length;i++){ if(kids[i].classList&&kids[i].classList.contains('snav'))break; hide.push(kids[i]); }
+    if(!hide.length)return;
+    var wrap=document.createElement('div'); wrap.className='kbg-hidden';
+    sec.insertBefore(wrap,hide[0]); hide.forEach(function(el){wrap.appendChild(el);});
+    var oc=sec.querySelector('.gha-onechance'); if(oc)oc.style.display='none';
+    var t=sec.querySelector('.sec-title'), label=(t?t.textContent.trim():'');
+    label=(label?label+' Questions':'Questions');
+    var b=document.createElement('button'); b.className='kbg-reveal'; b.type='button';
+    b.innerHTML='<span class="kbg-reveal-tx"></span><span class="kbg-reveal-ar">&#9660;</span>';
+    b.querySelector('.kbg-reveal-tx').textContent=label;
+    sec.insertBefore(b,wrap);
+    b.addEventListener('click',function(){
+      b.style.display='none'; if(oc)oc.style.display=''; wrap.classList.add('kbg-show');
+      wrap.scrollIntoView({behavior:'smooth',block:'nearest'});
+    });
+  }
+  function run(){ document.querySelectorAll('section.sec').forEach(function(sec){
+    if(sec.id==='sec-overview'||sec.id==='sec-stdtest'||sec.id==='sec-writing')return; build(sec); }); }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',run); else run();
+})();
+</script>
+<!--/KBGATE-->
+</body>
+</html>
