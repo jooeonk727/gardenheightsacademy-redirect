@@ -377,7 +377,7 @@ function tdCheckClaim(chkBtn){
   var opts = g.querySelectorAll('.tdopt');
   var selected = [];
   for (var i = 0; i < opts.length; i++) { if (opts[i].classList.contains('sel')) selected.push(opts[i].getAttribute('data-k')); }
-  if (!selected.length) return;
+  if (selected.length !== keys.length) return;
   g.setAttribute('data-done', '1');
   var ok = selected.length === keys.length && selected.every(function (k) { return keys.indexOf(k) !== -1; });
   for (var j = 0; j < opts.length; j++) {
@@ -639,7 +639,7 @@ function qbFrac(qb){if(qb.dataset&&qb.dataset.done==='1'&&qb.dataset.frac!==unde
 <script>/* GHA report card (genesis1) */
 (function(){
   var BOOK='genesis1', PART='p1';
-  function qfrac(qb){var fibs=qb.querySelectorAll('.fib');if(fibs.length){var o=0;for(var i=0;i<fibs.length;i++)if(fibs[i].classList.contains('ok'))o++;return o/fibs.length;}var oeis=qb.querySelectorAll('.oei');if(oeis.length){var ins=qb.querySelectorAll('input'),t=0,k=0;for(var j=0;j<ins.length;j++){t++;if(ins[j].classList.contains('ok'))k++;}return t?k/t:0;}if(qb.querySelector('.mb')||qb.querySelector('.tfb')){if(!qb.querySelector('[data-done="1"]'))return 0;return qb.querySelector('.wrong')?0:1;}return 0;}
+  function qfrac(qb){var fibs=qb.querySelectorAll('.fib');if(fibs.length){var o=0;for(var i=0;i<fibs.length;i++)if(fibs[i].classList.contains('ok'))o++;return o/fibs.length;}var oeis=qb.querySelectorAll('.oei');if(oeis.length){var ins=qb.querySelectorAll('input'),t=0,k=0;for(var j=0;j<ins.length;j++){t++;if(ins[j].classList.contains('ok'))k++;}return t?k/t:0;}if(qb.querySelector('.tdopt')||qb.querySelector('.tdit')||qb.querySelector('.tdm-s')||qb.querySelector('.tda-s')){if(qb.getAttribute('data-done')!=='1')return 0;return qb.querySelector('.wrong')?0:1;}if(qb.querySelector('.mb')||qb.querySelector('.tfb')){if(!qb.querySelector('[data-done="1"]'))return 0;return qb.querySelector('.wrong')?0:1;}return 0;}
   var SECS={vocab:'sec-vocab',comp:'sec-comp',literary:'sec-literary',critical:'sec-critical',stdtest:'sec-stdtest'};
   function sectionScores(){var out={};for(var k in SECS){var sec=document.getElementById(SECS[k]);if(!sec)continue;var qbs=sec.querySelectorAll('.qb');if(!qbs.length)continue;var e=0;for(var i=0;i<qbs.length;i++)e+=qfrac(qbs[i]);out[k]=Math.round(e/qbs.length*100);}return out;}
   function saveReport(){try{var all=JSON.parse(localStorage.getItem('gha_report')||'{}');if(!all[BOOK])all[BOOK]={};var cur=all[BOOK][PART]||{},ns=sectionScores();for(var k in ns)cur[k]=Math.max(cur[k]||0,ns[k]);all[BOOK][PART]=cur;localStorage.setItem('gha_report',JSON.stringify(all));}catch(e){}}
