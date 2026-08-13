@@ -132,7 +132,7 @@ textarea:read-only{background:#f5f5f5;}
 .ovt td:first-child{font-weight:600;color:#8E6C0B;width:34%;}
 .ovt tr:nth-child(odd) td{background:#F3F4F6;}.ovt tr:nth-child(even) td{background:white;}
 .done-wrap{text-align:center;padding:40px 20px;}
-.done-brand{width:max-content;margin:0 auto 16px;padding:8px 14px;border-radius:16px;background:var(--grn);align-items:center;box-shadow:0 2px 8px rgba(0,0,0,.15);}
+.done-brand{width:max-content;margin:0 auto 16px;align-items:center;color:#181818;}
 .done-wrap h2{font-family:'Playfair Display',serif;font-size:31px;font-weight:900;margin-bottom:8px;}
 .score-box{background:linear-gradient(135deg,var(--grn) 0%,var(--navy) 100%);border-radius:16px;padding:28px;color:white;text-align:center;margin:20px 0;}
 .score-n{font-family:'Playfair Display',serif;font-size:66px;font-weight:900;line-height:1;}
@@ -662,37 +662,11 @@ function qbFrac(qb){if(qb.dataset&&qb.dataset.done==='1'&&qb.dataset.frac!==unde
   function sectionScores(){var out={};for(var k in SECS){var sec=document.getElementById(SECS[k]);if(!sec)continue;var qbs=sec.querySelectorAll('.qb');if(!qbs.length)continue;var e=0;for(var i=0;i<qbs.length;i++)e+=qfrac(qbs[i]);out[k]=Math.round(e/qbs.length*100);}return out;}
   function saveReport(){try{var all=JSON.parse(localStorage.getItem('gha_report')||'{}');if(!all[BOOK])all[BOOK]={};var cur=all[BOOK][PART]||{},ns=sectionScores();for(var k in ns)cur[k]=Math.max(cur[k]||0,ns[k]);all[BOOK][PART]=cur;localStorage.setItem('gha_report',JSON.stringify(all));}catch(e){}}
   function colr(v){return v>=75?'#16a34a':v>=50?'#d97706':'#dc2626';}
-  function showReport(){var data={};try{data=(JSON.parse(localStorage.getItem('gha_report')||'{}')[BOOK])||{};}catch(e){}var done=0;for(var d=1;d<=4;d++)if(data['p'+d])done++;if(!done)return;var box=document.getElementById('report-card');if(!box){var dw=document.querySelector('#sec-done .done-wrap')||document.getElementById('sec-done');if(!dw)return;box=document.createElement('div');box.id='report-card';dw.appendChild(box);}var sects=[['vocab','Word Study'],['comp','Understanding'],['literary','Literary Craft'],['critical','Wisdom'],['stdtest','World Discovery (SAT/TOEFL)']];var head='<th style="text-align:left;padding:7px 10px">Section</th>';for(var p=1;p<=4;p++)head+='<th style="padding:7px 7px;text-align:center">P'+p+'</th>';head+='<th style="padding:7px 10px;text-align:center;border-left:2px solid #cbd5e1">Avg</th>';var rows='';for(var i=0;i<sects.length;i++){var key=sects[i][0],sum=0,n=0,tds='<td style="padding:7px 10px;font-weight:600;border-bottom:1px solid #eef2f7;text-align:left">'+sects[i][1]+'</td>';for(var q=1;q<=4;q++){var v=data['p'+q]?data['p'+q][key]:undefined;if(typeof v==='number'){sum+=v;n++;tds+='<td style="padding:7px 7px;text-align:center;border-bottom:1px solid #eef2f7;font-weight:600;color:'+colr(v)+'">'+v+'</td>';}else tds+='<td style="padding:7px 7px;text-align:center;border-bottom:1px solid #eef2f7;color:#cbd5e1">&ndash;</td>';}var avg=n?Math.round(sum/n):0;tds+='<td style="padding:7px 10px;text-align:center;font-weight:800;border-left:2px solid #cbd5e1;color:'+(n?colr(avg):'#cbd5e1')+'">'+(n?avg:'&ndash;')+'</td>';rows+='<tr>'+tds+'</tr>';}box.innerHTML='<div style="margin:22px auto 0;max-width:700px;text-align:left"><div style="font-family:\'Playfair Display\',serif;font-size:19px;color:#1A2E3B;margin-bottom:4px">\uD83D\uDCCA My Genesis: Creation to Babel Report Card</div><div style="font-size:13.5px;color:#64748b;margin-bottom:10px">Your best score per section, across all 4 adventures. Green \u2265 75 \u00b7 amber \u2265 50 \u00b7 red below.</div><div style="overflow-x:auto"><table style="border-collapse:collapse;width:100%;font-size:13.5px"><thead><tr style="background:#F1F5F9">'+head+'</tr></thead><tbody>'+rows+'</tbody></table></div></div>';}
-  var _sd=window.showDone;window.showDone=function(){try{if(_sd)_sd();}catch(e){}try{saveReport();}catch(e){}try{showReport();}catch(e){}};window.ghaShowReport=showReport;
+  
+  var _sd=window.showDone;window.showDone=function(){try{if(_sd)_sd();}catch(e){}try{saveReport();}catch(e){}};
 })();
 </script>
-<style>/* gha report-card PDF print */
-@media print{
-  body *{visibility:hidden!important;}
-  #report-card,#report-card *{visibility:visible!important;}
-  #report-card{position:absolute;left:0;top:0;width:100%;margin:0;padding:14px;}
-  #gha-rc-pdf{display:none!important;}
-  @page{margin:14mm;}
-}</style>
-<script>/* gha report-card: Save as PDF button */
-(function(){
-  if(!window.ghaShowReport) return;
-  var _r=window.ghaShowReport;
-  window.ghaShowReport=function(){
-    _r();
-    var box=document.getElementById('report-card');
-    if(!box||box.style.display==='none') return;
-    if(box.querySelector('#gha-rc-pdf')) return;
-    var b=document.createElement('button');
-    b.id='gha-rc-pdf';
-    b.type='button';
-    b.textContent='\uD83D\uDDA8 Save as PDF';
-    b.style.cssText='margin-top:12px;padding:9px 16px;border:1.5px solid var(--navy,#264D54);background:#fff;color:var(--navy,#264D54);font-weight:700;border-radius:16px;cursor:pointer;font-family:inherit;font-size:15px';
-    b.onclick=function(){window.print();};
-    box.appendChild(b);
-  };
-})();
-</script>
+
 <script>
 /* GHA account tracking: view log + report-card auto-save */
 (function(){
@@ -737,32 +711,6 @@ function ghaShowReport(){return;/*report card graph removed*/
   box.innerHTML='<div style="background:#fff;border:2px solid var(--navy);border-radius:16px;overflow:hidden"><div style="background:var(--navy);color:#fff;padding:10px 14px;font-weight:700">&#128203; My Genesis: Creation to Babel Report Card <span style="font-weight:500;opacity:.85">('+done+' of 4 adventures done &middot; scores per section &amp; part)</span></div><div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:14px;min-width:600px"><thead><tr style="background:var(--navy-lt)">'+head+'</tr></thead><tbody>'+rows+'</tbody></table></div><div style="padding:10px 14px;font-size:13.5px;color:#475569">'+tip+'</div></div>';
   box.style.display='block';
 }
-</script><style>/* gha report-card PDF print */
-@media print{
-  body *{visibility:hidden!important;}
-  #report-card,#report-card *{visibility:visible!important;}
-  #report-card{position:absolute;left:0;top:0;width:100%;margin:0;padding:14px;}
-  #gha-rc-pdf{display:none!important;}
-  @page{margin:14mm;}
-}</style>
-<script>/* gha report-card: Save as PDF button */
-(function(){
-  if(!window.ghaShowReport) return;
-  var _r=window.ghaShowReport;
-  window.ghaShowReport=function(){
-    _r();
-    var box=document.getElementById('report-card');
-    if(!box||box.style.display==='none') return;
-    if(box.querySelector('#gha-rc-pdf')) return;
-    var b=document.createElement('button');
-    b.id='gha-rc-pdf';
-    b.type='button';
-    b.textContent='\uD83D\uDDA8 Save as PDF';
-    b.style.cssText='margin-top:12px;padding:9px 16px;border:1.5px solid var(--navy,#264D54);background:#fff;color:var(--navy,#264D54);font-weight:700;border-radius:16px;cursor:pointer;font-family:inherit;font-size:15px';
-    b.onclick=function(){window.print();};
-    box.appendChild(b);
-  };
-})();
 </script><script>(function(){function go(){if(window.ghaShowReport){try{ghaShowReport();}catch(e){}}}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',go);else go();var fs=document.getElementById('final-score');if(fs&&window.MutationObserver){try{new MutationObserver(go).observe(fs,{childList:true,characterData:true,subtree:true});}catch(e){}}})();</script><!--KBGATE-->
 <style>
 .kbg-on > .kbank{border:1px solid #B79CED !important;box-shadow:0 8px 22px rgba(0,0,0,.06) !important;overflow:hidden}
