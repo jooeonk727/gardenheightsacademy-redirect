@@ -80,17 +80,17 @@
 
   /* Side rails — a peek at real workbook content, shown only where there's spare margin beside the hero */
   .hero-outer{position:relative;width:100%;}
-  .side-rail{display:none;position:absolute;top:26px;width:188px;flex-direction:column;gap:18px;z-index:5;}
-  .side-rail.left{left:max(16px, calc(50% - 1006px));}
-  .side-rail.right{right:max(16px, calc(50% - 1006px));}
-  .rail-card{background:var(--paper);border:1px solid var(--rule);border-radius:16px;box-shadow:0 14px 30px rgba(41,45,46,.14);padding:14px 16px;transform:rotate(var(--rot,0deg));transition:transform .2s ease;}
+  .side-rail{display:none;position:absolute;top:20px;width:282px;flex-direction:column;gap:27px;z-index:5;}
+  .side-rail.left{left:max(16px, calc(50% - 1098px));}
+  .side-rail.right{right:max(16px, calc(50% - 1098px));}
+  .rail-card{background:var(--paper);border:1px solid var(--rule);border-radius:22px;box-shadow:0 18px 38px rgba(41,45,46,.14);padding:21px 24px;transform:rotate(var(--rot,0deg));transition:transform .2s ease;}
   .rail-card:hover{transform:rotate(0deg) translateY(-3px);}
-  .rail-tag{display:inline-block;font-size:9.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--org);margin-bottom:8px;}
-  .rail-word{font-family:'Playfair Display',serif;font-weight:800;font-size:17px;color:var(--ink);}
-  .rail-ref{font-size:11px;font-weight:700;color:#9a8a63;margin-left:6px;}
-  .rail-title{font-family:'Playfair Display',serif;font-weight:800;font-size:14px;color:var(--ink);line-height:1.25;}
-  .rail-txt{font-size:12px;line-height:1.5;color:var(--slate);margin-top:7px;}
-  @media(min-width:1400px){.side-rail{display:flex;}}
+  .rail-tag{display:inline-block;font-size:13px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--org);margin-bottom:12px;}
+  .rail-word{font-family:'Playfair Display',serif;font-weight:800;font-size:25px;color:var(--ink);}
+  .rail-ref{font-size:15px;font-weight:700;color:#9a8a63;margin-left:6px;}
+  .rail-title{font-family:'Playfair Display',serif;font-weight:800;font-size:20px;color:var(--ink);line-height:1.25;}
+  .rail-txt{font-size:15.5px;line-height:1.55;color:var(--slate);margin-top:10px;}
+  @media(min-width:1650px){.side-rail{display:flex;}}
   .pill-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:24px;}
   .pill-btn{background:var(--ink);color:#F5F1E6;font-weight:700;font-size:15px;padding:13px 28px;border-radius:99px;text-decoration:none;display:inline-block;transition:transform .15s ease,background .15s ease;}
   .pill-btn:hover{transform:translateY(-1px);background:#3A3F40;}
@@ -100,6 +100,21 @@
   .trust{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);background:var(--paper);}
   .trust-in{width:100%;max-width:var(--page-max);margin:0 auto;padding:22px var(--content-gutter);display:flex;gap:28px;flex-wrap:wrap;justify-content:center;font-size:13.5px;color:var(--slate);font-weight:600;}
   .trust-in span{white-space:nowrap;}
+
+  /* Pricing */
+  .pricing{width:100%;max-width:var(--page-max);margin:0 auto;padding:56px var(--content-gutter) 20px;}
+  .price-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;max-width:720px;margin:34px auto 0;}
+  .price-card{position:relative;background:var(--paper);border:1.5px solid var(--rule);border-radius:18px;padding:28px 26px;text-align:center;}
+  .price-card.featured{border-color:var(--org);box-shadow:0 16px 34px rgba(41,45,46,.12);}
+  .price-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--org);color:#fff;font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;padding:5px 14px;border-radius:99px;white-space:nowrap;}
+  .price-plan{font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--slate);}
+  .price-amt{font-family:'Playfair Display',serif;font-weight:900;font-size:40px;color:var(--ink);margin:10px 0 2px;}
+  .price-amt span{font-family:'Inter',sans-serif;font-weight:600;font-size:14px;color:var(--slate);}
+  .price-note{font-size:12.5px;color:var(--slate);margin-bottom:18px;}
+  .price-feats{list-style:none;margin:0 0 22px;padding:0;text-align:left;display:flex;flex-direction:column;gap:9px;}
+  .price-feats li{font-size:13.5px;color:var(--ink);display:flex;gap:8px;align-items:flex-start;}
+  .price-feats li::before{content:"✓";color:var(--org);font-weight:800;flex:0 0 auto;}
+  .pricing-lede{color:var(--slate);font-size:15.5px;margin:14px auto 0;max-width:480px;text-align:center;}
 
   /* Library / shelves */
   .library{width:100%;max-width:var(--page-max);margin:0 auto;padding:56px var(--content-gutter) 30px;}
@@ -135,14 +150,7 @@
   .cat-soon{position:relative;}
   .cat-soon-tag{position:absolute;bottom:9px;left:9px;right:9px;background:rgba(41,45,46,.82);color:#fff;font-size:9.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:4px 6px;border-radius:6px;text-align:center;z-index:2;}
 
-  /* Why section */
   .roadmap{width:100%;max-width:var(--page-max);margin:0 auto;padding:10px var(--content-gutter) 60px;}
-  .why{width:100%;max-width:var(--page-max);margin:0 auto;padding:50px var(--content-gutter) 70px;}
-  .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px;margin-top:30px;}
-  .why-card{background:var(--paper);border:1px solid var(--rule);border-radius:14px;padding:22px;}
-  .why-card .ic{font-size:26px;margin-bottom:10px;}
-  .why-card h3{font-family:'Playfair Display',serif;font-size:16.5px;font-weight:700;margin-bottom:8px;}
-  .why-card p{margin:0;font-size:14px;line-height:1.6;color:var(--slate);}
 
   footer{background:var(--ink);color:#C7D0C9;padding:44px 0 30px;}
   .foot-in{width:100%;max-width:var(--page-max);margin:0 auto;padding:0 var(--content-gutter);}
@@ -167,7 +175,7 @@
     <div class="nav-right">
       <div class="navlinks">
         <a href="index.html#library" data-ko="라이브러리">Library</a>
-        <a href="index.html#how-it-works" data-ko="이용 방법">How it works</a>
+        <a href="index.html#pricing" data-ko="구독하기">Pricing</a>
         <a href="index.html#roadmap" data-ko="로드맵">Roadmap</a>
       </div>
       <div id="lang-switch"></div>
@@ -187,17 +195,24 @@
     <span class="rail-word" data-ko="창조하다">create</span><span class="rail-ref">v. &middot; Gen 1:1</span>
     <div class="rail-txt" data-ko="새로운 것을 만들다 &mdash; 성경이 말하는 하나님의 첫 번째 행동입니다.">To make something new &mdash; the very first thing the Bible says God does.</div>
   </div>
+  <div class="rail-card" style="--rot:-3deg;">
+    <span class="rail-tag" data-ko="📘 언제나 8개의 파트로 구성">&#128214; Eight Parts, Every Time</span>
+    <div class="rail-txt" data-ko="어휘, 독해, 문학적 요소, 읽기 지문, 쓰기 프롬프트까지 — 모든 권이 동일한 구성을 따르기 때문에 진도를 파악하기 쉽습니다.">Word Study, comprehension, literary craft, a reading passage and a writing prompt &mdash; the same shape every time, so progress is always easy to track.</div>
+  </div>
 </div>
 <div class="side-rail right">
   <div class="rail-card" style="--rot:5deg;">
-    <span class="rail-tag" data-ko="🔖 보물 같은 지식">&#128278; Treasure Wisdom</span>
-    <div class="rail-title" data-ko="세상을 짓는 단어들">The Words That Build a World</div>
-    <div class="rail-txt" data-ko="창세기 1장은 &lsquo;창조하다&rsquo;, &lsquo;분리하다&rsquo;처럼 만드는 단어를 씁니다. 창세기 2장은 &lsquo;빚다&rsquo;, &lsquo;숨&rsquo;처럼 손으로 하는 단어로 가까이 다가갑니다.">Genesis 1 uses making words &mdash; create, separate. Genesis 2 zooms in with hands-on words &mdash; form, breath.</div>
+    <span class="rail-tag" data-ko="🏺 모든 섹션에 담긴 실제 지식">&#127991;&#65039; A Real Fact, Every Section</span>
+    <div class="rail-txt" data-ko="실제 지역, 고고학, 고대 생활상에 관한 지식 박스를 담았습니다 — 어른이 봐도 흥미로울 만한 진짜 지식입니다.">Knowledge boxes on real places, archaeology and ancient daily life &mdash; the kind of thing an interested adult finds genuinely interesting.</div>
   </div>
   <div class="rail-card" style="--rot:-4deg;">
     <span class="rail-tag" data-ko="🏛️ 보물 같은 지식 · 고고학">&#127963;&#65039; Treasure Wisdom &middot; Archaeology</span>
     <div class="rail-title" data-ko="지구라트: 메소포타미아의 가장 높은 탑">Ziggurats: Mesopotamia's Tallest Towers</div>
     <div class="rail-txt" data-ko="기원전 2100년경 세워진 우르의 대지구라트는 지금도 남아 있어, 바벨탑 이야기의 배경이 된 실제 증거입니다.">The Great Ziggurat of Ur, begun around 2100 BC, still stands &mdash; real evidence behind the world of the Tower of Babel.</div>
+  </div>
+  <div class="rail-card" style="--rot:3deg;">
+    <span class="rail-tag" data-ko="⚖️ 민감한 주제에는 중립을 지킵니다">&#9878;&#65039; Neutral on Hard Questions</span>
+    <div class="rail-txt" data-ko="지구의 나이, 창조의 날들의 길이를 둘러싼 논쟁에 대해서는 본문이 말하는 바를 전달하고, 신실한 그리스도인들 사이에서도 해석이 다를 수 있음을 밝힐 뿐입니다.">On the age of the earth and the creation-days debate, we state what the text says and where sincere Christians read it differently &mdash; and stop there.</div>
   </div>
 </div>
 
@@ -206,7 +221,7 @@
   <p data-ko="말씀을 읽고, 세상을 이해하는 크리스천 리더를 키웁니다. 성경과 영어를 함께 배우며 성경적 지식과 탄탄한 읽기 능력, 역사와 문화에 대한 넓은 시야를 기릅니다. 이를 통해 AI 시대에 지혜롭게 생각하고, 분명하게 소통하며, 세상을 이끌어 갈 힘을 키웁니다.">We raise Christian readers who can understand both the Word and the world. By learning the Bible and English together, students build biblical knowledge, strong reading skills, and a wider understanding of history and culture &mdash; equipping them to think wisely, communicate clearly, and lead in the age of AI.</p>
   <div class="hero-cta">
     <a class="btn btn-gold" href="genesis-creation-to-babel.html" data-ko="창세기로 시작하기 →">Start with Genesis →</a>
-    <a class="btn btn-ghost" href="index.html#how-it-works" data-ko="이용 방법 보기">How it works</a>
+    <a class="btn btn-ghost" href="index.html#library" data-ko="라이브러리 보기">See the Library</a>
   </div>
 </header>
 </div>
@@ -215,7 +230,7 @@
   <h2 data-ko="성경의 특정 책을 살펴보고 싶으신가요?">Exploring a book of the Bible?</h2>
   <div class="stack-wrap">
     <div class="stack-card" style="--rot:-7deg;">
-      <img src="covers/Genesis_Creation_to_Babel_Book_Cover.png" alt="Genesis: Creation to Babel cover" data-ko-alt="창세기: 창조부터 바벨까지 표지">
+      <img src="covers/Genesis_Creation_to_Babel_Book_Cover.png" alt="Genesis: Creation to Babel cover" data-ko-alt="창세기: 창조부터 바벨탑까지 표지">
     </div>
     <div class="stack-card empty" style="--rot:0deg;">
       <div class="stack-empty-label"><div class="se-t" data-ko="출애굽기">Exodus</div><span class="se-s" data-ko="출시 예정">Coming soon</span></div>
@@ -240,6 +255,38 @@
   </div>
 </div>
 
+<section class="pricing" id="pricing">
+  <div class="lib-head">
+    <h2 data-ko="구독하기">Subscribe</h2>
+    <p class="pricing-lede" data-ko="모든 성경 권에 대한 무제한 이용, 오프라인·인쇄용 PDF 포함, 한 계정당 3개 기기까지 사용할 수 있습니다.">Unlimited access to every book of the Bible, with a printable PDF included and up to 3 devices per account.</p>
+  </div>
+  <div class="price-grid">
+    <div class="price-card">
+      <div class="price-plan" data-ko="월간">Monthly</div>
+      <div class="price-amt">$39.99<span data-ko="/월"> /month</span></div>
+      <div class="price-note" data-ko="언제든 취소 가능">Cancel anytime</div>
+      <ul class="price-feats">
+        <li data-ko="모든 성경 권 무제한 이용">Unlimited access to all books of the Bible</li>
+        <li data-ko="오프라인·인쇄용 PDF 포함">PDF included, for offline &amp; print use</li>
+        <li data-ko="계정당 3개 기기">3 devices per account</li>
+      </ul>
+      <a class="btn btn-ghost" href="#pricing" style="width:100%;text-align:center;" data-ko="구독하기">Subscribe</a>
+    </div>
+    <div class="price-card featured">
+      <div class="price-badge" data-ko="가장 알뜰한 선택">Best value</div>
+      <div class="price-plan" data-ko="연간">Yearly</div>
+      <div class="price-amt">$399<span data-ko="/년"> /year</span></div>
+      <div class="price-note" data-ko="월간 대비 약 17% 절약">About 17% less than paying monthly</div>
+      <ul class="price-feats">
+        <li data-ko="모든 성경 권 무제한 이용">Unlimited access to all books of the Bible</li>
+        <li data-ko="오프라인·인쇄용 PDF 포함">PDF included, for offline &amp; print use</li>
+        <li data-ko="계정당 3개 기기">3 devices per account</li>
+      </ul>
+      <a class="btn btn-gold" href="#pricing" style="width:100%;text-align:center;" data-ko="구독하기">Subscribe</a>
+    </div>
+  </div>
+</section>
+
 <main class="library" id="library">
   <div class="lib-head">
     <h2 data-ko="라이브러리">The Library</h2>
@@ -257,10 +304,10 @@
       <a class="cat-card cat-avail" href="genesis-creation-to-babel.html">
         <div class="cat-cover" style="--bc:#FFDA70;">
           <span class="kbb">SD</span><span class="snum">1</span>
-          <img class="cat-cover-img" src="covers/Genesis_Creation_to_Babel_Book_Cover.png" alt="Genesis: Creation to Babel — Genesis 1–11" data-ko-alt="창세기: 창조부터 바벨까지 — 창세기 1~11장">
+          <img class="cat-cover-img" src="covers/Genesis_Creation_to_Babel_Book_Cover.png" alt="Genesis: Creation to Babel — Genesis 1–11" data-ko-alt="창세기: 창조부터 바벨탑까지 — 창세기 1~11장">
         </div>
         <div class="cat-cap">
-          <div class="cat-cap-title" data-ko="창세기: 창조부터 바벨까지">Genesis: Creation to Babel</div>
+          <div class="cat-cap-title" data-ko="창세기: 창조부터 바벨탑까지">Genesis: Creation to Babel</div>
           <div class="cat-cap-auth" data-ko="창세기 1~11장 &middot; ESV 성경 기준">Genesis 1–11 &middot; ESV</div>
         </div>
       </a>
@@ -380,30 +427,6 @@
         </tr>
       </tbody>
     </table>
-  </div>
-</section>
-
-<section class="why" id="how-it-works">
-  <div class="lib-head">
-    <h2 data-ko="이렇게 만든 이유">Why it's built this way</h2>
-    <p data-ko="모든 권이 예외 없이 지키는 세 가지 원칙입니다.">Three things every volume promises, without exception.</p>
-  </div>
-  <div class="why-grid">
-    <div class="why-card">
-      <div class="ic">📘</div>
-      <h3 data-ko="언제나 8개의 파트로 구성">Eight parts, every time</h3>
-      <p data-ko="어휘, 독해, 문학적 요소, 읽기 지문, 쓰기 프롬프트까지 — 모든 권이 동일한 구성을 따르기 때문에 진도를 파악하기 쉽고 어느 것도 미완성처럼 느껴지지 않습니다.">Vocabulary, comprehension, literary craft, a reading passage and a writing prompt — the same shape in every volume, so progress is easy to track and nothing feels unfinished.</p>
-    </div>
-    <div class="why-card">
-      <div class="ic">🏺</div>
-      <h3 data-ko="모든 섹션에 담긴 실제 지식">A real fact in every section</h3>
-      <p data-ko="실제 지역, 고고학, 고대 생활상, 절기에 관한 지식 박스를 담았습니다 — 단순한 교훈이 아니라 어른이 봐도 흥미로울 만한 진짜 지식입니다.">Knowledge boxes on real places, archaeology, ancient daily life and the feasts — the kind of thing an interested adult would find genuinely interesting, not a moral wrapped in trivia.</p>
-    </div>
-    <div class="why-card">
-      <div class="ic">⚖️</div>
-      <h3 data-ko="민감한 주제에는 중립을 지킵니다">Neutral on the hard questions</h3>
-      <p data-ko="지구의 나이, 창조의 날들의 길이, 창세기 1~11장을 둘러싼 역사성 논쟁에 대해서는 본문이 말하는 바를 그대로 전달하고, 신실한 그리스도인들 사이에서도 해석이 다를 수 있는 지점을 밝힐 뿐, 그 이상의 입장을 취하지 않습니다.">On the age of the earth, the length of the creation days and the historicity debates around Genesis 1–11, we state what the text says and where sincere Christians read it differently — and stop there.</p>
-    </div>
   </div>
 </section>
 
