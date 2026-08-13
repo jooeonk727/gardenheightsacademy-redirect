@@ -8,10 +8,11 @@
     window.location.replace("https://gardenheightsacademy.com");
   }
 </script>
-<title>Word &amp; World Academy — Learn English Through the Bible</title>
-<meta name="description" content="Interactive English workbooks built from Scripture. Vocabulary, comprehension and literary skills taught chapter by chapter, alongside real places, archaeology and ancient life. Keyed to the ESV.">
+<title data-ko="Word &amp; World Academy — 성경으로 배우는 영어">Word &amp; World Academy — Learn English Through the Bible</title>
+<meta name="description" content="Interactive English workbooks built from Scripture. Vocabulary, comprehension and literary skills taught chapter by chapter, alongside real places, archaeology and ancient life. Keyed to the ESV." data-ko="성경 본문을 바탕으로 만든 인터랙티브 영어 워크북입니다. 어휘, 독해, 문학적 요소를 장별로 배우며, 실제 지역과 고고학, 고대 생활상까지 함께 다룹니다. ESV 성경 기준으로 구성되었습니다.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
 <style>
   :root{
     --ink:#0E1A14; --gold:#C9A227; --cream:#FEF7F2; --paper:#FFFFFF;
@@ -24,14 +25,30 @@
   a{color:inherit;}
   img{max-width:100%;display:block;}
 
+  /* Korean typography — Pretendard needs word-break:keep-all or lines break mid-word */
+  html[lang="ko"] body{font-family:'Pretendard','Inter',system-ui,sans-serif;}
+  html[lang="ko"] h1,html[lang="ko"] h2,html[lang="ko"] h3{font-family:'Pretendard','Playfair Display',serif;}
+  html[lang="ko"] p,html[lang="ko"] h1,html[lang="ko"] h2,html[lang="ko"] h3,html[lang="ko"] li,html[lang="ko"] td,html[lang="ko"] .cat-cap-title,html[lang="ko"] .cat-lv-meta{word-break:keep-all;overflow-wrap:break-word;}
+
   /* Nav */
   .nav{position:sticky;top:0;z-index:100;background:var(--ink);color:var(--cream);}
   .nav-in{width:100%;max-width:var(--page-max);margin:0 auto;padding:14px var(--content-gutter);display:flex;align-items:center;justify-content:space-between;gap:16px;}
   .brand{font-family:'Playfair Display',serif;font-weight:900;font-size:19px;color:var(--gold);text-decoration:none;letter-spacing:.01em;display:flex;flex-direction:column;line-height:1.1;}
   .brand .brand-sub{font-size:10.5px;font-weight:700;color:#fff;letter-spacing:.1em;text-transform:uppercase;margin-top:2px;}
+  .nav-right{display:flex;align-items:center;gap:22px;flex-wrap:wrap;}
   .navlinks{display:flex;gap:22px;flex-wrap:wrap;font-size:14px;font-weight:600;}
   .navlinks a{text-decoration:none;color:#E7E2D6;opacity:.9;}
   .navlinks a:hover{opacity:1;color:var(--gold);}
+
+  /* Language switcher */
+  .lang-switch{position:relative;}
+  .lang-current{display:flex;align-items:center;gap:6px;background:transparent;border:1.5px solid rgba(255,255,255,.35);color:#E7E2D6;font-family:'Inter',sans-serif;font-size:13px;font-weight:700;padding:7px 12px;border-radius:99px;cursor:pointer;letter-spacing:.02em;}
+  .lang-current:hover{border-color:var(--gold);color:var(--gold);}
+  .lang-menu{position:absolute;top:calc(100% + 8px);right:0;background:var(--paper);border:1px solid var(--rule);border-radius:10px;box-shadow:0 12px 28px rgba(14,26,20,.18);padding:6px;min-width:150px;display:none;z-index:200;}
+  .lang-switch.open .lang-menu{display:block;}
+  .lang-opt{display:flex;align-items:center;gap:8px;width:100%;background:transparent;border:none;color:var(--ink);font-family:'Inter',sans-serif;font-size:13.5px;font-weight:600;padding:9px 10px;border-radius:7px;cursor:pointer;text-align:left;}
+  .lang-opt:hover{background:#F1F5F9;}
+  .lang-opt.active{color:#8a6a1a;background:#FBF3E7;}
 
   /* Hero */
   .hero{width:100%;max-width:1600px;margin:0 auto;padding:clamp(48px,6vw,80px) var(--content-gutter) 24px;text-align:center;}
@@ -123,6 +140,7 @@
   @media(max-width:560px){
     .nav-in{flex-direction:column;align-items:flex-start;gap:8px;}
     .navlinks{gap:16px;}
+    .nav-right{width:100%;justify-content:space-between;}
   }
 </style>
 </head>
@@ -131,89 +149,92 @@
 <nav class="nav">
   <div class="nav-in">
     <a class="brand" href="index.html">Word &amp; World<span class="brand-sub">Academy</span></a>
-    <div class="navlinks">
-      <a href="index.html#library">Library</a>
-      <a href="index.html#how-it-works">How it works</a>
-      <a href="index.html#roadmap">Roadmap</a>
+    <div class="nav-right">
+      <div class="navlinks">
+        <a href="index.html#library" data-ko="라이브러리">Library</a>
+        <a href="index.html#how-it-works" data-ko="이용 방법">How it works</a>
+        <a href="index.html#roadmap" data-ko="로드맵">Roadmap</a>
+      </div>
+      <div id="lang-switch"></div>
     </div>
   </div>
 </nav>
 
 <header class="hero">
-  <h1>Read the <span class="hl">Word</span>.<br>Read the <span class="hl">World</span>.<br>Lead with <span class="hl">Wisdom</span>.</h1>
-  <p>We raise Christian readers who can understand both the Word and the world. By learning the Bible and English together, students build biblical knowledge, strong reading skills, and a wider understanding of history and culture &mdash; equipping them to think wisely, communicate clearly, and lead in the age of AI.</p>
+  <h1 data-ko="<span class=&quot;hl&quot;>말씀</span>을 읽고.<br><span class=&quot;hl&quot;>세상</span>을 읽고.<br><span class=&quot;hl&quot;>지혜</span>로 이끌다.">Read the <span class="hl">Word</span>.<br>Read the <span class="hl">World</span>.<br>Lead with <span class="hl">Wisdom</span>.</h1>
+  <p data-ko="말씀을 읽고, 세상을 이해하는 크리스천 리더를 키웁니다. 성경과 영어를 함께 배우며 성경적 지식과 탄탄한 읽기 능력, 역사와 문화에 대한 넓은 시야를 기릅니다. 이를 통해 AI 시대에 지혜롭게 생각하고, 분명하게 소통하며, 세상을 이끌어 갈 힘을 키웁니다.">We raise Christian readers who can understand both the Word and the world. By learning the Bible and English together, students build biblical knowledge, strong reading skills, and a wider understanding of history and culture &mdash; equipping them to think wisely, communicate clearly, and lead in the age of AI.</p>
   <div class="hero-cta">
-    <a class="btn btn-gold" href="genesis-creation-to-babel.html">Start with Genesis →</a>
-    <a class="btn btn-ghost" href="index.html#how-it-works">How it works</a>
+    <a class="btn btn-gold" href="genesis-creation-to-babel.html" data-ko="창세기로 시작하기 →">Start with Genesis →</a>
+    <a class="btn btn-ghost" href="index.html#how-it-works" data-ko="이용 방법 보기">How it works</a>
   </div>
 </header>
 
 <section class="explore">
-  <h2>Exploring a book of the Bible?</h2>
+  <h2 data-ko="성경의 특정 책을 살펴보고 싶으신가요?">Exploring a book of the Bible?</h2>
   <div class="stack-wrap">
     <div class="stack-card" style="--rot:-7deg;">
-      <img src="covers/Genesis_Creation_to_Babel_Book_Cover.png" alt="Genesis: Creation to Babel cover">
+      <img src="covers/Genesis_Creation_to_Babel_Book_Cover.png" alt="Genesis: Creation to Babel cover" data-ko-alt="창세기: 창조부터 바벨까지 표지">
     </div>
     <div class="stack-card empty" style="--rot:0deg;">
-      <div class="stack-empty-label"><div class="se-t">Exodus</div><span class="se-s">Coming soon</span></div>
+      <div class="stack-empty-label"><div class="se-t" data-ko="출애굽기">Exodus</div><span class="se-s" data-ko="출시 예정">Coming soon</span></div>
     </div>
     <div class="stack-card empty" style="--rot:7deg;">
-      <div class="stack-empty-label"><div class="se-t">New&nbsp;Testament</div><span class="se-s">Coming later</span></div>
+      <div class="stack-empty-label"><div class="se-t" data-ko="신약성경">New&nbsp;Testament</div><span class="se-s" data-ko="추후 출시">Coming later</span></div>
     </div>
   </div>
-  <p class="explore-lede">One finished volume today, and a full path from Genesis to Revelation on the way. Jump into what's ready, or see where each testament is headed.</p>
+  <p class="explore-lede" data-ko="지금 이용 가능한 한 권과 함께, 창세기부터 요한계시록까지 이어지는 전체 커리큘럼이 준비되고 있습니다. 지금 바로 시작하거나, 각 성경이 어떻게 진행될지 살펴보세요.">One finished volume today, and a full path from Genesis to Revelation on the way. Jump into what's ready, or see where each testament is headed.</p>
   <div class="pill-row">
-    <a class="pill-btn" href="index.html#library">Old Testament</a>
-    <a class="pill-btn pill-ghost" href="index.html#roadmap">New Testament</a>
+    <a class="pill-btn" href="index.html#library" data-ko="구약성경">Old Testament</a>
+    <a class="pill-btn pill-ghost" href="index.html#roadmap" data-ko="신약성경">New Testament</a>
   </div>
 </section>
 
 <div class="trust">
   <div class="trust-in">
-    <span>📖 Keyed to the ESV</span>
-    <span>✅ Auto-graded, works offline</span>
-    <span>🌍 Real places, archaeology &amp; ancient life in every part</span>
-    <span>⛪ Independent study resource — not affiliated with any publisher</span>
+    <span data-ko="📖 ESV 성경 기준">📖 Keyed to the ESV</span>
+    <span data-ko="✅ 자동 채점, 오프라인 이용 가능">✅ Auto-graded, works offline</span>
+    <span data-ko="🌍 모든 파트에 실제 지역, 고고학, 고대 생활상 수록">🌍 Real places, archaeology &amp; ancient life in every part</span>
+    <span data-ko="⛪ 독립적인 학습 자료 — 특정 출판사와 제휴하지 않음">⛪ Independent study resource — not affiliated with any publisher</span>
   </div>
 </div>
 
 <main class="library" id="library">
   <div class="lib-head">
-    <h2>The Library</h2>
-    <p>Every volume grouped by shelf, easiest to hardest.</p>
+    <h2 data-ko="라이브러리">The Library</h2>
+    <p data-ko="모든 권을 난이도별로 쉬운 것부터 어려운 순으로 정리했습니다.">Every volume grouped by shelf, easiest to hardest.</p>
   </div>
 
   <div class="cat-lv-block">
     <div class="cat-lv-head">
-      <span class="lv-badge lv-bible">Old Testament</span>
-      <span class="cat-lv-name">Old Testament</span>
-      <span class="cat-lv-meta">Learning English through the Old Testament &middot; Scripture Discovery covers real places, archaeology, ancient life and the feasts &middot; designed to be used beside an ESV Bible &middot; includes SAT/TOEFL-style reading practice.</span>
+      <span class="lv-badge lv-bible" data-ko="구약성경">Old Testament</span>
+      <span class="cat-lv-name" data-ko="구약성경">Old Testament</span>
+      <span class="cat-lv-meta" data-ko="구약성경으로 배우는 영어 &middot; Scripture Discovery는 실제 지역, 고고학, 고대 생활상, 절기를 다룹니다 &middot; ESV 성경과 함께 사용하도록 구성 &middot; SAT/TOEFL 유형의 독해 연습 포함">Learning English through the Old Testament &middot; Scripture Discovery covers real places, archaeology, ancient life and the feasts &middot; designed to be used beside an ESV Bible &middot; includes SAT/TOEFL-style reading practice.</span>
     </div>
     <div class="cat-grid">
 
       <a class="cat-card cat-avail" href="genesis-creation-to-babel.html">
         <div class="cat-cover" style="--bc:#FFDA70;">
           <span class="kbb">SD</span><span class="snum">1</span>
-          <img class="cat-cover-img" src="covers/Genesis_Creation_to_Babel_Book_Cover.png" alt="Genesis: Creation to Babel — Genesis 1–11">
+          <img class="cat-cover-img" src="covers/Genesis_Creation_to_Babel_Book_Cover.png" alt="Genesis: Creation to Babel — Genesis 1–11" data-ko-alt="창세기: 창조부터 바벨까지 — 창세기 1~11장">
         </div>
         <div class="cat-cap">
-          <div class="cat-cap-title">Genesis: Creation to Babel</div>
-          <div class="cat-cap-auth">Genesis 1–11 &middot; ESV</div>
+          <div class="cat-cap-title" data-ko="창세기: 창조부터 바벨까지">Genesis: Creation to Babel</div>
+          <div class="cat-cap-auth" data-ko="창세기 1~11장 &middot; ESV 성경 기준">Genesis 1–11 &middot; ESV</div>
         </div>
       </a>
 
       <div class="cat-card cat-soon" aria-disabled="true" title="In development">
         <div class="cat-cover" style="--bc:#70CCFF;">
           <div class="cat-bfront">
-            <div class="t">Abraham to Joseph</div>
+            <div class="t" data-ko="아브라함부터 요셉까지">Abraham to Joseph</div>
             <div class="r"></div>
-            <div class="s">Volume 2</div>
+            <div class="s" data-ko="2권">Volume 2</div>
           </div>
-          <div class="cat-soon-tag">In development</div>
+          <div class="cat-soon-tag" data-ko="제작 중">In development</div>
         </div>
         <div class="cat-cap">
-          <div class="cat-cap-title">Genesis: Abraham to Joseph</div>
-          <div class="cat-cap-auth">Coming soon</div>
+          <div class="cat-cap-title" data-ko="창세기: 아브라함부터 요셉까지">Genesis: Abraham to Joseph</div>
+          <div class="cat-cap-auth" data-ko="출시 예정">Coming soon</div>
         </div>
       </div>
 
@@ -223,97 +244,97 @@
 
 <section class="section roadmap" id="roadmap">
   <div class="lib-head">
-    <h2>The full curriculum roadmap</h2>
-    <p>200 Bible adventures, Genesis to Revelation, grouped into 13 arcs. Genesis is where we started &mdash; everything below is planned, not yet built.</p>
+    <h2 data-ko="전체 커리큘럼 로드맵">The full curriculum roadmap</h2>
+    <p data-ko="창세기부터 요한계시록까지, 200개의 성경 어드벤처를 13개의 아크로 구성했습니다. 창세기부터 시작했으며, 아래 나머지는 아직 제작 전인 계획 단계입니다.">200 Bible adventures, Genesis to Revelation, grouped into 13 arcs. Genesis is where we started &mdash; everything below is planned, not yet built.</p>
   </div>
   <div style="overflow-x:auto;">
     <table style="width:100%;border-collapse:collapse;min-width:640px;background:var(--paper);border:1px solid var(--rule);border-radius:14px;overflow:hidden;">
       <thead>
         <tr style="background:#F1F5F9;text-align:left;">
-          <th style="padding:12px 16px;font-size:12.5px;text-transform:uppercase;letter-spacing:.04em;color:var(--slate);">Arc</th>
-          <th style="padding:12px 16px;font-size:12.5px;text-transform:uppercase;letter-spacing:.04em;color:var(--slate);">Covers</th>
-          <th style="padding:12px 16px;font-size:12.5px;text-transform:uppercase;letter-spacing:.04em;color:var(--slate);">Scripture</th>
-          <th style="padding:12px 16px;font-size:12.5px;text-transform:uppercase;letter-spacing:.04em;color:var(--slate);">Status</th>
+          <th style="padding:12px 16px;font-size:12.5px;text-transform:uppercase;letter-spacing:.04em;color:var(--slate);" data-ko="아크">Arc</th>
+          <th style="padding:12px 16px;font-size:12.5px;text-transform:uppercase;letter-spacing:.04em;color:var(--slate);" data-ko="다루는 내용">Covers</th>
+          <th style="padding:12px 16px;font-size:12.5px;text-transform:uppercase;letter-spacing:.04em;color:var(--slate);" data-ko="성경 본문">Scripture</th>
+          <th style="padding:12px 16px;font-size:12.5px;text-transform:uppercase;letter-spacing:.04em;color:var(--slate);" data-ko="진행 상황">Status</th>
         </tr>
       </thead>
       <tbody style="font-size:14px;">
         <tr style="border-top:1px solid var(--rule);">
-          <td style="padding:12px 16px;font-weight:700;">Genesis</td>
-          <td style="padding:12px 16px;color:var(--slate);">Beginnings, Patriarchs &amp; Egypt &middot; 14 adventures</td>
-          <td style="padding:12px 16px;color:var(--slate);">Genesis 1&ndash;50</td>
-          <td style="padding:12px 16px;"><span style="color:var(--ok);font-weight:700;">● 1 volume live</span></td>
+          <td style="padding:12px 16px;font-weight:700;" data-ko="창세기">Genesis</td>
+          <td style="padding:12px 16px;color:var(--slate);" data-ko="태초, 족장들과 이집트 &middot; 14개 어드벤처">Beginnings, Patriarchs &amp; Egypt &middot; 14 adventures</td>
+          <td style="padding:12px 16px;color:var(--slate);" data-ko="창세기 1~50장">Genesis 1&ndash;50</td>
+          <td style="padding:12px 16px;"><span style="color:var(--ok);font-weight:700;" data-ko="● 1권 출시됨">● 1 volume live</span></td>
         </tr>
         <tr style="border-top:1px solid var(--rule);">
-          <td style="padding:12px 16px;font-weight:700;">Exodus&ndash;Deuteronomy</td>
-          <td style="padding:12px 16px;color:var(--slate);">Egypt, Wilderness &amp; Ancient Israel &middot; 20 adventures</td>
-          <td style="padding:12px 16px;color:var(--slate);">Exodus 1&ndash;Deuteronomy 34</td>
-          <td style="padding:12px 16px;color:var(--slate);">Planned</td>
+          <td style="padding:12px 16px;font-weight:700;" data-ko="출애굽기~신명기">Exodus&ndash;Deuteronomy</td>
+          <td style="padding:12px 16px;color:var(--slate);" data-ko="이집트, 광야, 고대 이스라엘 &middot; 20개 어드벤처">Egypt, Wilderness &amp; Ancient Israel &middot; 20 adventures</td>
+          <td style="padding:12px 16px;color:var(--slate);" data-ko="출애굽기 1장~신명기 34장">Exodus 1&ndash;Deuteronomy 34</td>
+          <td style="padding:12px 16px;color:var(--slate);" data-ko="제작 예정">Planned</td>
         </tr>
         <tr style="border-top:1px solid var(--rule);">
-          <td style="padding:12px 16px;font-weight:700;">Joshua&ndash;Ruth</td>
-          <td style="padding:12px 16px;color:var(--slate);">Canaan, Judges &amp; Bethlehem &middot; 10 adventures</td>
-          <td style="padding:12px 16px;color:var(--slate);">Joshua 1&ndash;Ruth 4</td>
-          <td style="padding:12px 16px;color:var(--slate);">Planned</td>
+          <td style="padding:12px 16px;font-weight:700;" data-ko="여호수아~룻기">Joshua&ndash;Ruth</td>
+          <td style="padding:12px 16px;color:var(--slate);" data-ko="가나안, 사사 시대, 베들레헴 &middot; 10개 어드벤처">Canaan, Judges &amp; Bethlehem &middot; 10 adventures</td>
+          <td style="padding:12px 16px;color:var(--slate);" data-ko="여호수아 1장~룻기 4장">Joshua 1&ndash;Ruth 4</td>
+          <td style="padding:12px 16px;color:var(--slate);" data-ko="제작 예정">Planned</td>
         </tr>
         <tr style="border-top:1px solid var(--rule);">
-          <td style="padding:12px 16px;font-weight:700;">Samuel</td>
-          <td style="padding:12px 16px;color:var(--slate);">Samuel, Saul &amp; David &middot; 12 adventures</td>
-          <td style="padding:12px 16px;color:var(--slate);">1 Samuel 1&ndash;2 Samuel 24</td>
-          <td style="padding:12px 16px;color:var(--slate);">Planned</td>
+          <td style="padding:12px 16px;font-weight:700;" data-ko="사무엘">Samuel</td>
+          <td style="padding:12px 16px;color:var(--slate);" data-ko="사무엘, 사울, 다윗 &middot; 12개 어드벤처">Samuel, Saul &amp; David &middot; 12 adventures</td>
+          <td style="padding:12px 16px;color:var(--slate);" data-ko="사무엘상 1장~사무엘하 24장">1 Samuel 1&ndash;2 Samuel 24</td>
+          <td style="padding:12px 16px;color:var(--slate);" data-ko="제작 예정">Planned</td>
         </tr>
         <tr style="border-top:1px solid var(--rule);">
-          <td style="padding:12px 16px;font-weight:700;">Kings &amp; Chronicles</td>
-          <td style="padding:12px 16px;color:var(--slate);">Temple, Kingdoms &amp; Empires &middot; 14 adventures</td>
-          <td style="padding:12px 16px;color:var(--slate);">1 Kings 1&ndash;2 Chronicles 36</td>
-          <td style="padding:12px 16px;color:var(--slate);">Planned</td>
+          <td style="padding:12px 16px;font-weight:700;" data-ko="열왕기·역대기">Kings &amp; Chronicles</td>
+          <td style="padding:12px 16px;color:var(--slate);" data-ko="성전, 왕국과 제국 &middot; 14개 어드벤처">Temple, Kingdoms &amp; Empires &middot; 14 adventures</td>
+          <td style="padding:12px 16px;color:var(--slate);" data-ko="열왕기상 1장~역대하 36장">1 Kings 1&ndash;2 Chronicles 36</td>
+          <td style="padding:12px 16px;color:var(--slate);" data-ko="제작 예정">Planned</td>
         </tr>
         <tr style="border-top:1px solid var(--rule);">
-          <td style="padding:12px 16px;font-weight:700;">Ezra&ndash;Esther</td>
-          <td style="padding:12px 16px;color:var(--slate);">Persia, Return &amp; Rebuilding &middot; 6 adventures</td>
-          <td style="padding:12px 16px;color:var(--slate);">Ezra 1&ndash;Esther 10</td>
-          <td style="padding:12px 16px;color:var(--slate);">Planned</td>
+          <td style="padding:12px 16px;font-weight:700;" data-ko="에스라~에스더">Ezra&ndash;Esther</td>
+          <td style="padding:12px 16px;color:var(--slate);" data-ko="페르시아, 귀환과 재건 &middot; 6개 어드벤처">Persia, Return &amp; Rebuilding &middot; 6 adventures</td>
+          <td style="padding:12px 16px;color:var(--slate);" data-ko="에스라 1장~에스더 10장">Ezra 1&ndash;Esther 10</td>
+          <td style="padding:12px 16px;color:var(--slate);" data-ko="제작 예정">Planned</td>
         </tr>
         <tr style="border-top:1px solid var(--rule);">
-          <td style="padding:12px 16px;font-weight:700;">Job&ndash;Wisdom</td>
-          <td style="padding:12px 16px;color:var(--slate);">Poetry, Music &amp; Everyday Life &middot; 10 adventures</td>
-          <td style="padding:12px 16px;color:var(--slate);">Job&ndash;Ecclesiastes, Song of Songs</td>
-          <td style="padding:12px 16px;color:var(--slate);">Planned</td>
+          <td style="padding:12px 16px;font-weight:700;" data-ko="욥기~지혜서">Job&ndash;Wisdom</td>
+          <td style="padding:12px 16px;color:var(--slate);" data-ko="시가서, 음악, 일상생활 &middot; 10개 어드벤처">Poetry, Music &amp; Everyday Life &middot; 10 adventures</td>
+          <td style="padding:12px 16px;color:var(--slate);" data-ko="욥기~전도서, 아가서">Job&ndash;Ecclesiastes, Song of Songs</td>
+          <td style="padding:12px 16px;color:var(--slate);" data-ko="제작 예정">Planned</td>
         </tr>
         <tr style="border-top:1px solid var(--rule);">
-          <td style="padding:12px 16px;font-weight:700;">Major Prophets</td>
-          <td style="padding:12px 16px;color:var(--slate);">Jerusalem, Babylon &amp; Exile &middot; 12 adventures</td>
-          <td style="padding:12px 16px;color:var(--slate);">Isaiah 1&ndash;Daniel 12</td>
-          <td style="padding:12px 16px;color:var(--slate);">Planned</td>
+          <td style="padding:12px 16px;font-weight:700;" data-ko="대선지서">Major Prophets</td>
+          <td style="padding:12px 16px;color:var(--slate);" data-ko="예루살렘, 바빌론, 포로 시대 &middot; 12개 어드벤처">Jerusalem, Babylon &amp; Exile &middot; 12 adventures</td>
+          <td style="padding:12px 16px;color:var(--slate);" data-ko="이사야 1장~다니엘 12장">Isaiah 1&ndash;Daniel 12</td>
+          <td style="padding:12px 16px;color:var(--slate);" data-ko="제작 예정">Planned</td>
         </tr>
         <tr style="border-top:1px solid var(--rule);">
-          <td style="padding:12px 16px;font-weight:700;">Minor Prophets</td>
-          <td style="padding:12px 16px;color:var(--slate);">Israel and the Nations &middot; 6 adventures</td>
-          <td style="padding:12px 16px;color:var(--slate);">Hosea&ndash;Malachi</td>
-          <td style="padding:12px 16px;color:var(--slate);">Planned</td>
+          <td style="padding:12px 16px;font-weight:700;" data-ko="소선지서">Minor Prophets</td>
+          <td style="padding:12px 16px;color:var(--slate);" data-ko="이스라엘과 열방 &middot; 6개 어드벤처">Israel and the Nations &middot; 6 adventures</td>
+          <td style="padding:12px 16px;color:var(--slate);" data-ko="호세아~말라기">Hosea&ndash;Malachi</td>
+          <td style="padding:12px 16px;color:var(--slate);" data-ko="제작 예정">Planned</td>
         </tr>
         <tr style="border-top:1px solid var(--rule);">
-          <td style="padding:12px 16px;font-weight:700;">The Four Gospels</td>
-          <td style="padding:12px 16px;color:var(--slate);">The World of Jesus &middot; 48 adventures</td>
-          <td style="padding:12px 16px;color:var(--slate);">Matthew&ndash;John</td>
-          <td style="padding:12px 16px;color:var(--slate);">Planned</td>
+          <td style="padding:12px 16px;font-weight:700;" data-ko="사복음서">The Four Gospels</td>
+          <td style="padding:12px 16px;color:var(--slate);" data-ko="예수님 시대의 세계 &middot; 48개 어드벤처">The World of Jesus &middot; 48 adventures</td>
+          <td style="padding:12px 16px;color:var(--slate);" data-ko="마태복음~요한복음">Matthew&ndash;John</td>
+          <td style="padding:12px 16px;color:var(--slate);" data-ko="제작 예정">Planned</td>
         </tr>
         <tr style="border-top:1px solid var(--rule);">
-          <td style="padding:12px 16px;font-weight:700;">Acts</td>
-          <td style="padding:12px 16px;color:var(--slate);">The Early Church &amp; Roman World &middot; 16 adventures</td>
-          <td style="padding:12px 16px;color:var(--slate);">Acts 1&ndash;28</td>
-          <td style="padding:12px 16px;color:var(--slate);">Planned</td>
+          <td style="padding:12px 16px;font-weight:700;" data-ko="사도행전">Acts</td>
+          <td style="padding:12px 16px;color:var(--slate);" data-ko="초대 교회와 로마 세계 &middot; 16개 어드벤처">The Early Church &amp; Roman World &middot; 16 adventures</td>
+          <td style="padding:12px 16px;color:var(--slate);" data-ko="사도행전 1~28장">Acts 1&ndash;28</td>
+          <td style="padding:12px 16px;color:var(--slate);" data-ko="제작 예정">Planned</td>
         </tr>
         <tr style="border-top:1px solid var(--rule);">
-          <td style="padding:12px 16px;font-weight:700;">New Testament Letters</td>
-          <td style="padding:12px 16px;color:var(--slate);">Cities, Churches &amp; Daily Life &middot; 24 adventures</td>
-          <td style="padding:12px 16px;color:var(--slate);">Romans&ndash;Jude</td>
-          <td style="padding:12px 16px;color:var(--slate);">Planned</td>
+          <td style="padding:12px 16px;font-weight:700;" data-ko="신약 서신서">New Testament Letters</td>
+          <td style="padding:12px 16px;color:var(--slate);" data-ko="도시, 교회, 일상생활 &middot; 24개 어드벤처">Cities, Churches &amp; Daily Life &middot; 24 adventures</td>
+          <td style="padding:12px 16px;color:var(--slate);" data-ko="로마서~유다서">Romans&ndash;Jude</td>
+          <td style="padding:12px 16px;color:var(--slate);" data-ko="제작 예정">Planned</td>
         </tr>
         <tr style="border-top:1px solid var(--rule);">
-          <td style="padding:12px 16px;font-weight:700;">Revelation</td>
-          <td style="padding:12px 16px;color:var(--slate);">Patmos, Seven Churches &amp; New Creation &middot; 8 adventures</td>
-          <td style="padding:12px 16px;color:var(--slate);">Revelation 1&ndash;22</td>
-          <td style="padding:12px 16px;color:var(--slate);">Planned</td>
+          <td style="padding:12px 16px;font-weight:700;" data-ko="요한계시록">Revelation</td>
+          <td style="padding:12px 16px;color:var(--slate);" data-ko="밧모섬, 일곱 교회, 새 창조 &middot; 8개 어드벤처">Patmos, Seven Churches &amp; New Creation &middot; 8 adventures</td>
+          <td style="padding:12px 16px;color:var(--slate);" data-ko="요한계시록 1~22장">Revelation 1&ndash;22</td>
+          <td style="padding:12px 16px;color:var(--slate);" data-ko="제작 예정">Planned</td>
         </tr>
       </tbody>
     </table>
@@ -322,24 +343,24 @@
 
 <section class="why" id="how-it-works">
   <div class="lib-head">
-    <h2>Why it's built this way</h2>
-    <p>Three things every volume promises, without exception.</p>
+    <h2 data-ko="이렇게 만든 이유">Why it's built this way</h2>
+    <p data-ko="모든 권이 예외 없이 지키는 세 가지 원칙입니다.">Three things every volume promises, without exception.</p>
   </div>
   <div class="why-grid">
     <div class="why-card">
       <div class="ic">📘</div>
-      <h3>Eight parts, every time</h3>
-      <p>Vocabulary, comprehension, literary craft, a reading passage and a writing prompt — the same shape in every volume, so progress is easy to track and nothing feels unfinished.</p>
+      <h3 data-ko="언제나 8개의 파트로 구성">Eight parts, every time</h3>
+      <p data-ko="어휘, 독해, 문학적 요소, 읽기 지문, 쓰기 프롬프트까지 — 모든 권이 동일한 구성을 따르기 때문에 진도를 파악하기 쉽고 어느 것도 미완성처럼 느껴지지 않습니다.">Vocabulary, comprehension, literary craft, a reading passage and a writing prompt — the same shape in every volume, so progress is easy to track and nothing feels unfinished.</p>
     </div>
     <div class="why-card">
       <div class="ic">🏺</div>
-      <h3>A real fact in every section</h3>
-      <p>Knowledge boxes on real places, archaeology, ancient daily life and the feasts — the kind of thing an interested adult would find genuinely interesting, not a moral wrapped in trivia.</p>
+      <h3 data-ko="모든 섹션에 담긴 실제 지식">A real fact in every section</h3>
+      <p data-ko="실제 지역, 고고학, 고대 생활상, 절기에 관한 지식 박스를 담았습니다 — 단순한 교훈이 아니라 어른이 봐도 흥미로울 만한 진짜 지식입니다.">Knowledge boxes on real places, archaeology, ancient daily life and the feasts — the kind of thing an interested adult would find genuinely interesting, not a moral wrapped in trivia.</p>
     </div>
     <div class="why-card">
       <div class="ic">⚖️</div>
-      <h3>Neutral on the hard questions</h3>
-      <p>On the age of the earth, the length of the creation days and the historicity debates around Genesis 1–11, we state what the text says and where sincere Christians read it differently — and stop there.</p>
+      <h3 data-ko="민감한 주제에는 중립을 지킵니다">Neutral on the hard questions</h3>
+      <p data-ko="지구의 나이, 창조의 날들의 길이, 창세기 1~11장을 둘러싼 역사성 논쟁에 대해서는 본문이 말하는 바를 그대로 전달하고, 신실한 그리스도인들 사이에서도 해석이 다를 수 있는 지점을 밝힐 뿐, 그 이상의 입장을 취하지 않습니다.">On the age of the earth, the length of the creation days and the historicity debates around Genesis 1–11, we state what the text says and where sincere Christians read it differently — and stop there.</p>
     </div>
   </div>
 </section>
@@ -347,16 +368,17 @@
 <footer>
   <div class="foot-in">
     <div class="foot-links">
-      <a href="index.html">Home</a>
-      <a href="index.html#library">Library</a>
-      <a href="genesis-creation-to-babel.html">Genesis</a>
-      <a href="index.html#roadmap">Curriculum roadmap</a>
+      <a href="index.html" data-ko="홈">Home</a>
+      <a href="index.html#library" data-ko="라이브러리">Library</a>
+      <a href="genesis-creation-to-babel.html" data-ko="창세기">Genesis</a>
+      <a href="index.html#roadmap" data-ko="커리큘럼 로드맵">Curriculum roadmap</a>
     </div>
-    <div class="foot-legal">
+    <div class="foot-legal" data-ko="Word &amp; World Academy는 독립적인 학습 자료이며, Crossway 또는 그 어떤 성경 출판사와도 제휴하거나 공인받지 않았습니다. 워크북은 ESV&reg; 성경을 기준으로 구성되어 있으며, 학생은 본인의 성경으로 해당 본문을 직접 읽어야 합니다. 본문에 인용된 성경 구절은 ESV&reg; 성경(Copyright &copy; 2001 by Crossway)에서 발췌한 것으로, 허락을 받아 사용하였습니다. 모든 권리는 원저작권자에게 있습니다. 성경 본문 전체를 그대로 옮긴 부분은 없으며, 모든 본문 요약과 질문은 자체 제작한 원문입니다.">
       Word &amp; World Academy is an independent study resource. It is not affiliated with or endorsed by Crossway or any Bible publisher. Workbooks are keyed to the ESV® Bible; students should read the referenced Scripture in their own Bible. Scripture quotations, where used, are from the ESV® Bible, copyright © 2001 by Crossway. Used by permission. All rights reserved. No copyrighted text is reproduced in full; all passage summaries and questions are original.
     </div>
   </div>
 </footer>
 
+<script src="i18n.js"></script>
 </body>
 </html>
