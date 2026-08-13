@@ -15,7 +15,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
 <style>
   :root{
-    --ink:#0E1A14; --gold:#C9A227; --cream:#FEF7F2; --paper:#FFFFFF;
+    --ink:#0E1A14; --gold:#C9A227; --cream:#FFFFFF; --paper:#FFFFFF;
     --rule:#E2E8F0; --slate:#4A5568; --ok:#16a34a; --err:#dc2626; --acc:#FFDA70;
     --page-max:2200px; --content-gutter:clamp(18px,3vw,64px);
   }
@@ -82,10 +82,16 @@
   .pstate{flex:0 0 auto;font-size:12.5px;font-weight:700;color:var(--ok);}
   .part.locked .pstate{color:#94A3B8;}
 
-  .spine-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;}
-  .spine-card{background:var(--paper);border:1px solid var(--rule);border-radius:12px;padding:16px;}
-  .spine-card .sc-part{font-size:11px;font-weight:800;color:#B8862F;text-transform:uppercase;letter-spacing:.06em;}
-  .spine-card .sc-phrase{font-family:'Playfair Display',serif;font-weight:700;font-size:16px;margin-top:6px;}
+  .idiom-table{width:100%;border-collapse:separate;border-spacing:0;background:var(--paper);border:1px solid var(--rule);border-radius:14px;overflow:hidden;}
+  .idiom-table th{text-align:left;font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--slate);background:#F8F7F4;padding:12px 16px;}
+  .idiom-table td{padding:14px 16px;font-size:14.5px;line-height:1.6;border-top:1px solid var(--rule);vertical-align:top;}
+  .idiom-table tr:first-child td{border-top:none;}
+  .idiom-part{border-left:4px solid var(--idiom-c,var(--gold));}
+  .idiom-part-badge{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.04em;color:var(--idiom-c,var(--gold));background:color-mix(in srgb, var(--idiom-c,var(--gold)) 14%, white);border-radius:99px;padding:3px 10px;white-space:nowrap;}
+  .idiom-phrase{font-family:'Playfair Display',serif;font-weight:700;font-size:15.5px;}
+  .idiom-ref{font-size:12px;color:var(--slate);font-weight:600;margin-top:2px;}
+  .idiom-note{font-size:11.5px;font-style:italic;color:var(--slate);margin-top:4px;}
+  @media(max-width:700px){.idiom-table thead{display:none;}.idiom-table tr{display:block;padding:14px 16px;border-top:1px solid var(--rule);}.idiom-table tr:first-child{border-top:none;}.idiom-table td{display:block;padding:2px 0;border-top:none;}}
 
   .note{background:#FDF6E3;border:1px solid #F0E0A8;border-radius:12px;padding:16px 18px;font-size:14px;line-height:1.65;color:#4a3c14;}
   .note b{color:#3a2f0f;}
@@ -209,12 +215,62 @@
 </section>
 
 <section class="section">
-  <h2 data-ko="이용 가능한 워크북 속 영어 표현">English language in available workbooks</h2>
-  <div class="spine-grid">
-    <div class="spine-card"><div class="sc-part" data-ko="1파트">Part 1</div><div class="sc-phrase">&ldquo;Let there be light&rdquo; &middot; &ldquo;the breath of life&rdquo;</div></div>
-    <div class="spine-card"><div class="sc-part" data-ko="2파트">Part 2</div><div class="sc-phrase">&ldquo;Forbidden fruit&rdquo; &middot; &ldquo;fig leaf&rdquo; &middot; &ldquo;My brother's keeper&rdquo;</div></div>
-    <div class="spine-card"><div class="sc-part" data-ko="3파트">Part 3</div><div class="sc-phrase">&ldquo;Forty days and forty nights&rdquo; &middot; &ldquo;according to their kinds&rdquo;</div></div>
-    <div class="spine-card"><div class="sc-part" data-ko="4파트">Part 4</div><div class="sc-phrase">&ldquo;An olive branch&rdquo; &middot; &ldquo;a tower of Babel&rdquo;</div></div>
+  <h2 data-ko="성경에서 나온 영어 표현들">English phrases that came from these chapters</h2>
+  <p style="color:var(--slate);font-size:14.5px;margin:-8px 0 18px;max-width:70ch" data-ko="이 워크북에서 배우는 성경 구절 중 일부는 오늘날에도 쓰이는 영어 표현이 되었습니다. 성경에서 직접 나온 표현도 있고, 성경 이야기에서 비롯된 재미있는 표현도 있습니다.">Some of the passages in this workbook gave English its everyday phrases. A few come straight from the verse; others are just well-known expressions the story inspired.</p>
+  <div style="overflow-x:auto">
+  <table class="idiom-table">
+    <thead><tr>
+      <th data-ko="파트">Part</th>
+      <th data-ko="표현">Phrase</th>
+      <th data-ko="오늘날의 의미">What it means today</th>
+    </tr></thead>
+    <tbody>
+      <tr class="idiom-part" style="--idiom-c:#C9A227">
+        <td rowspan="2"><span class="idiom-part-badge" data-ko="1파트">Part 1</span></td>
+        <td><div class="idiom-phrase">&ldquo;Let there be light&rdquo;</div><div class="idiom-ref">Genesis 1:3</div></td>
+        <td data-ko="갑자기 아이디어가 떠오르거나 무언가 새로운 것이 시작될 때 쓰는 말입니다.">Said today when someone suddenly understands something, or when something new begins.</td>
+      </tr>
+      <tr class="idiom-part" style="--idiom-c:#C9A227">
+        <td><div class="idiom-phrase">&ldquo;The breath of life&rdquo;</div><div class="idiom-ref">Genesis 2:7</div></td>
+        <td data-ko="어떤 사람이나 사물에 진짜 활력과 생기를 주는 것을 가리킬 때 씁니다.">Used for whatever gives someone or something real vitality and energy.</td>
+      </tr>
+      <tr class="idiom-part" style="--idiom-c:#4C7A5C">
+        <td rowspan="4"><span class="idiom-part-badge" data-ko="2파트">Part 2</span></td>
+        <td><div class="idiom-phrase">&ldquo;Forbidden fruit&rdquo;</div><div class="idiom-ref">Genesis 3:6</div></td>
+        <td data-ko="단지 금지되어 있다는 이유만으로 끌리는 것을 뜻합니다.">Something tempting mainly because it's off-limits.</td>
+      </tr>
+      <tr class="idiom-part" style="--idiom-c:#4C7A5C">
+        <td><div class="idiom-phrase">&ldquo;Fig leaf&rdquo;</div><div class="idiom-ref">Genesis 3:7</div></td>
+        <td data-ko="부끄러운 것을 대충 가리려는 얕은 시도를 뜻합니다.">A thin, obvious attempt to cover up something embarrassing.</td>
+      </tr>
+      <tr class="idiom-part" style="--idiom-c:#4C7A5C">
+        <td><div class="idiom-phrase">&ldquo;Adam's apple&rdquo;</div><div class="idiom-ref" data-ko="재미있는 표현 &middot; 창세기 3:6에서 유래">Fun fact &middot; inspired by Genesis 3:6</div></td>
+        <td data-ko="목에 튀어나온 부분을 가리키는 영어의 별명입니다. 금단의 열매가 아담의 목에 걸렸다는 민간 이야기에서 나왔다고 하며, 성경에 직접 나오는 표현은 아닙니다.">The popular English nickname for the bump in the throat. Folklore says a bite of the forbidden fruit stuck in Adam's throat &mdash; it's not something the Bible itself says, just a well-known expression the story inspired.</td>
+      </tr>
+      <tr class="idiom-part" style="--idiom-c:#4C7A5C">
+        <td><div class="idiom-phrase">&ldquo;My brother's keeper&rdquo;</div><div class="idiom-ref">Genesis 4:9</div></td>
+        <td data-ko="서로를 돌볼 책임이 있는지 물을 때 쓰는 표현입니다.">Used to ask whether we're responsible for looking after one another.</td>
+      </tr>
+      <tr class="idiom-part" style="--idiom-c:#3D6B8A">
+        <td rowspan="2"><span class="idiom-part-badge" data-ko="3파트">Part 3</span></td>
+        <td><div class="idiom-phrase">&ldquo;Forty days and forty nights&rdquo;</div><div class="idiom-ref">Genesis 7:12</div></td>
+        <td data-ko="오늘날에는 길고 힘든 기간을 가리킬 때 씁니다.">Used today for any long, difficult stretch of time.</td>
+      </tr>
+      <tr class="idiom-part" style="--idiom-c:#3D6B8A">
+        <td><div class="idiom-phrase">&ldquo;A flood of &hellip;&rdquo;</div><div class="idiom-ref" data-ko="재미있는 표현 &middot; 창세기 7장에서 유래">Fun fact &middot; inspired by Genesis 7</div></td>
+        <td data-ko="&ldquo;이메일이 쏟아진다&rdquo;, &ldquo;눈물이 쏟아진다&rdquo;처럼 무언가 한꺼번에 넘치도록 몰려올 때 쓰는 표현입니다.">Used for an overwhelming rush of something, like &ldquo;a flood of emails&rdquo; or &ldquo;a flood of tears.&rdquo;</td>
+      </tr>
+      <tr class="idiom-part" style="--idiom-c:#B5622E">
+        <td rowspan="2"><span class="idiom-part-badge" data-ko="4파트">Part 4</span></td>
+        <td><div class="idiom-phrase">&ldquo;An olive branch&rdquo;</div><div class="idiom-ref">Genesis 8:11</div></td>
+        <td data-ko="&ldquo;올리브 가지를 내밀다&rdquo;는 갈등 후에 화해를 청한다는 뜻입니다.">To &ldquo;extend an olive branch&rdquo; means to offer peace after a conflict.</td>
+      </tr>
+      <tr class="idiom-part" style="--idiom-c:#B5622E">
+        <td><div class="idiom-phrase">&ldquo;A tower of Babel&rdquo;</div><div class="idiom-ref">Genesis 11:1&ndash;9</div></td>
+        <td data-ko="여러 목소리가 뒤섞인 혼란, 또는 지나치게 야심 차다가 혼란에 빠져버린 계획을 가리킬 때 씁니다.">Used for a confusing jumble of voices, or a grand plan that collapses into chaos.</td>
+      </tr>
+    </tbody>
+  </table>
   </div>
 </section>
 
