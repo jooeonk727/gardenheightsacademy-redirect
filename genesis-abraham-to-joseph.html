@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+  if (/^(?:www\.)?gardenheightsacademy\.net$/i.test(window.location.hostname)) {
+    window.location.replace("https://gardenheightsacademy.com");
+  }
+</script>
+<title data-ko="창세기: 아브라함부터 요셉까지 — The Word &amp; World Academy">Genesis: Abraham to Joseph — The Word &amp; World Academy</title>
+<meta name="description" content="A ten-adventure English workbook through Genesis 12–50, currently in development. See the planned adventures covering Abraham, Isaac, Jacob and Joseph, keyed to the ESV." data-ko="창세기 12~50장을 다루는 10개 어드벤처로 구성된 영어 워크북으로, 현재 제작 중입니다. 아브라함, 이삭, 야곱, 요셉의 이야기를 다루는 예정된 어드벤처들을 확인해보세요. ESV 성경 기준으로 구성됩니다.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+  :root{
+    --ink:#0E1A14; --gold:#C9A227; --cream:#FEF7F2; --paper:#FFFFFF;
+    --rule:#E2E8F0; --slate:#4A5568; --ok:#16a34a; --err:#dc2626; --acc:#70CCFF;
+    --page-max:2200px; --content-gutter:clamp(18px,3vw,64px);
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--cream);color:var(--ink);font-family:'Inter',system-ui,sans-serif;}
+  h1,h2,h3{font-family:'Playfair Display',serif;font-weight:900;margin:0;}
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+
+  /* Korean typography — Pretendard needs word-break:keep-all or lines break mid-word */
+  html[lang="ko"] body{font-family:'Pretendard','Inter',system-ui,sans-serif;}
+  html[lang="ko"] h1,html[lang="ko"] h2,html[lang="ko"] h3{font-family:'Pretendard','Playfair Display',serif;}
+  html[lang="ko"] p,html[lang="ko"] h1,html[lang="ko"] h2,html[lang="ko"] h3,html[lang="ko"] .vdesc,html[lang="ko"] .note,html[lang="ko"] .ptitle,html[lang="ko"] .pmeta{word-break:keep-all;overflow-wrap:break-word;}
+
+  .nav{position:sticky;top:0;z-index:100;background:var(--ink);color:var(--cream);}
+  .nav-in{width:100%;max-width:var(--page-max);margin:0 auto;padding:14px var(--content-gutter);display:flex;align-items:center;justify-content:space-between;gap:16px;}
+  .brand{font-family:'Playfair Display',serif;font-weight:900;font-size:19px;color:var(--gold);text-decoration:none;letter-spacing:.01em;display:flex;flex-direction:column;line-height:1.1;}
+  .brand .brand-sub{font-size:10.5px;font-weight:700;color:#fff;letter-spacing:.1em;text-transform:uppercase;margin-top:2px;}
+  .nav-right{display:flex;align-items:center;gap:22px;flex-wrap:wrap;}
+  .navlinks{display:flex;gap:22px;flex-wrap:wrap;font-size:14px;font-weight:600;}
+  .navlinks a{text-decoration:none;color:#E7E2D6;opacity:.9;}
+  .navlinks a:hover{opacity:1;color:var(--gold);}
+
+  /* Language switcher */
+  .lang-switch{position:relative;}
+  .lang-current{display:flex;align-items:center;gap:6px;background:transparent;border:1.5px solid rgba(255,255,255,.35);color:#E7E2D6;font-family:'Inter',sans-serif;font-size:13px;font-weight:700;padding:7px 12px;border-radius:99px;cursor:pointer;letter-spacing:.02em;}
+  .lang-current:hover{border-color:var(--gold);color:var(--gold);}
+  .lang-menu{position:absolute;top:calc(100% + 8px);right:0;background:var(--paper);border:1px solid var(--rule);border-radius:10px;box-shadow:0 12px 28px rgba(14,26,20,.18);padding:6px;min-width:150px;display:none;z-index:200;}
+  .lang-switch.open .lang-menu{display:block;}
+  .lang-opt{display:flex;align-items:center;gap:8px;width:100%;background:transparent;border:none;color:var(--ink);font-family:'Inter',sans-serif;font-size:13.5px;font-weight:600;padding:9px 10px;border-radius:7px;cursor:pointer;text-align:left;}
+  .lang-opt:hover{background:#F1F5F9;}
+  .lang-opt.active{color:#8a6a1a;background:#FBF3E7;}
+
+  .crumb{width:100%;max-width:var(--page-max);margin:0 auto;padding:16px var(--content-gutter) 0;font-size:13px;color:var(--slate);}
+  .crumb a{text-decoration:none;color:var(--slate);font-weight:600;}
+  .crumb a:hover{color:var(--ink);}
+
+  .vhero{width:100%;max-width:var(--page-max);margin:0 auto;padding:26px var(--content-gutter) 50px;display:grid;grid-template-columns:clamp(260px,20vw,380px) minmax(0,1fr);gap:clamp(36px,4vw,80px);align-items:start;}
+  .vcover{border-radius:14px;overflow:hidden;box-shadow:0 20px 40px rgba(14,26,20,.18);border:6px solid var(--acc);aspect-ratio:2/3;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px;background:var(--acc);}
+  .vcover-t{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(24px,3vw,30px);color:var(--ink);}
+  .vcover-r{width:48px;height:3px;background:var(--ink);opacity:.35;margin:16px 0;}
+  .vcover-s{font-size:15px;font-weight:700;color:var(--ink);opacity:.85;}
+  .vcover-v{font-size:11.5px;font-weight:700;color:var(--ink);opacity:.6;margin-top:8px;text-transform:uppercase;letter-spacing:.06em;}
+  .veyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#2B6E96;margin-bottom:10px;}
+  .vhero h1{font-size:clamp(28px,4.4vw,44px);line-height:1.08;}
+  .vsub{font-size:16px;color:var(--slate);margin-top:8px;}
+  .vmeta{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px;}
+  .vtag{font-size:12.5px;font-weight:700;background:var(--paper);border:1px solid var(--rule);border-radius:99px;padding:5px 13px;}
+  .vdesc{margin-top:20px;font-size:15.5px;line-height:1.7;color:#28352C;max-width:75ch;}
+  .vcta{margin-top:24px;display:flex;gap:12px;flex-wrap:wrap;}
+  .btn{display:inline-block;padding:13px 26px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;}
+  .btn-gold{background:var(--gold);color:var(--ink);}
+  .btn-ghost{background:transparent;border:1.5px solid var(--ink);color:var(--ink);}
+
+  .section{width:100%;max-width:var(--page-max);margin:0 auto;padding:10px var(--content-gutter) 50px;}
+  .section h2{font-size:24px;margin-bottom:18px;}
+
+  .parts{display:flex;flex-direction:column;gap:10px;}
+  .part{display:flex;align-items:center;gap:16px;background:var(--paper);border:1px solid var(--rule);border-radius:14px;padding:16px 18px;text-decoration:none;color:inherit;}
+  .part.avail:hover{border-color:var(--gold);box-shadow:0 8px 20px rgba(14,26,20,.08);}
+  .part.locked{opacity:.62;cursor:default;}
+  .pnum{flex:0 0 auto;width:38px;height:38px;border-radius:50%;background:var(--ink);color:var(--acc);font-weight:800;font-family:'Playfair Display',serif;display:flex;align-items:center;justify-content:center;font-size:15px;}
+  .part.locked .pnum{background:#CBD5E1;color:#64748B;}
+  .pbody{flex:1;min-width:0;}
+  .ptitle{font-weight:700;font-size:15.5px;}
+  .pmeta{font-size:12.5px;color:var(--slate);margin-top:3px;}
+  .pdomain{flex:0 0 auto;font-size:12px;font-weight:700;background:#F1F5F9;border-radius:99px;padding:5px 11px;white-space:nowrap;}
+  .pstate{flex:0 0 auto;font-size:12.5px;font-weight:700;color:var(--ok);}
+  .part.locked .pstate{color:#94A3B8;}
+
+  .note{background:#FDF6E3;border:1px solid #F0E0A8;border-radius:12px;padding:16px 18px;font-size:14px;line-height:1.65;color:#4a3c14;}
+  .note b{color:#3a2f0f;}
+
+  footer{background:var(--ink);color:#C7D0C9;padding:44px 0 30px;}
+  .foot-in{width:100%;max-width:var(--page-max);margin:0 auto;padding:0 var(--content-gutter);}
+  .foot-links{display:flex;gap:20px;flex-wrap:wrap;font-size:13.5px;font-weight:600;margin-bottom:18px;}
+  .foot-links a{text-decoration:none;color:#E7E2D6;}
+  .foot-links a:hover{color:var(--gold);}
+  .foot-legal{font-size:12px;line-height:1.7;color:#8FA093;max-width:820px;}
+
+  @media(min-width:1180px){
+    .parts{display:grid;grid-template-columns:repeat(auto-fit,minmax(520px,1fr));gap:14px;}
+    .part{display:grid;grid-template-columns:38px minmax(0,1fr) auto;gap:8px 14px;align-content:start;}
+    .part .pnum{grid-row:1 / span 2;}
+    .part .pbody{grid-column:2 / -1;}
+    .part .pdomain{grid-column:2;justify-self:start;}
+    .part .pstate{grid-column:3;justify-self:end;}
+  }
+  @media(max-width:820px){
+    .vhero{grid-template-columns:1fr;gap:30px;}
+    .vcover{width:min(320px,75vw);justify-self:center;}
+  }
+  @media(max-width:620px){
+    .nav-in{flex-direction:column;align-items:flex-start;gap:8px;}
+    .navlinks{gap:16px;}
+    .nav-right{width:100%;justify-content:space-between;}
+    .part{display:grid;grid-template-columns:38px minmax(0,1fr);gap:8px 14px;align-items:start;}
+    .part .pnum{grid-row:1 / span 3;}
+    .pbody,.pdomain,.pstate{grid-column:2;}
+    .pdomain,.pstate{justify-self:start;}
+  }
+  @media(max-width:420px){
+    .vcta .btn{width:100%;text-align:center;}
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-in">
+    <a class="brand" href="index.html">The Word &amp; World<span class="brand-sub">Academy</span></a>
+    <div class="nav-right">
+      <div class="navlinks">
+        <a href="index.html#library" data-ko="라이브러리">Library</a>
+        <a href="index.html#how-it-works" data-ko="이용 방법">How it works</a>
+        <a href="index.html#roadmap" data-ko="로드맵">Roadmap</a>
+      </div>
+      <div id="lang-switch"></div>
+    </div>
+  </div>
+</nav>
+
+<div class="crumb"><a href="index.html" data-ko="라이브러리">Library</a> &nbsp;/&nbsp; <span data-ko="창세기: 아브라함부터 요셉까지">Genesis: Abraham to Joseph</span></div>
+
+<section class="vhero">
+  <div class="vcover">
+    <div class="vcover-t">Genesis</div>
+    <div class="vcover-r"></div>
+    <div class="vcover-s" data-ko="아브라함부터 요셉까지">Abraham to Joseph</div>
+    <div class="vcover-v" data-ko="2권 &middot; 제작 중">Volume 2 &middot; In development</div>
+  </div>
+  <div>
+    <div class="veyebrow" data-ko="구약성경 &middot; 2권">Old Testament &middot; Volume 2</div>
+    <h1 data-ko="창세기: 아브라함부터 요셉까지">Genesis: Abraham to Joseph</h1>
+    <div class="vsub" data-ko="창세기 12~50장 &middot; ESV 성경 기준 예정">Genesis 12&ndash;50 &middot; keyed to the ESV</div>
+    <div class="vmeta">
+      <span class="vtag" data-ko="레벨 1">Level 1</span>
+      <span class="vtag" data-ko="10개 어드벤처">10 Adventures</span>
+      <span class="vtag" data-ko="파트별 4개의 Treasure Wisdom 박스 예정">4 Treasure Wisdom boxes per part</span>
+      <span class="vtag" data-ko="현재 제작 중">In development</span>
+    </div>
+    <p class="vdesc" data-ko="열 개의 어드벤처를 통해 아이는 아브람이 고향을 떠나라는 부르심을 받는 순간부터 요셉이 이집트에서 높은 자리에 오르고 그의 가족이 이집트에 도착하기까지의 이야기를 따라갑니다. 각 어드벤처는 이야기와 함께 영어 어휘·독해 워크북, 그리고 매번 바뀌는 Treasure Wisdom 영역(실제 지역, 고고학, 고대 생활상)을 제공할 예정입니다. 이 권은 현재 제작 중이며, 아래 열 개의 어드벤처는 예정된 순서대로 표시되어 있습니다.">Ten adventures carry a child from Abram's call to leave home through Joseph's rise in Egypt and his family's arrival there. Every adventure will pair the story with an English vocabulary and comprehension workbook and one rotating Treasure Wisdom domain &mdash; real places, archaeology and ancient daily life. This volume is currently in development; the ten adventures below are shown in their planned order.</p>
+    <div class="vcta">
+      <a class="btn btn-gold" href="#parts" data-ko="10개 파트 모두 보기 →">Browse all ten parts →</a>
+      <a class="btn btn-ghost" href="genesis-creation-to-babel.html" data-ko="← 1권부터 시작하기">&larr; Start with Volume 1</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="parts">
+  <h2 data-ko="열 가지 어드벤처">The ten adventures</h2>
+  <div class="parts">
+
+    <div class="part locked">
+      <div class="pnum">1</div>
+      <div class="pbody">
+        <div class="ptitle" data-ko="아브람, 고향을 떠나다">Abram Leaves Home</div>
+        <div class="pmeta" data-ko="창세기 12~14장 &middot; 우르, 하란, 가나안, 유목 생활">Genesis 12&ndash;14 &middot; Ur, Haran, Canaan, nomadic travel</div>
+      </div>
+      <div class="pdomain" data-ko="🐫 유목 생활">🐫 Nomadic travel</div>
+      <div class="pstate" data-ko="출시 예정">Coming soon</div>
+    </div>
+
+    <div class="part locked">
+      <div class="pnum">2</div>
+      <div class="pbody">
+        <div class="ptitle" data-ko="하나님이 아브라함과 맺으신 언약">God's Covenant with Abraham</div>
+        <div class="pmeta" data-ko="창세기 15~17장 &middot; 고대 언약, 장막, 할례, 이름">Genesis 15&ndash;17 &middot; ancient covenants, tents, circumcision, names</div>
+      </div>
+      <div class="pdomain" data-ko="🤝 고대 언약">🤝 Ancient covenants</div>
+      <div class="pstate" data-ko="출시 예정">Coming soon</div>
+    </div>
+
+    <div class="part locked">
+      <div class="pnum">3</div>
+      <div class="pbody">
+        <div class="ptitle" data-ko="손님들, 소돔과 평지 성읍들">Visitors, Sodom &amp; the Cities of the Plain</div>
+        <div class="pmeta" data-ko="창세기 18~20장 &middot; 환대, 사막 도시들, 사해 지역">Genesis 18&ndash;20 &middot; hospitality, desert cities, Dead Sea region</div>
+      </div>
+      <div class="pdomain" data-ko="🏜️ 사막 도시">🏜️ Desert cities</div>
+      <div class="pstate" data-ko="출시 예정">Coming soon</div>
+    </div>
+
+    <div class="part locked">
+      <div class="pnum">4</div>
+      <div class="pbody">
+        <div class="ptitle" data-ko="이삭: 약속된 아들">Isaac: The Promised Son</div>
+        <div class="pmeta" data-ko="창세기 21~23장 &middot; 브엘세바, 제사, 장례 풍습">Genesis 21&ndash;23 &middot; Beersheba, sacrifice, burial customs</div>
+      </div>
+      <div class="pdomain" data-ko="⚱️ 장례 풍습">⚱️ Burial customs</div>
+      <div class="pstate" data-ko="출시 예정">Coming soon</div>
+    </div>
+
+    <div class="part locked">
+      <div class="pnum">5</div>
+      <div class="pbody">
+        <div class="ptitle" data-ko="이삭의 아내를 찾다">Finding a Wife for Isaac</div>
+        <div class="pmeta" data-ko="창세기 24~26장 &middot; 우물, 결혼 풍습, 낙타, 가족 씨족">Genesis 24&ndash;26 &middot; wells, marriage customs, camels, family clans</div>
+      </div>
+      <div class="pdomain" data-ko="🐪 낙타와 씨족">🐪 Camels &amp; clans</div>
+      <div class="pstate" data-ko="출시 예정">Coming soon</div>
+    </div>
+
+    <div class="part locked">
+      <div class="pnum">6</div>
+      <div class="pbody">
+        <div class="ptitle" data-ko="야곱과 에서: 장자권과 축복">Jacob &amp; Esau: Birthright and Blessing</div>
+        <div class="pmeta" data-ko="창세기 27~29장 &middot; 상속, 축복, 벧엘">Genesis 27&ndash;29 &middot; inheritance, blessings, Bethel</div>
+      </div>
+      <div class="pdomain" data-ko="🕊️ 축복">🕊️ Blessings</div>
+      <div class="pstate" data-ko="출시 예정">Coming soon</div>
+    </div>
+
+    <div class="part locked">
+      <div class="pnum">7</div>
+      <div class="pbody">
+        <div class="ptitle" data-ko="야곱의 가족과 고대 목자의 삶">Jacob's Family &amp; Ancient Shepherd Life</div>
+        <div class="pmeta" data-ko="창세기 30~33장 &middot; 가축 떼, 품삯, 여행, 화해">Genesis 30&ndash;33 &middot; flocks, wages, travel, reconciliation</div>
+      </div>
+      <div class="pdomain" data-ko="🐑 목자의 삶">🐑 Shepherd life</div>
+      <div class="pstate" data-ko="출시 예정">Coming soon</div>
+    </div>
+
+    <div class="part locked">
+      <div class="pnum">8</div>
+      <div class="pbody">
+        <div class="ptitle" data-ko="꿈꾸는 자 요셉">Joseph the Dreamer</div>
+        <div class="pmeta" data-ko="창세기 34~37장 &middot; 가족 씨족, 특별한 옷, 대상 무역">Genesis 34&ndash;37 &middot; family clans, special garments, caravan trade</div>
+      </div>
+      <div class="pdomain" data-ko="🧵 옷과 무역">🧵 Garments &amp; trade</div>
+      <div class="pstate" data-ko="출시 예정">Coming soon</div>
+    </div>
+
+    <div class="part locked">
+      <div class="pnum">9</div>
+      <div class="pbody">
+        <div class="ptitle" data-ko="이집트의 요셉: 감옥에서 궁전으로">Joseph in Egypt: Prison to Palace</div>
+        <div class="pmeta" data-ko="창세기 38~41장 &middot; 이집트 관리들, 꿈, 곡식 저장">Genesis 38&ndash;41 &middot; Egyptian officials, dreams, grain storage</div>
+      </div>
+      <div class="pdomain" data-ko="🏺 이집트 생활">🏺 Egyptian life</div>
+      <div class="pstate" data-ko="출시 예정">Coming soon</div>
+    </div>
+
+    <div class="part locked">
+      <div class="pnum">10</div>
+      <div class="pbody">
+        <div class="ptitle" data-ko="요셉의 가족, 이집트로 오다">Joseph's Family Comes to Egypt</div>
+        <div class="pmeta" data-ko="창세기 42~50장 &middot; 기근, 고센, 시신 방부 처리, 이집트 장례">Genesis 42&ndash;50 &middot; famine, Goshen, embalming, Egyptian burial</div>
+      </div>
+      <div class="pdomain" data-ko="🌾 기근과 고센">🌾 Famine &amp; Goshen</div>
+      <div class="pstate" data-ko="출시 예정">Coming soon</div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section">
+  <h2 data-ko="추천 성경 판본">Recommended Bible edition</h2>
+  <div class="note" data-ko="이 워크북이 완성되면 1권과 마찬가지로 <b>ESV&reg; 성경</b>(Crossway)을 기준으로 구성될 예정입니다 &mdash; 장·절 표기, 고유명사, 학습하는 어휘 모두 ESV를 따를 예정입니다. 완성되면 학생은 본인의 ESV 성경으로 창세기 12~50장을 함께 읽게 됩니다. 족장 이야기에 대해 신실한 그리스도인들 사이에서 해석이 다를 수 있는 부분은, 1권과 동일한 방식으로 본문이 말하는 바를 전달하고 해석 차이를 명확히 밝힐 계획입니다.">
+    Once built, this workbook will be keyed to the <b>ESV&reg; Bible</b> (Crossway), matching Volume 1 &mdash; chapter and verse references, proper names and the vocabulary taught will all follow the ESV, and the student will read Genesis 12&ndash;50 in their own ESV Bible alongside each part. On matters where sincere Christians read the patriarchal narratives differently, we plan to state what the text says and note plainly where interpretations diverge, following the same approach as Volume 1.
+  </div>
+</section>
+
+<footer>
+  <div class="foot-in">
+    <div class="foot-links">
+      <a href="index.html" data-ko="홈">Home</a>
+      <a href="index.html#library" data-ko="라이브러리">Library</a>
+      <a href="#parts" data-ko="창세기 파트">Genesis parts</a>
+      <a href="index.html#roadmap" data-ko="커리큘럼 로드맵">Curriculum roadmap</a>
+    </div>
+    <div class="foot-legal" data-ko="The Word &amp; World Academy는 독립적인 학습 자료이며, Crossway 또는 그 어떤 성경 출판사와도 제휴하거나 공인받지 않았습니다. 이 권은 현재 제작 중입니다. 워크북이 완성되면 ESV&reg; 성경을 기준으로 구성되며, 학생은 본인의 성경으로 해당 본문을 직접 읽어야 합니다. 성경 본문 전체를 그대로 옮기는 부분은 없으며, 모든 본문 요약과 질문은 자체 제작한 원문일 예정입니다.">
+      The Word &amp; World Academy is an independent study resource. It is not affiliated with or endorsed by Crossway or any Bible publisher. This volume is currently in development. Once built, workbooks will be keyed to the ESV&reg; Bible; students will read the referenced Scripture in their own Bible. No copyrighted text will be reproduced in full; all passage summaries and questions will be original.
+    </div>
+  </div>
+</footer>
+
+<script src="i18n.js"></script>
+</body>
+</html>

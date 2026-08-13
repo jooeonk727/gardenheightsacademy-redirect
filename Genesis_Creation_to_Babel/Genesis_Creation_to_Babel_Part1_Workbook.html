@@ -205,7 +205,7 @@ nav{background:linear-gradient(140deg,#0E1A14 0%,#12251B 100%)!important;border-
 @media(max-width:640px){.nav-home{display:none;}.nav-gha{font-size:15px!important;}.sbadge{font-size:12px;padding:4px 9px;}.hero{padding:24px 20px;}.qb{padding:16px;}.snav{flex-wrap:wrap;}#sec-stdtest .qch{flex-basis:100%;margin-left:40px;}}
 </style><style>.psum{display:flex;flex-direction:column;gap:8px;margin:10px 0;}.psb{display:flex;align-items:flex-start;gap:10px;text-align:left;padding:12px 14px;background:white;border:1.5px solid var(--rule);border-radius:10px;font-size:14.5px;line-height:1.5;cursor:pointer;font-family:inherit;color:inherit;}.psb::before{content:"";flex:0 0 18px;height:18px;margin-top:1px;border:2px solid var(--rule);border-radius:5px;}.psb.sel{border-color:var(--navy);background:#f0f6ff;}.psb.sel::before{background:var(--navy);border-color:var(--navy);}.psb.ok{border-color:var(--ok);background:#f0fdf4;}.psb.ok::before{background:var(--ok);border-color:var(--ok);}.psb.bad{border-color:var(--err);background:#fef2f2;}.psb.bad::before{background:var(--err);border-color:var(--err);}.psb.miss{border-style:dashed;border-color:var(--ok);}</style></head>
 <body>
-<div style="background:#0E1A14;color:#C9A227;text-align:center;font-size:12.5px;font-weight:700;letter-spacing:.04em;padding:7px 10px;">FREE SAMPLE &middot; Part 1 of 4 &middot; no sign-in required</div>
+<div style="background:#0E1A14;color:#C9A227;text-align:center;font-size:12.5px;font-weight:700;letter-spacing:.04em;padding:7px 10px;">GIFT &middot; Part 1 of 4 &middot; no sign-in required</div>
 
 <nav>
   <div class="nav-l"><a class="brand nav-gha" href="../index.html">The Word &amp; World<span class="brand-sub">Academy</span></a><a class="nav-pill" style="background:#FFDA70;color:#4A3808!important;" href="../index.html#library">Library</a><a class="nav-home" href="../genesis-creation-to-babel.html">&#8962; Genesis: Creation to Babel Home</a><div class="nav-title">The Word &amp; World Academy &middot; <i>Genesis: Creation to Babel</i> Study Guide</div></div>
@@ -679,7 +679,7 @@ function qbFrac(qb){if(qb.dataset&&qb.dataset.done==='1'&&qb.dataset.frac!==unde
 /* GHA account tracking: view log + report-card auto-save */
 (function(){
   var BOOK='genesis1', LEVEL=1, PART=1;
-  function ghaGate(){ /* accounts not yet live on this site; Part 1 is an open free sample, so this is a no-op */ }
+  function ghaGate(){ /* accounts not yet live on this site; Part 1 is an open gift, so this is a no-op */ }
   function post(p,b){ try{ var _pr=JSON.parse(localStorage.getItem('gha_profile')||'null'); if(_pr&&_pr.id!=null&&b&&b.profile_id==null)b.profile_id=_pr.id; }catch(e){} try{ var _r=fetch(p,{method:'POST',credentials:'same-origin',headers:{'Content-Type':'application/json'},body:JSON.stringify(b)}); if(p==='/api/access'&&b&&b.kind==='workbook'){ _r.then(function(r){return r.json();}).then(function(d){ if(d&&d.allowed===false)ghaGate(); }).catch(function(){}); } _r.catch(function(){});}catch(e){} }
   try{ if(localStorage.getItem('gha_auth')==='1') post('/api/access',{book:BOOK,level:LEVEL,part:PART,kind:'workbook'}); }catch(e){}
   var lastSent=null;
