@@ -78,18 +78,19 @@
   @media(max-width:560px){.stack-card{width:150px;}.stack-card:nth-child(2),.stack-card:nth-child(3){margin-left:-26px;}}
   .explore-lede{color:var(--slate);font-size:15.5px;margin:22px auto 0;max-width:420px;}
 
-  /* Side rails — a peek at real workbook content, shown only where there's spare margin on very wide screens */
-  .side-rail{display:none;position:fixed;top:150px;width:216px;flex-direction:column;gap:22px;z-index:5;}
-  .side-rail.left{left:calc(50% - 1360px);}
-  .side-rail.right{right:calc(50% - 1360px);}
-  .rail-card{background:var(--paper);border:1px solid var(--rule);border-radius:16px;box-shadow:0 14px 30px rgba(41,45,46,.14);padding:16px 18px;transform:rotate(var(--rot,0deg));transition:transform .2s ease;}
+  /* Side rails — a peek at real workbook content, shown only where there's spare margin beside the hero */
+  .hero-outer{position:relative;width:100%;}
+  .side-rail{display:none;position:absolute;top:26px;width:188px;flex-direction:column;gap:18px;z-index:5;}
+  .side-rail.left{left:max(16px, calc(50% - 1006px));}
+  .side-rail.right{right:max(16px, calc(50% - 1006px));}
+  .rail-card{background:var(--paper);border:1px solid var(--rule);border-radius:16px;box-shadow:0 14px 30px rgba(41,45,46,.14);padding:14px 16px;transform:rotate(var(--rot,0deg));transition:transform .2s ease;}
   .rail-card:hover{transform:rotate(0deg) translateY(-3px);}
-  .rail-tag{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--org);margin-bottom:9px;}
-  .rail-word{font-family:'Playfair Display',serif;font-weight:800;font-size:18px;color:var(--ink);}
-  .rail-ref{font-size:11.5px;font-weight:700;color:#9a8a63;margin-left:6px;}
-  .rail-title{font-family:'Playfair Display',serif;font-weight:800;font-size:15px;color:var(--ink);line-height:1.25;}
-  .rail-txt{font-size:12.5px;line-height:1.55;color:var(--slate);margin-top:8px;}
-  @media(min-width:2800px){.side-rail{display:flex;}}
+  .rail-tag{display:inline-block;font-size:9.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--org);margin-bottom:8px;}
+  .rail-word{font-family:'Playfair Display',serif;font-weight:800;font-size:17px;color:var(--ink);}
+  .rail-ref{font-size:11px;font-weight:700;color:#9a8a63;margin-left:6px;}
+  .rail-title{font-family:'Playfair Display',serif;font-weight:800;font-size:14px;color:var(--ink);line-height:1.25;}
+  .rail-txt{font-size:12px;line-height:1.5;color:var(--slate);margin-top:7px;}
+  @media(min-width:1400px){.side-rail{display:flex;}}
   .pill-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:24px;}
   .pill-btn{background:var(--ink);color:#F5F1E6;font-weight:700;font-size:15px;padding:13px 28px;border-radius:99px;text-decoration:none;display:inline-block;transition:transform .15s ease,background .15s ease;}
   .pill-btn:hover{transform:translateY(-1px);background:#3A3F40;}
@@ -174,23 +175,24 @@
   </div>
 </nav>
 
+<div class="hero-outer">
 <div class="side-rail left">
   <div class="rail-card" style="--rot:-5deg;">
+    <span class="rail-tag" data-ko="🎓 이렇게 도움이 됩니다">&#127891; Why This Helps</span>
+    <div class="rail-title" data-ko="성경을 읽으며 영어 실력을 키우세요">Grow Your English as You Read</div>
+    <div class="rail-txt" data-ko="각 파트는 실제 성경 본문으로 영어 실력을 길러줍니다. 이중 언어 성경과 함께 풀면 영어와 성경 이해를 함께 키울 수 있어요.">Every part builds real English skill from the Bible text itself. Tip: solve it alongside a bilingual Bible to grow your English and your understanding of Scripture together.</div>
+  </div>
+  <div class="rail-card" style="--rot:4deg;">
     <span class="rail-tag" data-ko="단어 학습 · 1부">Word Study &middot; Part 1</span><br>
     <span class="rail-word" data-ko="창조하다">create</span><span class="rail-ref">v. &middot; Gen 1:1</span>
     <div class="rail-txt" data-ko="새로운 것을 만들다 &mdash; 성경이 말하는 하나님의 첫 번째 행동입니다.">To make something new &mdash; the very first thing the Bible says God does.</div>
   </div>
-  <div class="rail-card" style="--rot:4deg;">
-    <span class="rail-tag" data-ko="🔖 보물 같은 지식">&#128278; Treasure Wisdom</span>
-    <div class="rail-title" data-ko="세상을 짓는 단어들">The Words That Build a World</div>
-    <div class="rail-txt" data-ko="창세기 1장은 &lsquo;창조하다&rsquo;, &lsquo;분리하다&rsquo;처럼 만드는 단어를 씁니다. 창세기 2장은 &lsquo;빚다&rsquo;, &lsquo;숨&rsquo;처럼 손으로 하는 단어로 가까이 다가갑니다.">Genesis 1 uses making words &mdash; create, separate. Genesis 2 zooms in with hands-on words &mdash; form, breath.</div>
-  </div>
 </div>
 <div class="side-rail right">
   <div class="rail-card" style="--rot:5deg;">
-    <span class="rail-tag" data-ko="단어 학습 · 4부">Word Study &middot; Part 4</span><br>
-    <span class="rail-word" data-ko="제사">sacrifice</span><span class="rail-ref">n. &middot; Gen 8:20</span>
-    <div class="rail-txt" data-ko="제단 위에서 하나님께 드리기 위해 내어놓는 것입니다.">Something given up and offered to God, often on an altar.</div>
+    <span class="rail-tag" data-ko="🔖 보물 같은 지식">&#128278; Treasure Wisdom</span>
+    <div class="rail-title" data-ko="세상을 짓는 단어들">The Words That Build a World</div>
+    <div class="rail-txt" data-ko="창세기 1장은 &lsquo;창조하다&rsquo;, &lsquo;분리하다&rsquo;처럼 만드는 단어를 씁니다. 창세기 2장은 &lsquo;빚다&rsquo;, &lsquo;숨&rsquo;처럼 손으로 하는 단어로 가까이 다가갑니다.">Genesis 1 uses making words &mdash; create, separate. Genesis 2 zooms in with hands-on words &mdash; form, breath.</div>
   </div>
   <div class="rail-card" style="--rot:-4deg;">
     <span class="rail-tag" data-ko="🏛️ 보물 같은 지식 · 고고학">&#127963;&#65039; Treasure Wisdom &middot; Archaeology</span>
@@ -207,6 +209,7 @@
     <a class="btn btn-ghost" href="index.html#how-it-works" data-ko="이용 방법 보기">How it works</a>
   </div>
 </header>
+</div>
 
 <section class="explore">
   <h2 data-ko="성경의 특정 책을 살펴보고 싶으신가요?">Exploring a book of the Bible?</h2>
