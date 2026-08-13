@@ -32,8 +32,8 @@
 
   .nav{position:sticky;top:0;z-index:100;background:var(--ink);color:var(--cream);}
   .nav-in{width:100%;max-width:var(--page-max);margin:0 auto;padding:14px var(--content-gutter);display:flex;align-items:center;justify-content:space-between;gap:16px;}
-  .brand{font-family:'Playfair Display',serif;font-weight:900;font-size:19px;color:var(--gold);text-decoration:none;letter-spacing:.01em;display:flex;flex-direction:column;line-height:1.1;}
-  .brand .brand-sub{font-size:10.5px;font-weight:700;color:#fff;letter-spacing:.1em;text-transform:uppercase;margin-top:2px;}
+  .brand{display:flex;align-items:center;text-decoration:none;}
+  .brand img{height:40px;width:auto;display:block;background:#FDFCFB;border-radius:12px;padding:5px 10px;}
   .nav-right{display:flex;align-items:center;gap:22px;flex-wrap:wrap;}
   .navlinks{display:flex;gap:22px;flex-wrap:wrap;font-size:14px;font-weight:600;}
   .navlinks a{text-decoration:none;color:#E7E2D6;opacity:.9;}
@@ -112,6 +112,7 @@
     .nav-in{flex-direction:column;align-items:flex-start;gap:8px;}
     .navlinks{gap:16px;}
     .nav-right{width:100%;justify-content:space-between;}
+    .brand img{height:32px;}
     .part{display:grid;grid-template-columns:38px minmax(0,1fr);gap:8px 14px;align-items:start;}
     .part .pnum{grid-row:1 / span 3;}
     .pbody,.pdomain,.pstate{grid-column:2;}
@@ -126,7 +127,7 @@
 
 <nav class="nav">
   <div class="nav-in">
-    <a class="brand" href="index.html">The Word &amp; World<span class="brand-sub">Academy</span></a>
+    <a class="brand" href="index.html"><img src="assets/logo-nav.png" alt="The Word &amp; World Academy"></a>
     <div class="nav-right">
       <div class="navlinks">
         <a href="index.html#library" data-ko="라이브러리">Library</a>
