@@ -213,9 +213,10 @@ nav{background:#FFFFFF!important;border-bottom:1px solid #E8E7E2;}
 h1,h2,.sec-title,.brand,.done-brand,.score-n{font-family:'Lora',Georgia,serif !important;font-weight:700 !important;}
 body,button,input,select,textarea{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif !important;}
 </style>
-<style>.hero h1{color:#181818 !important;}</style>
+<style>.hero h1{color:#181818 !important;}
 aside{background:white;border-left:1px solid var(--rule);padding:16px 0;position:sticky;top:56px;height:calc(100vh - 56px);overflow-y:auto;}
 @media(max-width:900px){.shell{grid-template-columns:minmax(0,1fr);}aside{display:none;}}
+</style>
 </head>
 <body>
 
@@ -934,7 +935,7 @@ main{width:100%;min-width:0;max-width:var(--workbook-max);margin:0 auto;padding:
 .sec .vhl{color:var(--section-accent);background:var(--section-soft);}
 
 
-#sec-critical .tdit-b{color:var(--section-accent);background:var(--section-soft);}
+#sec-critical .tdit:not(.bA):not(.bB) .tdit-b{color:var(--section-accent);background:var(--section-soft);}
 #sec-critical > .kbank + div,
 #sec-critical .kbg-hidden > div:first-child{background:var(--section-soft)!important;border-color:var(--section-border)!important;border-left-color:var(--section-accent)!important;color:var(--ink)!important;}
 
