@@ -8,7 +8,7 @@
     window.location.replace("https://gardenheightsacademy.com");
   }
 </script>
-<title data-ko="The Word &amp; World Academy — 성경으로 배우는 영어">The Word &amp; World Academy — Learn English Through the Bible</title>
+<title data-ko="Lokosmos Academy — 성경으로 배우는 영어">Lokosmos Academy — Learn English Through the Bible</title>
 <meta name="description" content="Interactive English workbooks built from Scripture. Vocabulary, comprehension and literary skills taught chapter by chapter, alongside real places, archaeology and ancient life. Keyed to the ESV." data-ko="성경 본문을 바탕으로 만든 인터랙티브 영어 워크북입니다. 어휘, 독해, 문학적 요소를 장별로 배우며, 실제 지역과 고고학, 고대 생활상까지 함께 다룹니다. ESV 성경 기준으로 구성되었습니다.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -52,7 +52,12 @@
 
   /* Hero */
   .hero{width:100%;max-width:1600px;margin:0 auto;padding:clamp(48px,6vw,80px) var(--content-gutter) 24px;text-align:center;}
-  .hero-logo{height:clamp(64px,9vw,96px);width:auto;margin:0 auto 22px;display:block;}
+  .hero-verse{max-width:480px;margin:0 auto clamp(26px,3.5vw,36px);}
+  .hero-verse-ref{font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--org);margin-bottom:12px;}
+  .hero-verse-gk{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(16px,2.1vw,19px);line-height:1.7;color:var(--ink);opacity:.82;}
+  .hero-verse-gk p{margin:0 0 14px;}
+  .hero-verse-gk p:last-child{margin-bottom:0;}
+  .hero-logo{height:clamp(72px,10vw,108px);width:auto;margin:0 auto 22px;display:block;}
   .hero-eyebrow{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--org);margin-bottom:14px;}
   .hero h1{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(38px,7vw,72px);line-height:1.04;color:var(--ink);letter-spacing:-.01em;}
   .hero h1 .hl{color:var(--org);}
@@ -192,7 +197,7 @@
 
 <nav class="nav">
   <div class="nav-in">
-    <a class="brand" href="index.html"><img src="assets/logo-nav.png" alt="The Word &amp; World Academy"></a>
+    <a class="brand" href="index.html"><img src="assets/logo-nav.png?v=lokosmos1" alt="Lokosmos Academy"></a>
     <div class="nav-right">
       <div class="navlinks">
         <a href="index.html#library" data-ko="라이브러리">Library</a>
@@ -238,7 +243,14 @@
 </div>
 
 <header class="hero">
-  <img class="hero-logo" src="assets/logo.png" alt="The Word &amp; World Academy">
+  <div class="hero-verse">
+    <div class="hero-verse-ref">John 1:1, 10</div>
+    <div class="hero-verse-gk">
+      <p>Ἐν ἀρχῇ ἦν ὁ Λόγος,<br>καὶ ὁ Λόγος ἦν πρὸς τὸν Θεόν,<br>καὶ Θεὸς ἦν ὁ Λόγος.</p>
+      <p>Ἐν τῷ κόσμῳ ἦν,<br>καὶ ὁ κόσμος δι&rsquo; αὐτοῦ ἐγένετο,<br>καὶ ὁ κόσμος αὐτὸν οὐκ ἔγνω.</p>
+    </div>
+  </div>
+  <img class="hero-logo" src="assets/logo.png?v=lokosmos1" alt="Lokosmos Academy">
   <h1 data-ko="<span class=&quot;hl&quot;>말씀</span>을 읽고.<br><span class=&quot;hl&quot;>세상</span>을 읽고.<br><span class=&quot;hl&quot;>지혜</span>로 이끌다.">Read the <span class="hl">Word</span>.<br>Read the <span class="hl">World</span>.<br>Lead with <span class="hl">Wisdom</span>.</h1>
   <p data-ko="말씀을 읽고, 세상을 이해하는 크리스천 리더를 키웁니다. 성경과 영어를 함께 배우며 성경적 지식과 탄탄한 읽기 능력, 역사와 문화에 대한 넓은 시야를 기릅니다. 이를 통해 AI 시대에 지혜롭게 생각하고, 분명하게 소통하며, 세상을 이끌어 갈 힘을 키웁니다.">We raise Christian readers who can understand both the Word and the world. By learning the Bible and English together, students build biblical knowledge, strong reading skills, and a wider understanding of history and culture &mdash; equipping them to think wisely, communicate clearly, and lead in the age of AI.</p>
   <div class="hero-cta">
@@ -321,8 +333,8 @@
       <div class="price-amt">$49.99<span data-ko="/PDF"> /PDF</span></div>
       <div class="price-note" data-ko="구독 없이 한 번만 결제">One-time purchase, no subscription</div>
       <ul class="price-feats">
-        <li data-ko="한 권 전체를 담은 PDF">The complete PDF for one book</li>
-        <li data-ko="다운로드 후 소장 가능">Yours to download and keep</li>
+        <li data-ko="한 권 전체를 담은 PDF 2종">The complete 2 PDFs for one book</li>
+        <li data-ko="학생용과 교사용(정답 포함) 별도 제공">Student Edition &amp; Teacher's Edition, separate</li>
         <li data-ko="인쇄 및 오프라인 사용">Print or read offline anytime</li>
       </ul>
       <a class="btn btn-ghost" href="#pricing" style="width:100%;text-align:center;border-color:#D64545;color:#D64545;margin-top:auto;" data-ko="PDF 구매하기">Buy the PDF</a>
@@ -477,8 +489,8 @@
       <a href="genesis-creation-to-babel.html" data-ko="창세기">Genesis</a>
       <a href="index.html#roadmap" data-ko="커리큘럼 로드맵">Curriculum roadmap</a>
     </div>
-    <div class="foot-legal" data-ko="The Word &amp; World Academy는 독립적인 학습 자료이며, Crossway 또는 그 어떤 성경 출판사와도 제휴하거나 공인받지 않았습니다. 워크북은 ESV&reg; 성경을 기준으로 구성되어 있으며, 학생은 본인의 성경으로 해당 본문을 직접 읽어야 합니다. 본문에 인용된 성경 구절은 ESV&reg; 성경(Copyright &copy; 2001 by Crossway)에서 발췌한 것으로, 허락을 받아 사용하였습니다. 모든 권리는 원저작권자에게 있습니다. 성경 본문 전체를 그대로 옮긴 부분은 없으며, 모든 본문 요약과 질문은 자체 제작한 원문입니다.">
-      The Word &amp; World Academy is an independent study resource. It is not affiliated with or endorsed by Crossway or any Bible publisher. Workbooks are keyed to the ESV® Bible; students should read the referenced Scripture in their own Bible. Scripture quotations, where used, are from the ESV® Bible, copyright © 2001 by Crossway. Used by permission. All rights reserved. No copyrighted text is reproduced in full; all passage summaries and questions are original.
+    <div class="foot-legal" data-ko="Lokosmos Academy는 독립적인 학습 자료이며, Crossway 또는 그 어떤 성경 출판사와도 제휴하거나 공인받지 않았습니다. 워크북은 ESV&reg; 성경을 기준으로 구성되어 있으며, 학생은 본인의 성경으로 해당 본문을 직접 읽어야 합니다. 본문에 인용된 성경 구절은 ESV&reg; 성경(Copyright &copy; 2001 by Crossway)에서 발췌한 것으로, 허락을 받아 사용하였습니다. 모든 권리는 원저작권자에게 있습니다. 성경 본문 전체를 그대로 옮긴 부분은 없으며, 모든 본문 요약과 질문은 자체 제작한 원문입니다.">
+      Lokosmos Academy is an independent study resource. It is not affiliated with or endorsed by Crossway or any Bible publisher. Workbooks are keyed to the ESV® Bible; students should read the referenced Scripture in their own Bible. Scripture quotations, where used, are from the ESV® Bible, copyright © 2001 by Crossway. Used by permission. All rights reserved. No copyrighted text is reproduced in full; all passage summaries and questions are original.
     </div>
   </div>
 </footer>

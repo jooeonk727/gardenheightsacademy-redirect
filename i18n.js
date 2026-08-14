@@ -1,4 +1,4 @@
-/* Word & World Academy — language switcher.
+/* Lokosmos Academy — language switcher.
    Every translatable element carries its Korean text inline as a data-ko
    attribute (data-ko-alt for image alt text). The page renders correctly in
    English before this script runs; this script only swaps text on load and
