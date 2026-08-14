@@ -172,6 +172,19 @@
     .navlinks{gap:16px;}
     .nav-right{width:100%;justify-content:space-between;}
     .brand img{height:32px;}
+
+    /* Show ~3 book cards per row instead of one full-width card */
+    .cat-grid{grid-template-columns:repeat(3,1fr);gap:10px;}
+    .cat-card{border-radius:10px;}
+    .snum{width:16px;height:16px;font-size:9px;top:6px;right:6px;}
+    .cat-cap{padding:7px 7px 9px;}
+    .cat-cap-title{font-size:11px;line-height:1.2;}
+    .cat-cap-auth{font-size:9.5px;margin-top:2px;}
+    .cat-bfront{padding:8px;}
+    .cat-bfront .t{font-size:10.5px;}
+    .cat-bfront .r{width:22px;margin:6px 0;}
+    .cat-bfront .s{font-size:8px;}
+    .cat-soon-tag{font-size:7px;padding:3px 4px;bottom:6px;left:6px;right:6px;}
   }
 </style>
 </head>
@@ -286,9 +299,8 @@
       <div class="price-amt">$29.99<span data-ko="/월"> /month</span></div>
       <div class="price-note" data-ko="언제든 취소 가능">Cancel anytime</div>
       <ul class="price-feats">
-        <li data-ko="모든 성경 권 무제한 이용">Unlimited access to all books of the Bible</li>
+        <li data-ko="모든 온라인 워크북 무제한 이용">Unlimited access to all online workbooks of the Bible</li>
         <li data-ko="계정당 3개 기기">3 devices per account</li>
-        <li data-ko="PDF는 별도 구매 (49.99$)">PDF sold separately ($49.99)</li>
       </ul>
       <a class="btn btn-ghost" href="#pricing" style="width:100%;text-align:center;margin-top:auto;" data-ko="구독하기">Subscribe</a>
     </div>
@@ -298,9 +310,8 @@
       <div class="price-amt">$249<span data-ko="/년"> /year</span></div>
       <div class="price-note" data-ko="월간 대비 약 31% 절약">About 31% less than paying monthly</div>
       <ul class="price-feats">
-        <li data-ko="모든 성경 권 무제한 이용">Unlimited access to all books of the Bible</li>
+        <li data-ko="모든 온라인 워크북 무제한 이용">Unlimited access to all online workbooks of the Bible</li>
         <li data-ko="계정당 3개 기기">3 devices per account</li>
-        <li data-ko="PDF는 별도 구매 (49.99$)">PDF sold separately ($49.99)</li>
       </ul>
       <a class="btn btn-gold" href="#pricing" style="width:100%;text-align:center;margin-top:auto;" data-ko="구독하기">Subscribe</a>
     </div>
