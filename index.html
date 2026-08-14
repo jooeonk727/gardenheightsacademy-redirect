@@ -58,6 +58,12 @@
   .hero h1 .hl{color:var(--org);}
   .hero p{max-width:70ch;margin:20px auto 0;color:var(--slate);font-size:17px;line-height:1.65;}
   .hero-cta{margin-top:30px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+  .trust-card{max-width:660px;margin:36px auto 0;background:var(--paper);border:1px solid var(--rule);border-radius:16px;padding:22px 26px;text-align:left;}
+  .trust-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px 26px;}
+  .trust-item{display:flex;gap:11px;align-items:flex-start;}
+  .trust-ic{flex:0 0 auto;font-size:19px;line-height:1.3;}
+  .trust-item b{display:block;font-size:14px;color:var(--ink);}
+  .trust-item span{display:block;font-size:12.5px;color:var(--slate);line-height:1.5;margin-top:2px;}
   .btn{display:inline-block;padding:13px 26px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;}
   .btn-gold{background:var(--org);color:#fff;}
   .btn-ghost{background:transparent;border:1.5px solid var(--ink);color:var(--ink);}
@@ -104,9 +110,11 @@
 
   /* Pricing */
   .pricing{width:100%;max-width:var(--page-max);margin:0 auto;padding:56px var(--content-gutter) 20px;}
-  .price-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;max-width:720px;margin:34px auto 0;}
-  .price-card{position:relative;background:var(--paper);border:1.5px solid var(--rule);border-radius:18px;padding:28px 26px;text-align:center;}
+  .price-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;max-width:980px;margin:34px auto 0;}
+  .price-card{position:relative;background:var(--paper);border:1.5px solid var(--rule);border-radius:18px;padding:28px 26px;text-align:center;display:flex;flex-direction:column;}
   .price-card.featured{border-color:var(--org);box-shadow:0 16px 34px rgba(41,45,46,.12);}
+  .price-card.pdf-tier{border-color:#D64545;}
+  .price-pdf-ic{width:44px;height:44px;margin:0 auto 12px;border-radius:12px;background:#FDECEC;color:#D64545;display:flex;align-items:center;justify-content:center;}
   .price-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--org);color:#fff;font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;padding:5px 14px;border-radius:99px;white-space:nowrap;}
   .price-plan{font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--slate);}
   .price-amt{font-family:'Playfair Display',serif;font-weight:900;font-size:40px;color:var(--ink);margin:10px 0 2px;}
@@ -224,6 +232,26 @@
     <a class="btn btn-gold" href="genesis-creation-to-babel.html" data-ko="창세기로 시작하기 →">Start with Genesis →</a>
     <a class="btn btn-ghost" href="index.html#library" data-ko="라이브러리 보기">See the Library</a>
   </div>
+  <div class="trust-card">
+    <div class="trust-grid">
+      <div class="trust-item">
+        <span class="trust-ic">📖</span>
+        <div><b data-ko="ESV 성경 기준">Keyed to the ESV</b><span data-ko="ESV(잉글리시 스탠다드 버전)는 널리 쓰이는 현대 영어 성경 번역본입니다. 모든 워크북은 이 번역을 기준으로 만들어졌습니다.">The ESV (English Standard Version) is a widely used, modern English Bible translation. Every workbook is built to match it.</span></div>
+      </div>
+      <div class="trust-item">
+        <span class="trust-ic">✅</span>
+        <div><b data-ko="자동 채점, 오프라인 이용 가능">Auto-graded, works offline</b><span data-ko="답을 제출하면 그 자리에서 바로 채점 결과를 확인할 수 있고, 페이지를 한 번 불러온 뒤에는 인터넷 연결 없이도 계속 풀 수 있습니다.">Check your answers instantly as you go, and keep working with no internet connection once a page has loaded.</span></div>
+      </div>
+      <div class="trust-item">
+        <span class="trust-ic">🌍</span>
+        <div><b data-ko="실제 지역, 고고학, 고대 생활상">Real places, archaeology &amp; ancient life</b><span data-ko="모든 파트에는 줄거리뿐 아니라 그 본문이 속한 실제 세계를 알려주는 지식 박스가 담겨 있습니다.">Every part includes a knowledge box on the real world behind the passage, not just the story.</span></div>
+      </div>
+      <div class="trust-item">
+        <span class="trust-ic">⛪</span>
+        <div><b data-ko="독립적인 학습 자료">Independent study resource</b><span data-ko="특정 출판사와 제휴하거나 그로부터 공인받지 않은 독립적인 자료입니다.">Not affiliated with or endorsed by any Bible publisher.</span></div>
+      </div>
+    </div>
+  </div>
 </header>
 </div>
 
@@ -247,15 +275,6 @@
   </div>
 </section>
 
-<div class="trust">
-  <div class="trust-in">
-    <span data-ko="📖 ESV 성경 기준">📖 Keyed to the ESV</span>
-    <span data-ko="✅ 자동 채점, 오프라인 이용 가능">✅ Auto-graded, works offline</span>
-    <span data-ko="🌍 모든 파트에 실제 지역, 고고학, 고대 생활상 수록">🌍 Real places, archaeology &amp; ancient life in every part</span>
-    <span data-ko="⛪ 독립적인 학습 자료 — 특정 출판사와 제휴하지 않음">⛪ Independent study resource — not affiliated with any publisher</span>
-  </div>
-</div>
-
 <section class="pricing" id="pricing">
   <div class="lib-head">
     <h2 data-ko="구독하기">Subscribe</h2>
@@ -264,26 +283,38 @@
   <div class="price-grid">
     <div class="price-card">
       <div class="price-plan" data-ko="월간">Monthly</div>
-      <div class="price-amt">$39.99<span data-ko="/월"> /month</span></div>
+      <div class="price-amt">$29.99<span data-ko="/월"> /month</span></div>
       <div class="price-note" data-ko="언제든 취소 가능">Cancel anytime</div>
       <ul class="price-feats">
         <li data-ko="모든 성경 권 무제한 이용">Unlimited access to all books of the Bible</li>
         <li data-ko="오프라인·인쇄용 PDF 포함">PDF included, for offline &amp; print use</li>
         <li data-ko="계정당 3개 기기">3 devices per account</li>
       </ul>
-      <a class="btn btn-ghost" href="#pricing" style="width:100%;text-align:center;" data-ko="구독하기">Subscribe</a>
+      <a class="btn btn-ghost" href="#pricing" style="width:100%;text-align:center;margin-top:auto;" data-ko="구독하기">Subscribe</a>
     </div>
     <div class="price-card featured">
       <div class="price-badge" data-ko="가장 알뜰한 선택">Best value</div>
       <div class="price-plan" data-ko="연간">Yearly</div>
-      <div class="price-amt">$399<span data-ko="/년"> /year</span></div>
-      <div class="price-note" data-ko="월간 대비 약 17% 절약">About 17% less than paying monthly</div>
+      <div class="price-amt">$249<span data-ko="/년"> /year</span></div>
+      <div class="price-note" data-ko="월간 대비 약 31% 절약">About 31% less than paying monthly</div>
       <ul class="price-feats">
         <li data-ko="모든 성경 권 무제한 이용">Unlimited access to all books of the Bible</li>
         <li data-ko="오프라인·인쇄용 PDF 포함">PDF included, for offline &amp; print use</li>
         <li data-ko="계정당 3개 기기">3 devices per account</li>
       </ul>
-      <a class="btn btn-gold" href="#pricing" style="width:100%;text-align:center;" data-ko="구독하기">Subscribe</a>
+      <a class="btn btn-gold" href="#pricing" style="width:100%;text-align:center;margin-top:auto;" data-ko="구독하기">Subscribe</a>
+    </div>
+    <div class="price-card pdf-tier">
+      <div class="price-pdf-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 2H14L19 7V21C19 21.5523 18.5523 22 18 22H6C5.44772 22 5 21.5523 5 21V3C5 2.44772 5.44772 2 6 2Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M14 2V7H19" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><text x="12" y="17.6" font-family="Arial, sans-serif" font-size="6.4" font-weight="800" fill="currentColor" text-anchor="middle">PDF</text></svg></div>
+      <div class="price-plan" data-ko="PDF 단품">PDF only</div>
+      <div class="price-amt">$49.99<span data-ko="/PDF"> /PDF</span></div>
+      <div class="price-note" data-ko="구독 없이 한 번만 결제">One-time purchase, no subscription</div>
+      <ul class="price-feats">
+        <li data-ko="한 권 전체를 담은 PDF">The complete PDF for one book</li>
+        <li data-ko="다운로드 후 소장 가능">Yours to download and keep</li>
+        <li data-ko="인쇄 및 오프라인 사용">Print or read offline anytime</li>
+      </ul>
+      <a class="btn btn-ghost" href="#pricing" style="width:100%;text-align:center;border-color:#D64545;color:#D64545;margin-top:auto;" data-ko="PDF 구매하기">Buy the PDF</a>
     </div>
   </div>
 </section>
@@ -303,7 +334,7 @@
     <div class="cat-grid">
 
       <a class="cat-card cat-avail" href="genesis-creation-to-babel.html">
-        <div class="cat-cover" style="--bc:#FFDA70;">
+        <div class="cat-cover" style="--bc:#F5F4F0;">
           <span class="snum">1</span>
           <img class="cat-cover-img" src="covers/Genesis_Creation_to_Babel_Book_Cover.png" alt="Genesis: Creation to Isaac — Genesis 1–23" data-ko-alt="창세기: 창조부터 이삭까지 — 창세기 1~23장">
         </div>
@@ -314,7 +345,7 @@
       </a>
 
       <a class="cat-card cat-soon" href="genesis-abraham-to-joseph.html" title="In development">
-        <div class="cat-cover" style="--bc:#70CCFF;">
+        <div class="cat-cover" style="--bc:#F5F4F0;">
           <img class="cat-cover-img" src="covers/Genesis_Jacob_to_Joseph_Book_Cover.png" alt="Genesis: Jacob to Joseph — Genesis 24–50" data-ko-alt="창세기: 야곱부터 요셉까지 — 창세기 24~50장">
           <div class="cat-soon-tag" data-ko="제작 중">In development</div>
         </div>
