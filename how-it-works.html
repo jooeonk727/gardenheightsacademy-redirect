@@ -91,6 +91,12 @@
   .prev-price-chip b{display:block;font-family:'Playfair Display',serif;font-size:16px;}
   .prev-price-chip span{display:block;font-size:11px;color:var(--slate);margin-top:2px;}
 
+  .prev-report{display:flex;flex-direction:column;align-items:flex-start;gap:12px;}
+  .prev-sbadge{background:var(--paper);border:1px solid var(--rule);font-size:13px;font-weight:700;padding:5px 13px;border-radius:99px;}
+  .prev-scorebox{width:100%;background:linear-gradient(135deg,var(--sc,#264D54) 0%,#16323a 100%);border-radius:12px;padding:16px;text-align:center;color:#fff;}
+  .prev-scorebox-n{font-family:'Playfair Display',serif;font-size:34px;font-weight:900;line-height:1;}
+  .prev-scorebox-l{font-size:12px;opacity:.85;margin-top:4px;}
+
   .guide-cta{text-align:center;padding:0 var(--content-gutter) 60px;}
   .btn{display:inline-block;padding:13px 26px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;}
   .btn-gold{background:var(--gold);color:var(--ink);}
@@ -134,7 +140,7 @@
 <header class="guide-hero">
   <div class="eyebrow" data-ko="이용 방법 &middot; 시작하기">Getting Started</div>
   <h1 data-ko="이용 방법 — 단계별 안내">How It Works — Step by Step</h1>
-  <p data-ko="책을 고르는 것부터 한 파트를 끝내기까지, 다섯 단계면 충분합니다. 모든 워크북은 하나의 ESV 성경을 기준으로 만들어졌기 때문에, 맞춰야 할 판본이나 ISBN은 따로 없습니다.">From choosing a book to a finished part, it only takes five steps. Every workbook is keyed to one Bible translation, the ESV &mdash; so there's no edition or ISBN to match, just your own Bible.</p>
+  <p data-ko="책을 고르는 것부터 한 파트를 끝내기까지, 여섯 단계면 충분합니다. 모든 워크북은 하나의 ESV 성경을 기준으로 만들어졌기 때문에, 맞춰야 할 판본이나 ISBN은 따로 없습니다.">From choosing a book to a finished part, it only takes six steps. Every workbook is keyed to one Bible translation, the ESV &mdash; so there's no edition or ISBN to match, just your own Bible.</p>
 </header>
 
 <div class="steps">
@@ -197,8 +203,23 @@
     </div>
   </div>
 
-  <div class="step-card" style="--sc:#B5622E">
+  <div class="step-card" style="--sc:#264D54">
     <div class="step-num">5</div>
+    <div class="step-title" data-ko="점수 확인하기 (성적표)">See Your Grade (Report Card)</div>
+    <div class="step-txt" data-ko="화면 위쪽의 점수 배지가 문제를 풀 때마다 실시간으로 올라갑니다. 파트를 끝내면 100점 만점 기준의 자동 채점 성적표가 완료 화면에 바로 나타납니다.">A live score badge at the top of the page climbs as you answer questions. Finish the part and your auto-graded report card &mdash; a score out of 100 &mdash; shows up right on the completion screen.</div>
+    <div class="step-preview">
+      <div class="prev-report">
+        <span class="prev-sbadge" data-ko="점수 74">Score 74</span>
+        <div class="prev-scorebox">
+          <div class="prev-scorebox-n">92</div>
+          <div class="prev-scorebox-l" data-ko="100점 만점">points out of 100</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="step-card" style="--sc:#B5622E">
+    <div class="step-num">6</div>
     <div class="step-title" data-ko="구독하거나 PDF 구매하기">Subscribe or Grab the PDF</div>
     <div class="step-txt" data-ko="온라인으로 모든 권을 계속 풀고 싶다면 구독하세요. 인쇄하거나 오프라인으로 한 권을 갖고 싶다면 PDF만 따로 구매할 수도 있습니다.">Subscribe for ongoing online access to every volume, or buy a one-time PDF if you'd rather print a finished book or keep it fully offline.</div>
     <a class="step-btn" href="index.html#pricing" data-ko="요금제 보기 →">See Pricing &rarr;</a>
